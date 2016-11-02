@@ -6,6 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RecipeCook extends JFrame {
 
@@ -37,6 +40,19 @@ public class RecipeCook extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel label = new JLabel("\uC694\uB9AC");
+		label.setBounds(173, 97, 57, 15);
+		contentPane.add(label);
+		
+		JButton btnNewButton = new JButton("\uB4A4\uB85C");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnNewButton.setBounds(162, 153, 97, 23);
+		contentPane.add(btnNewButton);
 	}
 
 }
