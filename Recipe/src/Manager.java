@@ -4,5 +4,5 @@ public class Manager {
 	//문의사항 보기
 	//배달음식 삽입,삭제,수정
 	//레시피 삽입,삭제,수정
-		//dfd
+	//dfddf
 }
