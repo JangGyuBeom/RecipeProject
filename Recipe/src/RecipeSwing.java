@@ -16,6 +16,10 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.Icon;
+import java.awt.SystemColor;
+import java.awt.event.MouseWheelListener;
+import java.awt.event.MouseWheelEvent;
 
 public class RecipeSwing extends JFrame {
 
@@ -38,30 +42,37 @@ public class RecipeSwing extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public RecipeSwing() {
-		ImageIcon Del = new ImageIcon("Image/테두리.png");
-		ImageIcon Cook = new ImageIcon("Image/Cook.jpeg");
-		ImageIcon Send = new ImageIcon("Image/Send.jpg");
-		ImageIcon background = new ImageIcon("Image/배경.png");
+		ImageIcon Del = new ImageIcon("Image/delivery.png");
+		ImageIcon Cook = new ImageIcon("Image/Cook.png");
+		ImageIcon exit = new ImageIcon("Image/종료.png");
+		ImageIcon inq = new ImageIcon("Image/문의.png");
+		ImageIcon Not = new ImageIcon("Image/notice.png");
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 857, 582);
-		contentPane = new JPanel(){
-			public void paintComponent(Graphics g){
-				g.drawImage(background.getImage(),0,0,null);
-				setOpaque(false);
-				super.paintComponent(g);
-			}
-		};
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 215, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton(Cook);
-		btnNewButton.addActionListener(new ActionListener() {
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane_1.setBounds(190, 335, 639, 138);
+		contentPane.add(scrollPane_1);
+		
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBackground(new Color(255, 250, 205));
+		scrollPane_1.setViewportView(textArea_1);
+		
+		JButton btn_Recipe = new JButton();
+		btn_Recipe.setBorderPainted(false); 	//투명 버튼
+		btn_Recipe.setFocusPainted(false);		//투명 버튼
+		btn_Recipe.setContentAreaFilled(false); //투명 버튼
+		btn_Recipe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
@@ -75,12 +86,27 @@ public class RecipeSwing extends JFrame {
 				});
 			}
 		});
-		btnNewButton.setForeground(Color.BLACK);
-		btnNewButton.setBounds(12, 10, 390, 179);
-		contentPane.add(btnNewButton);
+		btn_Recipe.setForeground(Color.BLACK);
+		btn_Recipe.setBounds(88, 10, 250, 280);
+		contentPane.add(btn_Recipe);
 		
-		JButton btnNewButton_1 = new JButton(Del);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btn_Exit = new JButton();
+		btn_Exit.setForeground(Color.BLACK);
+		btn_Exit.setBackground(Color.WHITE);
+		btn_Exit.setBorderPainted(false); 	//투명 버튼
+		btn_Exit.setFocusPainted(false);		//투명 버튼
+		btn_Exit.setContentAreaFilled(false); //투명 버튼
+		btn_Exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		
+		JButton btn_delivery = new JButton();
+		btn_delivery.setBorderPainted(false); 	//투명 버튼
+		btn_delivery.setFocusPainted(false);		//투명 버튼
+		btn_delivery.setContentAreaFilled(false); //투명 버튼
+		btn_delivery.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
@@ -95,55 +121,77 @@ public class RecipeSwing extends JFrame {
 				
 			}
 		});
-		btnNewButton_1.setBounds(439, 10, 390, 179);
-		contentPane.add(btnNewButton_1);
+		btn_delivery.setBounds(483, 30, 287, 260);
+		contentPane.add(btn_delivery);
 		
-		
-		JLabel lblNewLabel = new JLabel("\uBB38\uC758\uC0AC\uD56D");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("궁서체", Font.PLAIN, 18));
-		lblNewLabel.setBounds(12, 240, 113, 53);
-		contentPane.add(lblNewLabel);
-		
-		JButton btnNewButton_2 = new JButton(Send);
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btn_Inquire = new JButton();
+		btn_Inquire.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null,"전송 완료");
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipeinquires frame = new Recipeinquires();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 				
 			}
 		});
-		btnNewButton_2.setBounds(680, 234, 149, 72);
-		contentPane.add(btnNewButton_2);
+		btn_Inquire.setForeground(Color.BLACK);
+		btn_Inquire.setFocusPainted(false);
+		btn_Inquire.setContentAreaFilled(false);
+		btn_Inquire.setBorderPainted(false);
+		btn_Inquire.setBackground(Color.WHITE);
+		btn_Inquire.setBounds(713, 483, 57, 51);
+		contentPane.add(btn_Inquire);
+		btn_Exit.setBounds(772, 483, 57, 51);
+		contentPane.add(btn_Exit);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(137, 234, 531, 72);
-		contentPane.add(scrollPane);
+		JLabel Exit_image = new JLabel(exit);
+		Exit_image.setBounds(772, 483, 57, 48);
+		contentPane.add(Exit_image);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
+		JLabel inquire_image = new JLabel(inq);
+		inquire_image.setBounds(712, 485, 58, 46);
+		contentPane.add(inquire_image);
 		
-		JLabel label = new JLabel("\uACF5\uC9C0\uC0AC\uD56D");
-		label.setHorizontalAlignment(SwingConstants.LEFT);
-		label.setFont(new Font("궁서체", Font.PLAIN, 18));
-		label.setBounds(12, 327, 140, 37);
-		contentPane.add(label);
+		JLabel Recipe_image = new JLabel(Cook);
+		Recipe_image.setBounds(95, 24, 259, 271);
+		contentPane.add(Recipe_image);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane_1.setBounds(12, 363, 817, 138);
-		contentPane.add(scrollPane_1);
+		JLabel delivery_image = new JLabel(Del);
+		delivery_image.setBounds(493, 35, 287, 260);
+		contentPane.add(delivery_image);
 		
-		JTextArea textArea_1 = new JTextArea();
-		scrollPane_1.setViewportView(textArea_1);
+		JLabel notice_image = new JLabel(Not);
+		notice_image.setHorizontalAlignment(SwingConstants.LEFT);
+		notice_image.setFont(new Font("궁서체", Font.PLAIN, 18));
+		notice_image.setBounds(47, 345, 131, 120);
+		contentPane.add(notice_image);
 		
-		JButton btnNewButton_3 = new JButton("\uB05D\uB0B4\uAE30");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+		JButton btn_manager = new JButton();
+		btn_manager.setFocusPainted(false);
+		btn_manager.setContentAreaFilled(false);
+		btn_manager.setBorderPainted(false);
+		btn_manager.addMouseWheelListener(new MouseWheelListener() {
+			public void mouseWheelMoved(MouseWheelEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							RecipeManager_connect frame = new RecipeManager_connect();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+				
 			}
 		});
-		btnNewButton_3.setBounds(749, 511, 80, 23);
-		contentPane.add(btnNewButton_3);
+		btn_manager.setBounds(47, 345, 131, 120);
+		contentPane.add(btn_manager);
 	}
 }
