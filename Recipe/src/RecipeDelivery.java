@@ -12,6 +12,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
+import javax.swing.Icon;
+import java.awt.Color;
 
 public class RecipeDelivery extends JFrame {
 
@@ -37,42 +39,16 @@ public class RecipeDelivery extends JFrame {
 	 * Create the frame.
 	 */
 	public RecipeDelivery() {
-		ImageIcon background = new ImageIcon("Image/¹è°æ.png");
+		ImageIcon Search = new ImageIcon("Image/search.png");
+		ImageIcon Back = new ImageIcon("Image/back.png");
+		ImageIcon Money = new ImageIcon("Image/money.png");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 661, 455);
-		contentPane = new JPanel(){
-			public void paintComponent(Graphics g){
-				g.drawImage(background.getImage(),0,0,null);
-				setOpaque(false);
-				super.paintComponent(g);
-			}
-		};
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel label = new JLabel("\uAE08\uC561");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setBounds(12, 29, 77, 47);
-		contentPane.add(label);
-		
-		JButton btnNewButton = new JButton("\uB4A4\uB85C");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				
-			}
-		});
-		btnNewButton.setBounds(12, 384, 68, 23);
-		contentPane.add(btnNewButton);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(94, 33, 420, 43);
-		contentPane.add(textArea);
-		
-		JButton btnNewButton_1 = new JButton("\uAC80\uC0C9");
-		btnNewButton_1.setBounds(526, 33, 97, 43);
-		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("\uCC1C,\uD0D5");
 		btnNewButton_2.addActionListener(new ActionListener() {
@@ -113,6 +89,43 @@ public class RecipeDelivery extends JFrame {
 		JButton button_6 = new JButton("\uD53C\uC790");
 		button_6.setBounds(347, 302, 276, 43);
 		contentPane.add(button_6);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBackground(new Color(245, 245, 220));
+		textArea.setBounds(194, 21, 323, 54);
+		contentPane.add(textArea);
+		
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		
+		JButton btn_search = new JButton("");
+		btn_search.setFocusPainted(false);
+		btn_search.setContentAreaFilled(false);
+		btn_search.setBorderPainted(false);
+		btn_search.setBounds(531, 21, 97, 54);
+		contentPane.add(btn_search);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 366, 50, 41);
+		contentPane.add(btn_back);
+		
+		JLabel money_image = new JLabel(Money);
+		money_image.setHorizontalAlignment(SwingConstants.CENTER);
+		money_image.setBounds(12, 21, 202, 59);
+		contentPane.add(money_image);
+		
+		JLabel search_image = new JLabel(Search);
+		search_image.setBounds(541, 21, 61, 61);
+		contentPane.add(search_image);
+		
+		JLabel back_image = new JLabel(Back);
+		back_image.setBounds(12, 366, 50, 41);
+		contentPane.add(back_image);
 	}
 
 }
