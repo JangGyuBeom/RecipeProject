@@ -117,7 +117,7 @@ public class RecipeSwing extends JFrame {
 				
 			}
 		});
-		btn_delivery.setBounds(569, 62, 278, 271);
+		btn_delivery.setBounds(557, 62, 278, 271);
 		contentPane.add(btn_delivery);
 		
 		JButton btn_Inquire = new JButton();
@@ -180,7 +180,7 @@ public class RecipeSwing extends JFrame {
 		contentPane.add(Recipe_image);
 		
 		JLabel delivery_image = new JLabel(Del);
-		delivery_image.setBounds(592, 73, 287, 260);
+		delivery_image.setBounds(578, 73, 287, 260);
 		contentPane.add(delivery_image);
 		
 		JLabel notice_image = new JLabel(Not);

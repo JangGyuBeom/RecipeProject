@@ -59,6 +59,7 @@ public class Recipeinquires extends JFrame {
 		btn_Send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				JOptionPane.showMessageDialog(null,"전송 완료");
+				
 			}
 		});
 		btn_Send.setBounds(293, 321, 130, 42);
