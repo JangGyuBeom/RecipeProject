@@ -45,7 +45,7 @@ public class RecipeDelivery extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 661, 455);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(new Color(255, 140, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -91,7 +91,7 @@ public class RecipeDelivery extends JFrame {
 		contentPane.add(button_6);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(245, 245, 220));
+		textArea.setBackground(new Color(255, 165, 0));
 		textArea.setBounds(194, 21, 323, 54);
 		contentPane.add(textArea);
 		

@@ -1,25 +1,21 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.Icon;
-import java.awt.SystemColor;
-import java.awt.event.MouseWheelListener;
-import java.awt.event.MouseWheelEvent;
 
 public class RecipeSwing extends JFrame {
 
@@ -52,7 +48,7 @@ public class RecipeSwing extends JFrame {
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 857, 582);
+		setBounds(100, 100, 971, 653);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 215, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,12 +57,12 @@ public class RecipeSwing extends JFrame {
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane_1.setBounds(190, 335, 639, 138);
+		scrollPane_1.setBounds(190, 385, 734, 159);
 		contentPane.add(scrollPane_1);
 		
 		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBackground(new Color(255, 250, 205));
 		scrollPane_1.setViewportView(textArea_1);
+		textArea_1.setBackground(new Color(255, 250, 205));
 		
 		JButton btn_Recipe = new JButton();
 		btn_Recipe.setBorderPainted(false); 	//Åõ¸í ¹öÆ°
@@ -87,7 +83,7 @@ public class RecipeSwing extends JFrame {
 			}
 		});
 		btn_Recipe.setForeground(Color.BLACK);
-		btn_Recipe.setBounds(88, 10, 250, 280);
+		btn_Recipe.setBounds(137, 53, 265, 280);
 		contentPane.add(btn_Recipe);
 		
 		JButton btn_Exit = new JButton();
@@ -121,7 +117,7 @@ public class RecipeSwing extends JFrame {
 				
 			}
 		});
-		btn_delivery.setBounds(483, 30, 287, 260);
+		btn_delivery.setBounds(569, 62, 278, 271);
 		contentPane.add(btn_delivery);
 		
 		JButton btn_Inquire = new JButton();
@@ -145,39 +141,14 @@ public class RecipeSwing extends JFrame {
 		btn_Inquire.setContentAreaFilled(false);
 		btn_Inquire.setBorderPainted(false);
 		btn_Inquire.setBackground(Color.WHITE);
-		btn_Inquire.setBounds(713, 483, 57, 51);
+		btn_Inquire.setBounds(822, 554, 57, 51);
 		contentPane.add(btn_Inquire);
-		btn_Exit.setBounds(772, 483, 57, 51);
+		btn_Exit.setBounds(886, 554, 57, 51);
 		contentPane.add(btn_Exit);
 		
-		JLabel Exit_image = new JLabel(exit);
-		Exit_image.setBounds(772, 483, 57, 48);
-		contentPane.add(Exit_image);
-		
-		JLabel inquire_image = new JLabel(inq);
-		inquire_image.setBounds(712, 485, 58, 46);
-		contentPane.add(inquire_image);
-		
-		JLabel Recipe_image = new JLabel(Cook);
-		Recipe_image.setBounds(95, 24, 259, 271);
-		contentPane.add(Recipe_image);
-		
-		JLabel delivery_image = new JLabel(Del);
-		delivery_image.setBounds(493, 35, 287, 260);
-		contentPane.add(delivery_image);
-		
-		JLabel notice_image = new JLabel(Not);
-		notice_image.setHorizontalAlignment(SwingConstants.LEFT);
-		notice_image.setFont(new Font("±Ã¼­Ã¼", Font.PLAIN, 18));
-		notice_image.setBounds(47, 345, 131, 120);
-		contentPane.add(notice_image);
-		
 		JButton btn_manager = new JButton();
-		btn_manager.setFocusPainted(false);
-		btn_manager.setContentAreaFilled(false);
-		btn_manager.setBorderPainted(false);
-		btn_manager.addMouseWheelListener(new MouseWheelListener() {
-			public void mouseWheelMoved(MouseWheelEvent arg0) {
+		btn_manager.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
@@ -188,10 +159,34 @@ public class RecipeSwing extends JFrame {
 						}
 					}
 				});
-				
 			}
 		});
-		btn_manager.setBounds(47, 345, 131, 120);
+		btn_manager.setFocusPainted(false);
+		btn_manager.setContentAreaFilled(false);
+		btn_manager.setBorderPainted(false);
+		btn_manager.setBounds(35, 402, 131, 120);
 		contentPane.add(btn_manager);
+		
+		JLabel Exit_image = new JLabel(exit);
+		Exit_image.setBounds(886, 557, 57, 48);
+		contentPane.add(Exit_image);
+		
+		JLabel inquire_image = new JLabel(inq);
+		inquire_image.setBounds(822, 559, 58, 46);
+		contentPane.add(inquire_image);
+		
+		JLabel Recipe_image = new JLabel(Cook);
+		Recipe_image.setBounds(152, 62, 259, 271);
+		contentPane.add(Recipe_image);
+		
+		JLabel delivery_image = new JLabel(Del);
+		delivery_image.setBounds(592, 73, 287, 260);
+		contentPane.add(delivery_image);
+		
+		JLabel notice_image = new JLabel(Not);
+		notice_image.setHorizontalAlignment(SwingConstants.LEFT);
+		notice_image.setFont(new Font("±Ã¼­Ã¼", Font.PLAIN, 18));
+		notice_image.setBounds(35, 402, 131, 120);
+		contentPane.add(notice_image);
 	}
 }

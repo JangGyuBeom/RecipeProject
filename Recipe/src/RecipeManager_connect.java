@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.Icon;
 
 public class RecipeManager_connect extends JFrame {
 
@@ -37,22 +38,23 @@ public class RecipeManager_connect extends JFrame {
 	 */
 	public RecipeManager_connect() {
 		ImageIcon lc = new ImageIcon("Image/lock.png");
+		ImageIcon Back = new ImageIcon("Image/back_black.png");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 240, 88);
+		setBounds(100, 100, 278, 88);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(12, 10, 156, 32);
-		contentPane.add(textArea);
+		JTextArea ta_password = new JTextArea();
+		ta_password.setBounds(12, 10, 156, 32);
+		contentPane.add(ta_password);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btn_lock = new JButton("");
+		btn_lock.setFocusPainted(false);
+		btn_lock.setContentAreaFilled(false);
+		btn_lock.setBorderPainted(false);
+		btn_lock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
 					EventQueue.invokeLater(new Runnable() {
@@ -68,12 +70,27 @@ public class RecipeManager_connect extends JFrame {
 				}
 			
 		});
-		btnNewButton.setBounds(180, 10, 30, 32);
-		contentPane.add(btnNewButton);
+		btn_lock.setBounds(180, 10, 30, 32);
+		contentPane.add(btn_lock);
 		
-		JLabel lblNewLabel = new JLabel(lc);
-		lblNewLabel.setBounds(180, 10, 30, 32);
-		contentPane.add(lblNewLabel);
+		JLabel lock_image = new JLabel(lc);
+		lock_image.setBounds(180, 10, 30, 32);
+		contentPane.add(lock_image);
+		
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(222, 10, 32, 32);
+		contentPane.add(btn_back);
+		
+		JLabel back_image = new JLabel(Back);
+		back_image.setBounds(222, 10, 30, 32);
+		contentPane.add(back_image);
 	}
-
 }
