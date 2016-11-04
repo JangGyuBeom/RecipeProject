@@ -14,10 +14,12 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
+import javax.swing.JTextField;
 
 public class RecipeCook extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -54,12 +56,6 @@ public class RecipeCook extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));
-		textArea.setBackground(new Color(255, 255, 240));
-		textArea.setBounds(194, 21, 323, 54);
-		contentPane.add(textArea);
 		
 		JPanel panel = new JPanel();
 		panel.setForeground(Color.BLACK);
@@ -126,5 +122,13 @@ public class RecipeCook extends JFrame {
 		money_image.setHorizontalAlignment(SwingConstants.CENTER);
 		money_image.setBounds(12, 21, 202, 59);
 		contentPane.add(money_image);
+		
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setBackground(new Color(245, 245, 245));
+		textField.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));
+		textField.setColumns(10);
+		textField.setBounds(198, 21, 321, 54);
+		contentPane.add(textField);
 	}
 }

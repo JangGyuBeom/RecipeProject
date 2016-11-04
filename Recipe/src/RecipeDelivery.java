@@ -16,10 +16,12 @@ import javax.swing.Icon;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Font;
+import javax.swing.JTextField;
 
 public class RecipeDelivery extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -99,12 +101,6 @@ public class RecipeDelivery extends JFrame {
 		button_6.setBounds(347, 302, 276, 43);
 		contentPane.add(button_6);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));
-		textArea.setBackground(new Color(255, 239, 213));
-		textArea.setBounds(194, 21, 323, 54);
-		contentPane.add(textArea);
-		
 		JButton btn_back = new JButton();
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -136,6 +132,14 @@ public class RecipeDelivery extends JFrame {
 		JLabel back_image = new JLabel(Back);
 		back_image.setBounds(12, 366, 50, 41);
 		contentPane.add(back_image);
+		
+		textField = new JTextField();
+		
+		textField.setBackground(new Color(245, 245, 245));
+		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));
+		textField.setBounds(204, 21, 321, 54);
+		contentPane.add(textField);
+		textField.setColumns(10);
 	}
-
 }
