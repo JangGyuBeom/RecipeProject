@@ -1,22 +1,19 @@
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
 import javax.swing.JCheckBox;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Color;
-import javax.swing.Icon;
-import javax.swing.DropMode;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import java.awt.Font;
 
 public class RecipeCook extends JFrame {
 
@@ -42,17 +39,25 @@ public class RecipeCook extends JFrame {
 		ImageIcon Search = new ImageIcon("Image/search.png");
 		ImageIcon Back = new ImageIcon("Image/back.png");
 		ImageIcon Money = new ImageIcon("Image/money.png");
+		ImageIcon background = new ImageIcon("Image/background_ora.jpg");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 661, 455);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 140, 0));
+		contentPane = new JPanel(){
+			public void paintComponent(Graphics g){
+				g.drawImage(background.getImage(),0,0,null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		contentPane.setBackground(new Color(255, 255, 255));
 		//contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(255,165,0));
+		textArea.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));
+		textArea.setBackground(new Color(255, 255, 240));
 		textArea.setBounds(194, 21, 323, 54);
 		contentPane.add(textArea);
 		

@@ -14,6 +14,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.Icon;
 import java.awt.Color;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 public class RecipeDelivery extends JFrame {
 
@@ -44,8 +46,15 @@ public class RecipeDelivery extends JFrame {
 		ImageIcon Money = new ImageIcon("Image/money.png");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 661, 455);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 140, 0));
+		ImageIcon background = new ImageIcon("Image/background_ora.jpg");
+		contentPane = new JPanel(){
+			public void paintComponent(Graphics g){
+				g.drawImage(background.getImage(),0,0,null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -91,7 +100,8 @@ public class RecipeDelivery extends JFrame {
 		contentPane.add(button_6);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(new Color(255, 165, 0));
+		textArea.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));
+		textArea.setBackground(new Color(255, 239, 213));
 		textArea.setBounds(194, 21, 323, 54);
 		contentPane.add(textArea);
 		

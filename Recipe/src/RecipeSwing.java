@@ -1,10 +1,9 @@
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -45,12 +44,20 @@ public class RecipeSwing extends JFrame {
 		ImageIcon exit = new ImageIcon("Image/종료.png");
 		ImageIcon inq = new ImageIcon("Image/문의.png");
 		ImageIcon Not = new ImageIcon("Image/notice.png");
+		ImageIcon background = new ImageIcon("Image/background.jpg");
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 971, 653);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 215, 0));
+		
+		contentPane = new JPanel(){
+			public void paintComponent(Graphics g){
+				g.drawImage(background.getImage(),0,0,null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -60,9 +67,12 @@ public class RecipeSwing extends JFrame {
 		scrollPane_1.setBounds(190, 385, 734, 159);
 		contentPane.add(scrollPane_1);
 		
-		JTextArea textArea_1 = new JTextArea();
-		scrollPane_1.setViewportView(textArea_1);
-		textArea_1.setBackground(new Color(255, 250, 205));
+		JTextArea txtrAsdasdasd = new JTextArea();
+		txtrAsdasdasd.setForeground(new Color(0, 0, 0));
+		txtrAsdasdasd.setFont(new Font("휴먼둥근헤드라인", Font.PLAIN, 20));
+		txtrAsdasdasd.setText("\r\n  \uACF5\uC9C0\uC0AC\uD56D \uC608\uC2DC \uC785\uB825\uB780\r\n");
+		scrollPane_1.setViewportView(txtrAsdasdasd);
+		txtrAsdasdasd.setBackground(new Color(255, 250, 205));
 		
 		JButton btn_Recipe = new JButton();
 		btn_Recipe.setBorderPainted(false); 	//투명 버튼
