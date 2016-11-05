@@ -13,16 +13,16 @@ public class Recipe extends Manager{
 	void insert(String name,int price,String cooking,int time)
 	{
 		sql = "insert 음식이름,가격,요리순서,예상시간 from 레시피";
-		Jdbc.code(sql);
+		//Jdbc.code(sql);
 	}
 	void delete(String name,int price,String cooking,int time)
 	{
 		sql = "";
-		Jdbc.code(sql);
+		//Jdbc.code(sql);
 	}
 	void update(String name,int price,String cooking,int time)
 	{
 		sql = "";
-		Jdbc.code(sql);
+		//Jdbc.code(sql);
 	}
 }

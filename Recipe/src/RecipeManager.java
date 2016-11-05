@@ -37,7 +37,7 @@ public class RecipeManager extends JFrame {
 	 */
 	public RecipeManager() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 478, 336);
+		setBounds(100, 100, 591, 411);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -53,18 +53,18 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(33, 23, 182, 55);
+		btnNewButton.setBounds(72, 23, 182, 55);
 		contentPane.add(btnNewButton);
 		
 		textField = new JTextField();
 		textField.setText("         레시피");
-		textField.setBounds(73, 102, 116, 21);
+		textField.setBounds(107, 102, 116, 21);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setText("          배달");
-		textField_1.setBounds(291, 102, 116, 21);
+		textField_1.setBounds(351, 102, 116, 21);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -73,7 +73,7 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button.setBounds(73, 148, 116, 23);
+		button.setBounds(110, 158, 113, 36);
 		contentPane.add(button);
 		
 		JButton btnNewButton_2 = new JButton("수정");
@@ -81,7 +81,7 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(73, 194, 116, 23);
+		btnNewButton_2.setBounds(110, 227, 113, 36);
 		contentPane.add(btnNewButton_2);
 		
 		JButton button_1 = new JButton("삭제");
@@ -89,7 +89,7 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_1.setBounds(76, 241, 113, 21);
+		button_1.setBounds(110, 288, 113, 36);
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("등록");
@@ -97,7 +97,7 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_2.setBounds(291, 148, 116, 23);
+		button_2.setBounds(354, 158, 113, 36);
 		contentPane.add(button_2);
 		
 		JButton button_3 = new JButton("수정");
@@ -105,7 +105,7 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_3.setBounds(291, 196, 116, 21);
+		button_3.setBounds(354, 227, 113, 36);
 		contentPane.add(button_3);
 		
 		JButton button_4 = new JButton("삭제");
@@ -113,7 +113,7 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_4.setBounds(291, 241, 116, 21);
+		button_4.setBounds(354, 288, 113, 36);
 		contentPane.add(button_4);
 		
 		JButton button_5 = new JButton("공지 등록");
@@ -121,7 +121,7 @@ public class RecipeManager extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_5.setBounds(256, 23, 182, 55);
+		button_5.setBounds(322, 23, 182, 55);
 		contentPane.add(button_5);
 	}
 }
