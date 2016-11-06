@@ -119,7 +119,6 @@ public class RecipeSwing extends JFrame {
 						}
 					}
 				});
-				
 			}
 		});
 		btn_delivery.setBounds(557, 62, 278, 271);

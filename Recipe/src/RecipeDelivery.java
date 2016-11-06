@@ -42,15 +42,7 @@ public class RecipeDelivery extends JFrame {
 	public RecipeDelivery() {
 		
 		RecipeImage image = new RecipeImage();
-		
-	
-		
-		
-		
-		
-		
-		
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 786, 802);
 		ImageIcon background = new ImageIcon("Image/background_ora.jpg");
@@ -112,10 +104,7 @@ public class RecipeDelivery extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btn_중식 = new JButton();
-		btn_중식.setBorderPainted(false); 	//투명 버튼
-		btn_중식.setFocusPainted(false);		//투명 버튼
-		btn_중식.setContentAreaFilled(false); //투명 버튼
+		JButton btn_중식 = new JButton(image.중식1);
 		btn_중식.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -123,17 +112,12 @@ public class RecipeDelivery extends JFrame {
 		btn_중식.setBounds(62, 116, 290, 105);
 		contentPane.add(btn_중식);
 		
-		JButton btn_치킨 = new JButton();
-		btn_치킨.setBorderPainted(false); 	//투명 버튼
-		btn_치킨.setFocusPainted(false);		//투명 버튼
-		btn_치킨.setContentAreaFilled(false);
+		JButton btn_치킨 = new JButton(image.치킨1);
+	
 		btn_치킨.setBounds(427, 116, 290, 105);
 		contentPane.add(btn_치킨);
 		
-		JButton btn_일식 = new JButton();
-		btn_일식.setBorderPainted(false); 	//투명 버튼
-		btn_일식.setFocusPainted(false);		//투명 버튼
-		btn_일식.setContentAreaFilled(false);
+		JButton btn_일식 = new JButton(image.일식1);
 		btn_일식.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -141,10 +125,7 @@ public class RecipeDelivery extends JFrame {
 		btn_일식.setBounds(62, 259, 290, 105);
 		contentPane.add(btn_일식);
 		
-		JButton btn_한식_분식 = new JButton();
-		btn_한식_분식.setBorderPainted(false); 	//투명 버튼
-		btn_한식_분식.setFocusPainted(false);		//투명 버튼
-		btn_한식_분식.setContentAreaFilled(false);
+		JButton btn_한식_분식 = new JButton(image.분식1);
 		btn_한식_분식.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -152,17 +133,11 @@ public class RecipeDelivery extends JFrame {
 		btn_한식_분식.setBounds(427, 259, 290, 105);
 		contentPane.add(btn_한식_분식);
 		
-		JButton btn_족발_보쌈 = new JButton();
-		btn_족발_보쌈.setBorderPainted(false); 	//투명 버튼
-		btn_족발_보쌈.setFocusPainted(false);		//투명 버튼
-		btn_족발_보쌈.setContentAreaFilled(false);
+		JButton btn_족발_보쌈 = new JButton(image.족발1);
 		btn_족발_보쌈.setBounds(427, 410, 290, 105);
 		contentPane.add(btn_족발_보쌈);
 		
-		JButton btn_피자 = new JButton();
-		btn_피자.setBorderPainted(false); 	//투명 버튼
-		btn_피자.setFocusPainted(false);		//투명 버튼
-		btn_피자.setContentAreaFilled(false);
+		JButton btn_피자 = new JButton(image.피자1);
 		btn_피자.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -170,54 +145,16 @@ public class RecipeDelivery extends JFrame {
 		btn_피자.setBounds(427, 557, 290, 105);
 		contentPane.add(btn_피자);
 		
-		JButton btn_양식 = new JButton();
-		btn_양식.setBorderPainted(false); 	//투명 버튼
-		btn_양식.setFocusPainted(false);		//투명 버튼
-		btn_양식.setContentAreaFilled(false);
+		JButton btn_양식 = new JButton(image.양식1);
 		btn_양식.setBounds(62, 410, 290, 105);
 		contentPane.add(btn_양식);
 		
-		JButton btn_찜_탕 = new JButton();
-		btn_찜_탕.setBorderPainted(false); 	//투명 버튼
-		btn_찜_탕.setFocusPainted(false);		//투명 버튼
-		btn_찜_탕.setContentAreaFilled(false);
+		JButton btn_찜_탕 = new JButton(image.찜1);
 		btn_찜_탕.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btn_찜_탕.setBounds(62, 557, 290, 105);
 		contentPane.add(btn_찜_탕);
-		
-		JLabel 중식_image = new JLabel(image.중식1);
-		중식_image.setBounds(62, 116, 290, 105);
-		contentPane.add(중식_image);
-		
-		JLabel 치킨_image = new JLabel(image.치킨1);
-		치킨_image.setBounds(427, 116, 290, 105);
-		contentPane.add(치킨_image);
-		
-		JLabel 일식_image = new JLabel(image.일식1);
-		일식_image.setBounds(62, 259, 290, 105);
-		contentPane.add(일식_image);
-		
-		JLabel 한식_분식_image = new JLabel(image.분식1);
-		한식_분식_image.setBounds(427, 259, 290, 105);
-		contentPane.add(한식_분식_image);
-		
-		JLabel 양식_image = new JLabel(image.양식1);
-		양식_image.setBounds(62, 410, 290, 105);
-		contentPane.add(양식_image);
-		
-		JLabel 족발_image = new JLabel(image.족발1);
-		족발_image.setBounds(427, 410, 290, 105);
-		contentPane.add(족발_image);
-		
-		JLabel 찜_탕_image = new JLabel(image.찜1);
-		찜_탕_image.setBounds(62, 557, 290, 105);
-		contentPane.add(찜_탕_image);
-		
-		JLabel 피자_image = new JLabel(image.피자1);
-		피자_image.setBounds(427, 557, 290, 105);
-		contentPane.add(피자_image);
 	}
 }
