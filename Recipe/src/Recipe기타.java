@@ -22,7 +22,7 @@ public class Recipe기타 extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -33,13 +33,13 @@ public class Recipe기타 extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
 	public Recipe기타() {
-		ImageIcon Back = new ImageIcon("Image/back.png");
+		RecipeImage image = new RecipeImage();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 354);
 		contentPane = new JPanel();
@@ -95,7 +95,7 @@ public class Recipe기타 extends JFrame {
 		button.setBounds(12, 265, 50, 41);
 		contentPane.add(button);
 		
-		JLabel label_1 = new JLabel(Back);
+		JLabel label_1 = new JLabel(image.Back);
 		label_1.setBounds(12, 265, 50, 41);
 		contentPane.add(label_1);
 	}

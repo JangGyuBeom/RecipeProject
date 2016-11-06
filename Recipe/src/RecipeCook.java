@@ -39,15 +39,15 @@ public class RecipeCook extends JFrame {
 	}
 
 	public RecipeCook() {
-		ImageIcon Search = new ImageIcon("Image/search.png");
-		ImageIcon Back = new ImageIcon("Image/back.png");
-		ImageIcon Money = new ImageIcon("Image/money.png");
-		ImageIcon background = new ImageIcon("Image/background_ora.jpg");
+		
+		RecipeImage image = new RecipeImage();
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 633, 502);
 		contentPane = new JPanel(){
 			public void paintComponent(Graphics g){
-				g.drawImage(background.getImage(),0,0,null);
+				g.drawImage(image.background_ora.getImage(),0,0,null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -81,15 +81,15 @@ public class RecipeCook extends JFrame {
 		btn_search.setBounds(531, 21, 97, 54);
 		contentPane.add(btn_search);
 		
-		JLabel back_image = new JLabel(Back);
+		JLabel back_image = new JLabel(image.Back);
 		back_image.setBounds(12, 413, 50, 41);
 		contentPane.add(back_image);
 		
-		JLabel serach_image = new JLabel(Search);
+		JLabel serach_image = new JLabel(image.Search);
 		serach_image.setBounds(529, 10, 86, 73);
 		contentPane.add(serach_image);
 		
-		JLabel money_image = new JLabel(Money);
+		JLabel money_image = new JLabel(image.Money);
 		money_image.setHorizontalAlignment(SwingConstants.CENTER);
 		money_image.setBounds(12, 21, 202, 59);
 		contentPane.add(money_image);

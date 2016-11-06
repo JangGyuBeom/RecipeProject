@@ -37,8 +37,8 @@ public class RecipeManager_connect extends JFrame {
 	 * Create the frame.
 	 */
 	public RecipeManager_connect() {
-		ImageIcon lc = new ImageIcon("Image/lock.png");
-		ImageIcon Back = new ImageIcon("Image/back_black.png");
+		RecipeImage image = new RecipeImage();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 278, 88);
 		contentPane = new JPanel();
@@ -73,7 +73,7 @@ public class RecipeManager_connect extends JFrame {
 		btn_lock.setBounds(180, 10, 30, 32);
 		contentPane.add(btn_lock);
 		
-		JLabel lock_image = new JLabel(lc);
+		JLabel lock_image = new JLabel(image.lc);
 		lock_image.setBounds(180, 10, 30, 32);
 		contentPane.add(lock_image);
 		
@@ -89,7 +89,7 @@ public class RecipeManager_connect extends JFrame {
 		btn_back.setBounds(222, 10, 32, 32);
 		contentPane.add(btn_back);
 		
-		JLabel back_image = new JLabel(Back);
+		JLabel back_image = new JLabel(image.Back_black);
 		back_image.setBounds(222, 10, 30, 32);
 		contentPane.add(back_image);
 	}

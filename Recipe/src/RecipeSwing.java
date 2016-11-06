@@ -39,20 +39,15 @@ public class RecipeSwing extends JFrame {
 
 
 	public RecipeSwing() {
-		ImageIcon Del = new ImageIcon("Image/delivery.png");
-		ImageIcon Cook = new ImageIcon("Image/Cook.png");
-		ImageIcon exit = new ImageIcon("Image/종료.png");
-		ImageIcon inq = new ImageIcon("Image/문의.png");
-		ImageIcon Not = new ImageIcon("Image/notice.png");
-		ImageIcon background = new ImageIcon("Image/background.jpg");
 		
+		RecipeImage image = new RecipeImage();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 971, 653);
 		
 		contentPane = new JPanel(){
 			public void paintComponent(Graphics g){
-				g.drawImage(background.getImage(),0,0,null);
+				g.drawImage(image.background.getImage(),0,0,null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
@@ -177,23 +172,23 @@ public class RecipeSwing extends JFrame {
 		btn_manager.setBounds(35, 402, 131, 120);
 		contentPane.add(btn_manager);
 		
-		JLabel Exit_image = new JLabel(exit);
+		JLabel Exit_image = new JLabel(image.exit);
 		Exit_image.setBounds(886, 557, 57, 48);
 		contentPane.add(Exit_image);
 		
-		JLabel inquire_image = new JLabel(inq);
+		JLabel inquire_image = new JLabel(image.inq);
 		inquire_image.setBounds(822, 559, 58, 46);
 		contentPane.add(inquire_image);
 		
-		JLabel Recipe_image = new JLabel(Cook);
+		JLabel Recipe_image = new JLabel(image.Cook);
 		Recipe_image.setBounds(152, 62, 259, 271);
 		contentPane.add(Recipe_image);
 		
-		JLabel delivery_image = new JLabel(Del);
+		JLabel delivery_image = new JLabel(image.Del);
 		delivery_image.setBounds(578, 73, 287, 260);
 		contentPane.add(delivery_image);
 		
-		JLabel notice_image = new JLabel(Not);
+		JLabel notice_image = new JLabel(image.Not);
 		notice_image.setHorizontalAlignment(SwingConstants.LEFT);
 		notice_image.setFont(new Font("궁서체", Font.PLAIN, 18));
 		notice_image.setBounds(35, 402, 131, 120);

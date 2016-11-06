@@ -40,49 +40,10 @@ public class RecipeDelivery extends JFrame {
 	 * Create the frame.
 	 */
 	public RecipeDelivery() {
-		ImageIcon Search = new ImageIcon("Image/search.png");
-		ImageIcon Back = new ImageIcon("Image/back.png");
-		ImageIcon Money = new ImageIcon("Image/money.png");
 		
-		ImageIcon 족발 = new ImageIcon("Image/족발.jpg");
-		Image 족발2 = 족발.getImage();
-		Image 족발3 = 족발2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 족발1 = new ImageIcon(족발3);
+		RecipeImage image = new RecipeImage();
 		
-		ImageIcon 양식 = new ImageIcon("Image/양식.png");
-		Image 양식2 = 양식.getImage();
-		Image 양식3 = 양식2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 양식1 = new ImageIcon(양식3);
-		
-		ImageIcon 분식 = new ImageIcon("Image/분식.jpg");
-		Image 분식2 = 분식.getImage();
-		Image 분식3 = 분식2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 분식1 = new ImageIcon(분식3);
-		
-		ImageIcon 중식 = new ImageIcon("Image/중식.png");
-		Image 중식2 = 중식.getImage();
-		Image 중식3 = 중식2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 중식1 = new ImageIcon(중식3);
-		
-		ImageIcon 일식 = new ImageIcon("Image/일식.png");
-		Image 일식2 = 일식.getImage();
-		Image 일식3 = 일식2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 일식1 = new ImageIcon(일식3);
-		
-		ImageIcon 치킨 = new ImageIcon("Image/치킨.jpg");
-		Image 치킨2 = 치킨.getImage();
-		Image 치킨3 = 치킨2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 치킨1 = new ImageIcon(치킨3);
-		
-		ImageIcon 찜 = new ImageIcon("Image/찜.jpg");
-		Image 찜2 = 찜.getImage();
-		Image 찜3 = 찜2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 찜1 = new ImageIcon(찜3);
-		
-		ImageIcon 피자 = new ImageIcon("Image/피자.jpg");
-		Image 피자2 = 피자.getImage();
-		Image 피자3 = 피자2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);
-		ImageIcon 피자1 = new ImageIcon(피자3);
+	
 		
 		
 		
@@ -129,16 +90,16 @@ public class RecipeDelivery extends JFrame {
 		contentPane.add(btn_search);
 		
 		
-		JLabel money_image = new JLabel(Money);
+		JLabel money_image = new JLabel(image.Money);
 		money_image.setHorizontalAlignment(SwingConstants.CENTER);
 		money_image.setBounds(12, 21, 202, 59);
 		contentPane.add(money_image);
 		
-		JLabel search_image = new JLabel(Search);
+		JLabel search_image = new JLabel(image.Search);
 		search_image.setBounds(662, 19, 67, 61);
 		contentPane.add(search_image);
 		
-		JLabel back_image = new JLabel(Back);
+		JLabel back_image = new JLabel(image.Back);
 		back_image.setBounds(12, 713, 50, 41);
 		contentPane.add(back_image);
 		
@@ -227,35 +188,35 @@ public class RecipeDelivery extends JFrame {
 		btn_찜_탕.setBounds(62, 557, 290, 105);
 		contentPane.add(btn_찜_탕);
 		
-		JLabel 중식_image = new JLabel(중식1);
+		JLabel 중식_image = new JLabel(image.중식1);
 		중식_image.setBounds(62, 116, 290, 105);
 		contentPane.add(중식_image);
 		
-		JLabel 치킨_image = new JLabel(치킨1);
+		JLabel 치킨_image = new JLabel(image.치킨1);
 		치킨_image.setBounds(427, 116, 290, 105);
 		contentPane.add(치킨_image);
 		
-		JLabel 일식_image = new JLabel(일식1);
+		JLabel 일식_image = new JLabel(image.일식1);
 		일식_image.setBounds(62, 259, 290, 105);
 		contentPane.add(일식_image);
 		
-		JLabel 한식_분식_image = new JLabel(분식1);
+		JLabel 한식_분식_image = new JLabel(image.분식1);
 		한식_분식_image.setBounds(427, 259, 290, 105);
 		contentPane.add(한식_분식_image);
 		
-		JLabel 양식_image = new JLabel(양식1);
+		JLabel 양식_image = new JLabel(image.양식1);
 		양식_image.setBounds(62, 410, 290, 105);
 		contentPane.add(양식_image);
 		
-		JLabel 족발_image = new JLabel(족발1);
+		JLabel 족발_image = new JLabel(image.족발1);
 		족발_image.setBounds(427, 410, 290, 105);
 		contentPane.add(족발_image);
 		
-		JLabel 찜_탕_image = new JLabel(찜1);
+		JLabel 찜_탕_image = new JLabel(image.찜1);
 		찜_탕_image.setBounds(62, 557, 290, 105);
 		contentPane.add(찜_탕_image);
 		
-		JLabel 피자_image = new JLabel(피자1);
+		JLabel 피자_image = new JLabel(image.피자1);
 		피자_image.setBounds(427, 557, 290, 105);
 		contentPane.add(피자_image);
 	}

@@ -34,8 +34,9 @@ public class Recipeinquires extends JFrame {
 
 	
 	public Recipeinquires() {
-		ImageIcon Send = new ImageIcon("Image/send.png");
-		ImageIcon Back = new ImageIcon("Image/back.png");
+		
+		RecipeImage image = new RecipeImage();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 451, 411);
 		contentPane = new JPanel();
@@ -77,11 +78,11 @@ public class Recipeinquires extends JFrame {
 		btn_back.setBounds(12, 322, 50, 41);
 		contentPane.add(btn_back);
 		
-		JLabel Send_Image = new JLabel(Send);
+		JLabel Send_Image = new JLabel(image.Send);
 		Send_Image.setBounds(291, 321, 162, 44);
 		contentPane.add(Send_Image);
 		
-		JLabel back_Image = new JLabel(Back);
+		JLabel back_Image = new JLabel(image.Back);
 		back_Image.setBounds(12, 322, 50, 41);
 		contentPane.add(back_Image);
 	}

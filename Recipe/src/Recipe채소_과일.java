@@ -22,7 +22,7 @@ public class Recipe盲家_苞老 extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -33,13 +33,13 @@ public class Recipe盲家_苞老 extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
 	public Recipe盲家_苞老() {
-		ImageIcon Back = new ImageIcon("Image/back.png");
+		RecipeImage image = new RecipeImage();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 354);
 		contentPane = new JPanel();
@@ -96,7 +96,7 @@ public class Recipe盲家_苞老 extends JFrame {
 		button.setBounds(12, 265, 50, 41);
 		contentPane.add(button);
 		
-		JLabel label = new JLabel(Back);
+		JLabel label = new JLabel(image.Back);
 		label.setBounds(12, 265, 50, 41);
 		contentPane.add(label);
 	}
