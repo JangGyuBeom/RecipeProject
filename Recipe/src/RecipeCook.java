@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.JComboBox;
 
 public class RecipeCook extends JFrame {
 
@@ -43,7 +44,7 @@ public class RecipeCook extends JFrame {
 		ImageIcon Money = new ImageIcon("Image/money.png");
 		ImageIcon background = new ImageIcon("Image/background_ora.jpg");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 661, 455);
+		setBounds(100, 100, 633, 502);
 		contentPane = new JPanel(){
 			public void paintComponent(Graphics g){
 				g.drawImage(background.getImage(),0,0,null);
@@ -57,36 +58,6 @@ public class RecipeCook extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setForeground(Color.BLACK);
-		panel.setToolTipText("");
-		panel.setBounds(32, 100, 582, 33);
-		contentPane.add(panel);
-		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(chckbxNewCheckBox);
-		
-		JCheckBox checkBox = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(checkBox);
-		
-		JCheckBox checkBox_1 = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(checkBox_1);
-		
-		JCheckBox checkBox_2 = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(checkBox_2);
-		
-		JCheckBox checkBox_3 = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(checkBox_3);
-		
-		JCheckBox checkBox_4 = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(checkBox_4);
-		
-		JCheckBox checkBox_5 = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(checkBox_5);
-		
-		JCheckBox checkBox_6 = new JCheckBox("\uC7AC\uB8CC1");
-		panel.add(checkBox_6);
-		
 		JButton btn_back = new JButton();
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -96,7 +67,7 @@ public class RecipeCook extends JFrame {
 		btn_back.setFocusPainted(false);
 		btn_back.setContentAreaFilled(false);
 		btn_back.setBorderPainted(false);
-		btn_back.setBounds(12, 366, 50, 41);
+		btn_back.setBounds(12, 413, 50, 41);
 		contentPane.add(btn_back);
 		
 		JButton btn_search = new JButton("");
@@ -111,7 +82,7 @@ public class RecipeCook extends JFrame {
 		contentPane.add(btn_search);
 		
 		JLabel back_image = new JLabel(Back);
-		back_image.setBounds(12, 366, 50, 41);
+		back_image.setBounds(12, 413, 50, 41);
 		contentPane.add(back_image);
 		
 		JLabel serach_image = new JLabel(Search);
@@ -130,5 +101,208 @@ public class RecipeCook extends JFrame {
 		textField.setColumns(10);
 		textField.setBounds(198, 21, 321, 54);
 		contentPane.add(textField);
+		
+		JButton btn_채소_과일 = new JButton();
+		btn_채소_과일.setFocusPainted(false);
+		btn_채소_과일.setContentAreaFilled(false);
+		btn_채소_과일.setBorderPainted(false);
+		btn_채소_과일.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipe채소_과일 frame = new Recipe채소_과일();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btn_채소_과일.setBounds(91, 119, 161, 41);
+		contentPane.add(btn_채소_과일);
+		
+		JLabel lblNewLabel = new JLabel("\uCC44\uC18C/\uACFC\uC77C");
+		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 30));
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setBounds(91, 119, 161, 47);
+		contentPane.add(lblNewLabel);
+		
+		JButton btn_육류 = new JButton();
+		btn_육류.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipe육류 frame = new Recipe육류();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btn_육류.setFocusPainted(false);
+		btn_육류.setContentAreaFilled(false);
+		btn_육류.setBorderPainted(false);
+		btn_육류.setBounds(379, 119, 161, 41);
+		contentPane.add(btn_육류);
+		
+		JLabel label = new JLabel("\uC721\uB958");
+		label.setVerticalAlignment(SwingConstants.BOTTOM);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setForeground(Color.BLACK);
+		label.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 30));
+		label.setBounds(379, 119, 161, 47);
+		contentPane.add(label);
+		
+		JButton btn_수산물 = new JButton();
+		btn_수산물.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipe수산물 frame = new Recipe수산물();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btn_수산물.setFocusPainted(false);
+		btn_수산물.setContentAreaFilled(false);
+		btn_수산물.setBorderPainted(false);
+		btn_수산물.setBounds(91, 192, 161, 41);
+		contentPane.add(btn_수산물);
+		
+		JLabel label_1 = new JLabel("\uC218\uC0B0\uBB3C");
+		label_1.setVerticalAlignment(SwingConstants.BOTTOM);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setForeground(Color.BLACK);
+		label_1.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 30));
+		label_1.setBounds(91, 192, 161, 47);
+		contentPane.add(label_1);
+		
+		JButton btn_곡물_견과류 = new JButton();
+		btn_곡물_견과류.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipe곡물_견과류 frame = new Recipe곡물_견과류();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btn_곡물_견과류.setFocusPainted(false);
+		btn_곡물_견과류.setContentAreaFilled(false);
+		btn_곡물_견과류.setBorderPainted(false);
+		btn_곡물_견과류.setBounds(379, 192, 161, 41);
+		contentPane.add(btn_곡물_견과류);
+		
+		JLabel label_2 = new JLabel("\uACE1\uBB3C/\uACAC\uACFC\uB958");
+		label_2.setVerticalAlignment(SwingConstants.BOTTOM);
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setForeground(Color.BLACK);
+		label_2.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 30));
+		label_2.setBounds(379, 192, 161, 47);
+		contentPane.add(label_2);
+		
+		JButton btn_양념_소스 = new JButton();
+		btn_양념_소스.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipe양념_소스 frame = new Recipe양념_소스();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btn_양념_소스.setFocusPainted(false);
+		btn_양념_소스.setContentAreaFilled(false);
+		btn_양념_소스.setBorderPainted(false);
+		btn_양념_소스.setBounds(91, 261, 161, 41);
+		contentPane.add(btn_양념_소스);
+		
+		JLabel label_3 = new JLabel("\uC591\uB150/\uC18C\uC2A4");
+		label_3.setVerticalAlignment(SwingConstants.BOTTOM);
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setForeground(Color.BLACK);
+		label_3.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 30));
+		label_3.setBounds(91, 261, 161, 47);
+		contentPane.add(label_3);
+		
+		JButton btn_가공_유제품 = new JButton();
+		btn_가공_유제품.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipe가공_유제품 frame = new Recipe가공_유제품();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btn_가공_유제품.setFocusPainted(false);
+		btn_가공_유제품.setContentAreaFilled(false);
+		btn_가공_유제품.setBorderPainted(false);
+		btn_가공_유제품.setBounds(91, 330, 161, 41);
+		contentPane.add(btn_가공_유제품);
+		
+		JLabel label_4 = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
+		label_4.setVerticalAlignment(SwingConstants.BOTTOM);
+		label_4.setHorizontalAlignment(SwingConstants.CENTER);
+		label_4.setForeground(Color.BLACK);
+		label_4.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 30));
+		label_4.setBounds(91, 318, 161, 59);
+		contentPane.add(label_4);
+		
+		JButton btn_기타 = new JButton();
+		btn_기타.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Recipe기타 frame = new Recipe기타();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btn_기타.setFocusPainted(false);
+		btn_기타.setContentAreaFilled(false);
+		btn_기타.setBorderPainted(false);
+		btn_기타.setBounds(379, 255, 161, 41);
+		contentPane.add(btn_기타);
+		
+		JLabel label_5 = new JLabel("\uAE30\uD0C0");
+		label_5.setVerticalAlignment(SwingConstants.BOTTOM);
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setForeground(Color.BLACK);
+		label_5.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 30));
+		label_5.setBounds(379, 255, 161, 47);
+		contentPane.add(label_5);
 	}
 }
