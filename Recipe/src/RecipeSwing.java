@@ -64,7 +64,7 @@ public class RecipeSwing extends JFrame {
 		
 		JTextArea txtrAsdasdasd = new JTextArea();
 		txtrAsdasdasd.setForeground(new Color(0, 0, 0));
-		txtrAsdasdasd.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 20));
+		txtrAsdasdasd.setFont(new Font("≈∏¿Ã∆˜_Ω÷πÆµø B", Font.PLAIN, 20));
 		txtrAsdasdasd.setText("\r\n  \uACF5\uC9C0\uC0AC\uD56D \uC608\uC2DC \uC785\uB825\uB780\r\n");
 		scrollPane_1.setViewportView(txtrAsdasdasd);
 		txtrAsdasdasd.setBackground(new Color(255, 250, 205));

@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.UIManager;
+import java.awt.Font;
 
 public class Recipeinquires extends JFrame {
 
@@ -51,6 +52,7 @@ public class Recipeinquires extends JFrame {
 		contentPane.add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
 		scrollPane.setViewportView(textArea);
 		
 		JButton btn_Send = new JButton("");
