@@ -19,15 +19,15 @@ public class Jdbc {
 			java.sql.Statement st = null;
 			ResultSet rset = null;
 			st = conn.createStatement();
-			rset = st.executeQuery("select del_name from delivery where del_price>50000;");
+			rset = st.executeQuery("select d_name from delivery where d_price>50000;");
 
-			if (st.execute("select del_name from delivery where del_price>50000;")) {
+			if (st.execute("select d_name from delivery where d_price>50000;")) {
 				rset = st.getResultSet();
 			}
 
 			while (rset.next()) {
 				//String str = rset.getNString(1);
-				System.out.println("del_name :" + rset.getString("del_name"));
+				System.out.println("d_name :" + rset.getString("d_name"));
 			}
 		} catch (SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
