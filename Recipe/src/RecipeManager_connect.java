@@ -38,25 +38,27 @@ public class RecipeManager_connect extends JFrame {
 	 */
 	public RecipeManager_connect() {
 		RecipeImage image = new RecipeImage();
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 278, 88);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JTextArea ta_password = new JTextArea();
 		ta_password.setBounds(12, 10, 156, 32);
 		contentPane.add(ta_password);
-		
+
 		JButton btn_lock = new JButton("");
 		btn_lock.setFocusPainted(false);
 		btn_lock.setContentAreaFilled(false);
 		btn_lock.setBorderPainted(false);
 		btn_lock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				String password = "1111";
+				String passwordcp = new String(ta_password.getText());
+				if(password.compareTo(passwordcp) == 0){
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
@@ -68,15 +70,20 @@ public class RecipeManager_connect extends JFrame {
 						}
 					});
 				}
-			
+				else
+				{
+					JOptionPane.showMessageDialog(null,"비밀번호를 다시 입력 해 주세요.");
+				}
+			}
+
 		});
 		btn_lock.setBounds(180, 10, 30, 32);
 		contentPane.add(btn_lock);
-		
+
 		JLabel lock_image = new JLabel(image.lc);
 		lock_image.setBounds(180, 10, 30, 32);
 		contentPane.add(lock_image);
-		
+
 		JButton btn_back = new JButton();
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -88,7 +95,7 @@ public class RecipeManager_connect extends JFrame {
 		btn_back.setBorderPainted(false);
 		btn_back.setBounds(222, 10, 32, 32);
 		contentPane.add(btn_back);
-		
+
 		JLabel back_image = new JLabel(image.Back_black);
 		back_image.setBounds(222, 10, 30, 32);
 		contentPane.add(back_image);
