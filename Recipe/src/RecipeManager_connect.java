@@ -13,10 +13,14 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.awt.event.ActionEvent;
 import javax.swing.Icon;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class RecipeManager_connect extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField tf_password;
 
 	/**
 	 * Launch the application.
@@ -47,10 +51,6 @@ public class RecipeManager_connect extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JTextArea ta_password = new JTextArea();
-		ta_password.setBounds(12, 10, 156, 32);
-		contentPane.add(ta_password);
-
 		JButton btn_lock = new JButton("");
 		btn_lock.setFocusPainted(false);
 		btn_lock.setContentAreaFilled(false);
@@ -58,7 +58,7 @@ public class RecipeManager_connect extends JFrame {
 		btn_lock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String password = "1111";
-				String passwordcp = new String(ta_password.getText());
+				String passwordcp = new String(tf_password.getText());
 				if(password.compareTo(passwordcp) == 0)
 				{
 					EventQueue.invokeLater(new Runnable() {
@@ -101,5 +101,12 @@ public class RecipeManager_connect extends JFrame {
 		JLabel back_image = new JLabel(image.Back_black);
 		back_image.setBounds(222, 10, 30, 32);
 		contentPane.add(back_image);
+		
+		tf_password = new JTextField();
+		tf_password.setFont(new Font("«‘√ ∑“µ∏øÚ", Font.BOLD, 16));
+		tf_password.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_password.setBounds(12, 10, 154, 32);
+		contentPane.add(tf_password);
+		tf_password.setColumns(10);
 	}
 }

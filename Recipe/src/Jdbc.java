@@ -12,7 +12,7 @@ public class Jdbc {
 			Connection conn = null;
 
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:9000/recipe?useSSL=false",
-					"hoonju", "19950905"); // Xshell
+					"hoonju", "19950905"); // Xshell 
 			/*conn = DriverManager.getConnection("jdbc:mysql://165.229.88.102:3306/recipe?useSSL=false",
 					"hoonju", "19950905");  // ÇÐ±³
 */
