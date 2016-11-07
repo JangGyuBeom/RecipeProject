@@ -59,7 +59,8 @@ public class RecipeManager_connect extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String password = "1111";
 				String passwordcp = new String(ta_password.getText());
-				if(password.compareTo(passwordcp) == 0){
+				if(password.compareTo(passwordcp) == 0)
+				{
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
