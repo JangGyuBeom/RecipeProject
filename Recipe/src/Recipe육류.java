@@ -83,6 +83,27 @@ public class RecipeÀ°·ù extends JFrame {
 		JCheckBox checkBox_9 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uB2E4\uC9D0\uC721");
 		panel.add(checkBox_9);
 		
+		JCheckBox checkBox_10 = new JCheckBox("\uD6C8\uC81C\uC624\uB9AC");
+		panel.add(checkBox_10);
+		
+		JCheckBox checkBox_11 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uC7A5\uC870\uB9BC\uC6A9");
+		panel.add(checkBox_11);
+		
+		JCheckBox checkBox_12 = new JCheckBox("\uB3C8\uAE4C\uC2A4");
+		panel.add(checkBox_12);
+		
+		JCheckBox checkBox_13 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uC55E\uB2E4\uB9AC\uC0B4");
+		panel.add(checkBox_13);
+		
+		JCheckBox checkBox_14 = new JCheckBox("\uB3C8\uAE4C\uC2A4");
+		panel.add(checkBox_14);
+		
+		JCheckBox checkBox_15 = new JCheckBox("\uB3C8\uAE4C\uC2A4");
+		panel.add(checkBox_15);
+		
+		JCheckBox checkBox_16 = new JCheckBox("\uB3C8\uAE4C\uC2A4");
+		panel.add(checkBox_16);
+		
 		JLabel label = new JLabel("\uC721\uB958");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 24));
