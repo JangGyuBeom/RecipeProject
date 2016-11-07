@@ -1,20 +1,26 @@
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
+import javax.swing.DropMode;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 public class RecipeManager extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -37,7 +43,7 @@ public class RecipeManager extends JFrame {
 	 */
 	public RecipeManager() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 591, 411);
+		setBounds(100, 100, 964, 568);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,80 +54,80 @@ public class RecipeManager extends JFrame {
 		label.setBounds(187, 133, 57, 15);
 		contentPane.add(label);
 		
-		JButton btnNewButton = new JButton("문의 보기");
+		JButton btnNewButton = new JButton();
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setBorderPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(72, 23, 182, 55);
+		btnNewButton.setBounds(391, 32, 194, 73);
 		contentPane.add(btnNewButton);
 		
+		JLabel lblNewLabel = new JLabel("\uACF5\uC9C0\uC0AC\uD56D : ");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		lblNewLabel.setBounds(12, 158, 107, 48);
+		contentPane.add(lblNewLabel);
+		
+		JLabel label_1 = new JLabel("\uB808\uC2DC\uD53C : ");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		label_1.setBounds(12, 305, 107, 48);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("\uBC30\uB2EC\uC74C\uC2DD : ");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		label_2.setBounds(12, 397, 107, 48);
+		contentPane.add(label_2);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"\uB4F1\uB85D", "\uC218\uC815", "\uC0AD\uC81C"}));
+		comboBox.setBounds(115, 158, 100, 48);
+		contentPane.add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"\uB4F1\uB85D", "\uC218\uC815", "\uC0AD\uC81C"}));
+		comboBox_1.setBounds(115, 305, 100, 48);
+		contentPane.add(comboBox_1);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"\uB4F1\uB85D", "\uC218\uC815", "\uC0AD\uC81C"}));
+		comboBox_2.setBounds(115, 397, 100, 48);
+		contentPane.add(comboBox_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uBB38\uC758 \uBCF4\uAE30");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lblNewLabel_1.setBounds(391, 32, 194, 73);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("\uACF5\uC9C0\uBC88\uD638");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(255, 133, 93, 26);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel label_3 = new JLabel("\uACF5\uC9C0\uB0B4\uC6A9\r\n");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setBounds(581, 133, 93, 26);
+		contentPane.add(label_3);
+		
+		JButton btnNewButton_1 = new JButton("\uD655\uC778");
+		btnNewButton_1.setBounds(839, 165, 97, 35);
+		contentPane.add(btnNewButton_1);
+		
 		textField = new JTextField();
-		textField.setText("         레시피");
-		textField.setBounds(107, 102, 116, 21);
+		textField.setBounds(249, 172, 116, 21);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setText("          배달");
-		textField_1.setBounds(351, 102, 116, 21);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(506, 169, 244, 37);
+		contentPane.add(scrollPane);
 		
-		JButton button = new JButton("등록");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button.setBounds(110, 158, 113, 36);
-		contentPane.add(button);
-		
-		JButton btnNewButton_2 = new JButton("수정");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_2.setBounds(110, 227, 113, 36);
-		contentPane.add(btnNewButton_2);
-		
-		JButton button_1 = new JButton("삭제");
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_1.setBounds(110, 288, 113, 36);
-		contentPane.add(button_1);
-		
-		JButton button_2 = new JButton("등록");
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_2.setBounds(354, 158, 113, 36);
-		contentPane.add(button_2);
-		
-		JButton button_3 = new JButton("수정");
-		button_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_3.setBounds(354, 227, 113, 36);
-		contentPane.add(button_3);
-		
-		JButton button_4 = new JButton("삭제");
-		button_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_4.setBounds(354, 288, 113, 36);
-		contentPane.add(button_4);
-		
-		JButton button_5 = new JButton("공지 등록");
-		button_5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_5.setBounds(322, 23, 182, 55);
-		contentPane.add(button_5);
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
 	}
 }

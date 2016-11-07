@@ -81,7 +81,7 @@ public class Recipe°î¹°_°ß°ú·ù extends JFrame {
 		
 		JLabel label = new JLabel("\uACE1\uBB3C/\uACAC\uACFC\uB958");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("1ÈÆÇÎÅ©Ç³Â÷ Regular", Font.PLAIN, 24));
+		label.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 24));
 		label.setBounds(12, 10, 410, 44);
 		contentPane.add(label);
 		

@@ -80,7 +80,7 @@ public class Recipe가공_유제품 extends JFrame {
 		
 		JLabel label = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 24));
+		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
 		label.setBounds(12, 10, 410, 44);
 		contentPane.add(label);
 		

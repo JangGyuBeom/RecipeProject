@@ -78,7 +78,7 @@ public class Recipe채소_과일 extends JFrame {
 		panel.add(checkBox_7);
 		
 		JLabel lblNewLabel = new JLabel("\uCC44\uC18C/\uACFC\uC77C");
-		lblNewLabel.setFont(new Font("1훈핑크풍차 Regular", Font.PLAIN, 24));
+		lblNewLabel.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(12, 10, 410, 55);
 		contentPane.add(lblNewLabel);
