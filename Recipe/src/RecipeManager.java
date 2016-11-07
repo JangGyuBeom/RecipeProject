@@ -96,7 +96,7 @@ public class RecipeManager extends JFrame {
 		JLabel label_1 = new JLabel("\uB808\uC2DC\uD53C : ");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
-		label_1.setBounds(12, 342, 107, 48);
+		label_1.setBounds(12, 354, 107, 48);
 		contentPane.add(label_1);
 		
 		JLabel label_2 = new JLabel("\uBC30\uB2EC\uC74C\uC2DD : ");
@@ -112,7 +112,7 @@ public class RecipeManager extends JFrame {
 		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"\uB4F1\uB85D", "\uC218\uC815", "\uC0AD\uC81C"}));
-		comboBox_1.setBounds(115, 342, 100, 48);
+		comboBox_1.setBounds(115, 354, 100, 48);
 		contentPane.add(comboBox_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
@@ -128,27 +128,27 @@ public class RecipeManager extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("\uACF5\uC9C0\uBC88\uD638");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(311, 122, 93, 26);
+		lblNewLabel_2.setBounds(302, 132, 93, 26);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel label_3 = new JLabel("\uACF5\uC9C0\uB0B4\uC6A9\r\n");
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setBounds(597, 122, 93, 26);
+		label_3.setBounds(588, 132, 93, 26);
 		contentPane.add(label_3);
 		
 		JButton btnNewButton_1 = new JButton("\uD655\uC778");
-		btnNewButton_1.setBounds(953, 195, 97, 35);
+		btnNewButton_1.setBounds(953, 165, 97, 35);
 		contentPane.add(btnNewButton_1);
 		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBounds(301, 158, 116, 21);
+		textField.setBounds(292, 168, 116, 21);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(511, 158, 274, 123);
+		scrollPane.setBounds(502, 168, 274, 123);
 		contentPane.add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
@@ -230,7 +230,7 @@ public class RecipeManager extends JFrame {
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("\uD655\uC778");
-		button_2.setBounds(953, 451, 97, 35);
+		button_2.setBounds(953, 361, 97, 35);
 		contentPane.add(button_2);
 		
 		JLabel label_10 = new JLabel("\uC74C\uC2DD\uC774\uB984");

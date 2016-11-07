@@ -266,7 +266,7 @@ public class RecipeCook extends JFrame {
 		btn_가공_유제품.setFocusPainted(false);
 		btn_가공_유제품.setContentAreaFilled(false);
 		btn_가공_유제품.setBorderPainted(false);
-		btn_가공_유제품.setBounds(91, 330, 189, 47);
+		btn_가공_유제품.setBounds(79, 330, 189, 47);
 		contentPane.add(btn_가공_유제품);
 		
 		JLabel label_4 = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
@@ -274,7 +274,7 @@ public class RecipeCook extends JFrame {
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setForeground(Color.BLACK);
 		label_4.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		label_4.setBounds(91, 318, 189, 59);
+		label_4.setBounds(79, 318, 189, 59);
 		contentPane.add(label_4);
 		
 		JButton btn_기타 = new JButton();

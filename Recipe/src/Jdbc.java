@@ -3,10 +3,18 @@ import java.sql.*;
 public class Jdbc {
 	public static void main(String[] args) {
 		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.err.println("ClassNotFoundException : " + e.getMessage());
+		}
+		try {
 			Connection conn = null;
 
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/recipe?useSSL=false",
-					"root", "19950905");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:9000/recipe?useSSL=false",
+					"hoonju", "19950905");
+		/*	conn = DriverManager.getConnection("jdbc:mysql://165.229.88.102:3306/recipe?useSSL=false",
+					"hoonju", "19950905");*/
 
 			java.sql.Statement st = null;
 			ResultSet rset = null;

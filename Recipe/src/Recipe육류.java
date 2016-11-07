@@ -53,29 +53,35 @@ public class RecipeÀ°·ù extends JFrame {
 		panel.setBounds(12, 64, 410, 191);
 		contentPane.add(panel);
 		
-		JCheckBox checkBox = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox = new JCheckBox("\uC18C\uACE0\uAE30 \uAD6D\uAC70\uB9AC\uC6A9");
 		panel.add(checkBox);
 		
-		JCheckBox checkBox_1 = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox_1 = new JCheckBox("\uB2ED\uACE0\uAE30 \uAC00\uC2B4\uC0B4");
 		panel.add(checkBox_1);
 		
-		JCheckBox checkBox_2 = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox_2 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uAD6C\uC774\uC6A9");
 		panel.add(checkBox_2);
 		
-		JCheckBox checkBox_3 = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox_3 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uCC0C\uAC1C\uC6A9");
 		panel.add(checkBox_3);
 		
-		JCheckBox checkBox_4 = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox_4 = new JCheckBox("\uC18C\uACE0\uAE30 \uBD88\uACE0\uAE30\uC6A9");
 		panel.add(checkBox_4);
 		
-		JCheckBox checkBox_5 = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox_5 = new JCheckBox("\uB2ED\uACE0\uAE30 \uBCF6\uC74C\uC6A9");
 		panel.add(checkBox_5);
 		
-		JCheckBox checkBox_6 = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox_6 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uC0BC\uACB9\uC0B4");
 		panel.add(checkBox_6);
 		
-		JCheckBox checkBox_7 = new JCheckBox("\uC7AC\uB8CC1");
+		JCheckBox checkBox_7 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uB2E4\uC9D0\uC721");
 		panel.add(checkBox_7);
+		
+		JCheckBox checkBox_8 = new JCheckBox("\uD6C8\uC81C\uC624\uB9AC");
+		panel.add(checkBox_8);
+		
+		JCheckBox checkBox_9 = new JCheckBox("\uB3FC\uC9C0\uACE0\uAE30 \uB2E4\uC9D0\uC721");
+		panel.add(checkBox_9);
 		
 		JLabel label = new JLabel("\uC721\uB958");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
