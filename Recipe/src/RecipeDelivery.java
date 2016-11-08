@@ -152,5 +152,53 @@ public class RecipeDelivery extends JFrame {
 		});
 		btn_Âò_ÅÁ.setBounds(62, 557, 290, 105);
 		contentPane.add(btn_Âò_ÅÁ);
+		
+		JLabel label = new JLabel("\uC911\uC2DD");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label.setBounds(166, 218, 78, 31);
+		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel("\uCE58\uD0A8/\uCC1C\uB2ED");
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label_1.setBounds(511, 218, 115, 31);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("\uC77C\uC2DD");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label_2.setBounds(166, 361, 78, 31);
+		contentPane.add(label_2);
+		
+		JLabel label_3 = new JLabel("\uD55C\uC2DD/\uBD84\uC2DD");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label_3.setBounds(520, 361, 106, 31);
+		contentPane.add(label_3);
+		
+		JLabel label_4 = new JLabel("\uC591\uC2DD");
+		label_4.setHorizontalAlignment(SwingConstants.CENTER);
+		label_4.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label_4.setBounds(166, 511, 78, 31);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel("\uC871\uBC1C/\uBCF4\uC308");
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label_5.setBounds(520, 511, 106, 31);
+		contentPane.add(label_5);
+		
+		JLabel label_6 = new JLabel("\uCC1C/\uD0D5");
+		label_6.setHorizontalAlignment(SwingConstants.CENTER);
+		label_6.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label_6.setBounds(166, 662, 78, 31);
+		contentPane.add(label_6);
+		
+		JLabel label_7 = new JLabel("\uD53C\uC790/\uD328\uC2A4\uD2B8\uD478\uB4DC");
+		label_7.setHorizontalAlignment(SwingConstants.CENTER);
+		label_7.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 21));
+		label_7.setBounds(484, 662, 175, 31);
+		contentPane.add(label_7);
 	}
 }
