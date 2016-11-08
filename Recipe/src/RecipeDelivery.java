@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -96,17 +97,27 @@ public class RecipeDelivery extends JFrame {
 		contentPane.add(back_image);
 		
 		textField = new JTextField();
-		
 		textField.setBackground(new Color(245, 245, 245));
 		textField.setHorizontalAlignment(SwingConstants.RIGHT);
 		textField.setFont(new Font("휴먼둥근헤드라인", Font.PLAIN, 38));
 		textField.setBounds(204, 21, 436, 54);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+		textField.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent arg0){
+			}
+		});
 		JButton btn_중식 = new JButton(image.중식1);
 		btn_중식.addActionListener(new ActionListener() {
+			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
+				Jdbc s_price = new Jdbc();
+				String s = textField.getText();
+				
+				int p = Integer.parseInt(s);
+				
+				s_price.returnSQL("select * from delivery where d_price<="+p+" and d_group='중식'");
+				JOptionPane.showMessageDialog(null,"검색 완료");
 			}
 		});
 		btn_중식.setBounds(62, 116, 290, 105);

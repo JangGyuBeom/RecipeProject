@@ -32,7 +32,8 @@ public class Jdbc {
 
 			while (rset.next()) {
 				//String str = rset.getNString(1);
-				System.out.println("NUM : "+rset.getInt(1)+" | Text :"+rset.getString(2)+"\n");
+				//System.out.println("NUM : "+rset.getInt(1)+" | Text :"+rset.getString(2)+"\n");
+				System.out.println("d_name : "+rset.getString(1)+"\td_food : "+rset.getString(2)+"\td_price : "+rset.getInt(3)+"\td_tel : "+rset.getString(4)+"\td_group : "+rset.getString(5));
 			}
 		} catch (SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
@@ -60,6 +61,7 @@ public class Jdbc {
 			java.sql.Statement st = null;
 			ResultSet rset = null;
 			st = conn.createStatement();
+			
 			
 			st.executeUpdate(sql);
 
@@ -98,7 +100,9 @@ public class Jdbc {
 
 			while (rset.next()) {
 				//String str = rset.getNString(1);
-				i = rset.getInt(1);
+				//i = rset.getInt(1);
+				i=rset.getInt(3);
+				System.out.println("d_name : "+rset.getString(1)+"\td_food : "+rset.getString(2)+"\td_price : "+rset.getInt(3)+"\td_tel : "+rset.getString(4)+"\td_group : "+rset.getString(5));
 			}
 		} catch (SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
