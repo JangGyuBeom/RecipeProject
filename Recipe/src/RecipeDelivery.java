@@ -71,26 +71,11 @@ public class RecipeDelivery extends JFrame {
 			}
 		});
 		
-		JButton btn_search = new JButton("");
-		btn_search.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btn_search.setFocusPainted(false);
-		btn_search.setContentAreaFilled(false);
-		btn_search.setBorderPainted(false);
-		btn_search.setBounds(652, 10, 87, 63);
-		contentPane.add(btn_search);
-		
 		
 		JLabel money_image = new JLabel(image.Money);
 		money_image.setHorizontalAlignment(SwingConstants.CENTER);
 		money_image.setBounds(12, 21, 202, 59);
 		contentPane.add(money_image);
-		
-		JLabel search_image = new JLabel(image.Search);
-		search_image.setBounds(662, 19, 67, 61);
-		contentPane.add(search_image);
 		
 		JLabel back_image = new JLabel(image.Back);
 		back_image.setBounds(12, 713, 50, 41);
@@ -98,9 +83,9 @@ public class RecipeDelivery extends JFrame {
 		
 		textField = new JTextField();
 		textField.setBackground(new Color(245, 245, 245));
-		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));
-		textField.setBounds(204, 21, 436, 54);
+		textField.setBounds(204, 21, 513, 54);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		textField.addActionListener(new ActionListener() {
