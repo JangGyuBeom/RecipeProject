@@ -32,7 +32,7 @@ public class Jdbc {
 
 			while (rset.next()) {
 				//String str = rset.getNString(1);
-				System.out.println("NUM : "+rset.getInt(1));
+				System.out.println("NUM : "+rset.getInt(1)+" | Text :"+rset.getString(2));
 			}
 		} catch (SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
@@ -106,4 +106,5 @@ public class Jdbc {
 		}
 		return i;
 	}
+	
 }
