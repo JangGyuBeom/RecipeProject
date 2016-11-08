@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 public class RecipeImage {
 	
+	ImageIcon background_bl = new ImageIcon("Image/background_bl.jpg");
 	ImageIcon Back = new ImageIcon("Image/back.png");
 	
 	//swing
@@ -23,6 +24,7 @@ public class RecipeImage {
 	
 	//inquires
 	ImageIcon Send = new ImageIcon("Image/send.png");
+	ImageIcon background_gr = new ImageIcon("Image/background_gr.jpg");
 	
 	
 	//Manager_connect

@@ -15,6 +15,7 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.UIManager;
 import java.awt.Font;
+import java.awt.Graphics;
 
 public class Recipeinquires extends JFrame {
 
@@ -40,7 +41,13 @@ public class Recipeinquires extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 451, 411);
-		contentPane = new JPanel();
+		contentPane = new JPanel(){
+			public void paintComponent(Graphics g){
+				g.drawImage(image.background_gr.getImage(),0,0,null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
