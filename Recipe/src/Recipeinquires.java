@@ -61,8 +61,13 @@ public class Recipeinquires extends JFrame {
 		btn_Send.setContentAreaFilled(false); //투명 버튼
 		btn_Send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Jdbc ask = new Jdbc();
+				String text = new String(textArea.getText());
+				int i = ask.returnSQL("select max(ask_num) from ask;");
+				i++;
+				ask.insertSQL("insert into ask(ask_num,ask_text) values("+i+",'"+text+"');");
+				System.out.println(i);
 				JOptionPane.showMessageDialog(null,"전송 완료");
-				
 			}
 		});
 		btn_Send.setBounds(293, 321, 130, 42);
