@@ -16,6 +16,7 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Graphics;
 
 public class RecipeShowinquires extends JFrame {
 
@@ -44,7 +45,13 @@ public class RecipeShowinquires extends JFrame {
 		RecipeImage image = new RecipeImage();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 577, 403);
-		contentPane = new JPanel();
+		contentPane = new JPanel(){
+			public void paintComponent(Graphics g){
+				g.drawImage(image.background_gr.getImage(),0,0,null);
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -71,6 +78,7 @@ public class RecipeShowinquires extends JFrame {
 		contentPane.add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("πŸ≈¡", Font.BOLD, 17));
 		
 		try {
 
