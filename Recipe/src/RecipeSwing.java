@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -65,7 +66,43 @@ public class RecipeSwing extends JFrame {
 		JTextArea txtrAsdasdasd = new JTextArea();
 		txtrAsdasdasd.setForeground(new Color(0, 0, 0));
 		txtrAsdasdasd.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 20));
-		txtrAsdasdasd.setText("\r\n  \uACF5\uC9C0\uC0AC\uD56D \uC608\uC2DC \uC785\uB825\uB780.\r\n");
+		
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.err.println("ClassNotFoundException : " + e.getMessage());
+		}
+		try {
+			Connection conn = null;
+
+			/*conn = DriverManager.getConnection("jdbc:mysql://localhost:9000/recipe?useSSL=false",
+					"hoonju", "19950905");*/ // Xshell
+			conn = DriverManager.getConnection("jdbc:mysql://165.229.88.102:3306/recipe?useSSL=false",
+					"hoonju", "19950905");  // 학교
+			
+			
+
+			java.sql.Statement st = null;
+			ResultSet rset = null;
+			st = conn.createStatement();
+			String sql = "select notice_num,notice_text from notice order by notice_num desc;";
+			rset = st.executeQuery(sql);
+			System.out.println(sql);
+			/*if (st.execute("select del_name from delivery where del_price>50000;")) {
+				rset = st.getResultSet();
+			}*/
+
+			while (rset.next()) {
+				//String str = rset.getNString(1);
+				System.out.println("NUM : "+rset.getInt(1)+" | Text :"+rset.getString(2)+"\n");
+				txtrAsdasdasd.append("NUM : "+rset.getInt(1)+" | Text :"+rset.getString(2)+"\n");
+			}
+		} catch (SQLException sqex) {
+			System.out.println("SQLException: " + sqex.getMessage());
+			System.out.println("SQLState: " + sqex.getSQLState());
+		}
+		
 		scrollPane_1.setViewportView(txtrAsdasdasd);
 		txtrAsdasdasd.setBackground(new Color(255, 250, 205));
 		

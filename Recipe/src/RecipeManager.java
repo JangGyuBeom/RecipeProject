@@ -5,20 +5,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JTextField;
-import javax.swing.DropMode;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
-import javax.swing.Icon;
-import javax.swing.ScrollPaneConstants;
 
 public class RecipeManager extends JFrame {
 
@@ -105,46 +93,49 @@ public class RecipeManager extends JFrame {
 		label_2.setBounds(12, 609, 107, 48);
 		contentPane.add(label_2);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"\uB4F1\uB85D", "\uC218\uC815", "\uC0AD\uC81C"}));
-		comboBox.setBounds(115, 158, 100, 48);
-		contentPane.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"\uB4F1\uB85D", "\uC218\uC815", "\uC0AD\uC81C"}));
-		comboBox_1.setBounds(115, 354, 100, 48);
-		contentPane.add(comboBox_1);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"\uB4F1\uB85D", "\uC218\uC815", "\uC0AD\uC81C"}));
-		comboBox_2.setBounds(115, 609, 100, 48);
-		contentPane.add(comboBox_2);
-		
-		JLabel lblNewLabel_1 = new JLabel("\uBB38\uC758 \uBCF4\uAE30");
+		JLabel lblNewLabel_1 = new JLabel("문의보기");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
 		lblNewLabel_1.setBounds(32, 40, 158, 59);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("\uACF5\uC9C0\uBC88\uD638");
+		JComboBox comboBox = new JComboBox();  //공지사항
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
+		comboBox.setBounds(115, 158, 100, 48);
+		contentPane.add(comboBox);
+		
+		
+		
+		
+		JComboBox comboBox_1 = new JComboBox(); //레시피
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
+		comboBox_1.setBounds(115, 354, 100, 48);
+		contentPane.add(comboBox_1);
+		
+		JComboBox comboBox_2 = new JComboBox(); //배달
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
+		comboBox_2.setBounds(115, 609, 100, 48);
+		contentPane.add(comboBox_2);
+		
+
+		
+		JLabel lblNewLabel_2 = new JLabel("공지 번호");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(302, 132, 93, 26);
 		contentPane.add(lblNewLabel_2);
-		
-		JLabel label_3 = new JLabel("\uACF5\uC9C0\uB0B4\uC6A9\r\n");
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setBounds(588, 132, 93, 26);
-		contentPane.add(label_3);
-		
-		JButton btnNewButton_1 = new JButton("\uD655\uC778");
-		btnNewButton_1.setBounds(953, 165, 97, 35);
-		contentPane.add(btnNewButton_1);
 		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setBounds(292, 168, 116, 21);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		
+		
+		JLabel label_3 = new JLabel("공지 내용");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setBounds(588, 132, 93, 26);
+		contentPane.add(label_3);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -153,6 +144,44 @@ public class RecipeManager extends JFrame {
 		
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
+		
+		JButton btnNewButton_1 = new JButton("확인");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try{
+				String str = (String)comboBox.getSelectedItem();
+				Integer num = new Integer(textField.getText());
+				String text = new String(textArea.getText());
+				Jdbc notice = new Jdbc();
+				if(str == "등록")
+				{
+					str = "insert into";
+					notice.insertSQL(str+" notice(notice_num,notice_text) values("+num+",'"+text+"');");
+					JOptionPane.showMessageDialog(null,"입력 완료");
+				}
+				else if(str == "수정")
+				{
+					str = "update";
+					notice.insertSQL(str+" notice set notice_text = '"+text+"' where notice_num = "+num+";");
+					JOptionPane.showMessageDialog(null,"수정 완료");
+				}
+				else
+				{
+					str = "delete";
+					notice.insertSQL(str+" from notice where notice_num = "+num+";");
+					JOptionPane.showMessageDialog(null,"삭제 완료");
+				}
+				System.out.println(str);
+				System.out.println(num);
+				System.out.println(text);
+				}
+				catch(Exception k){
+					JOptionPane.showMessageDialog(null,"잘못된 입력 입니다.");
+				}
+			}
+		});
+		btnNewButton_1.setBounds(953, 165, 97, 35);
+		contentPane.add(btnNewButton_1);
 		
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
