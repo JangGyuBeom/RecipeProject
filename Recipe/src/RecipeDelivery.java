@@ -101,7 +101,7 @@ public class RecipeDelivery extends JFrame {
 				
 				int p = Integer.parseInt(s);
 				
-				s_price.returnSQL("select * from delivery where d_price<="+p+" and d_group='중식'");
+				s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='중식'");
 				JOptionPane.showMessageDialog(null,"검색 완료");
 			}
 		});
@@ -109,13 +109,32 @@ public class RecipeDelivery extends JFrame {
 		contentPane.add(btn_중식);
 		
 		JButton btn_치킨 = new JButton(image.치킨1);
-	
+		btn_치킨.addActionListener(new ActionListener() {
+			JFrame frame;
+			public void actionPerformed(ActionEvent arg0) {
+				Jdbc s_price = new Jdbc();
+				String s = textField.getText();
+				
+				int p = Integer.parseInt(s);
+				
+				s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='치킨'");
+				JOptionPane.showMessageDialog(null,"검색 완료");
+			}
+		});
 		btn_치킨.setBounds(427, 116, 290, 105);
 		contentPane.add(btn_치킨);
 		
 		JButton btn_일식 = new JButton(image.일식1);
 		btn_일식.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+				JFrame frame;
+				public void actionPerformed(ActionEvent arg0) {
+					Jdbc s_price = new Jdbc();
+					String s = textField.getText();
+					
+					int p = Integer.parseInt(s);
+					
+					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='일식'");
+					JOptionPane.showMessageDialog(null,"검색 완료");
 			}
 		});
 		btn_일식.setBounds(62, 259, 290, 105);
@@ -123,32 +142,80 @@ public class RecipeDelivery extends JFrame {
 		
 		JButton btn_한식_분식 = new JButton(image.분식1);
 		btn_한식_분식.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
+			JFrame frame;
+			public void actionPerformed(ActionEvent arg0) {
+				Jdbc s_price = new Jdbc();
+				String s = textField.getText();
+				
+				int p = Integer.parseInt(s);
+				
+				s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='한식/분식'");
+				JOptionPane.showMessageDialog(null,"검색 완료");
+		}
 		});
 		btn_한식_분식.setBounds(427, 259, 290, 105);
 		contentPane.add(btn_한식_분식);
 		
 		JButton btn_족발_보쌈 = new JButton(image.족발1);
+		btn_족발_보쌈.addActionListener(new ActionListener() {
+			JFrame frame;
+			public void actionPerformed(ActionEvent arg0) {
+				Jdbc s_price = new Jdbc();
+				String s = textField.getText();
+				
+				int p = Integer.parseInt(s);
+				
+				s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='족발/보쌈'");
+				JOptionPane.showMessageDialog(null,"검색 완료");
+		}
+		});
 		btn_족발_보쌈.setBounds(427, 410, 290, 105);
 		contentPane.add(btn_족발_보쌈);
 		
 		JButton btn_피자 = new JButton(image.피자1);
 		btn_피자.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
+			JFrame frame;
+			public void actionPerformed(ActionEvent arg0) {
+				Jdbc s_price = new Jdbc();
+				String s = textField.getText();
+				
+				int p = Integer.parseInt(s);
+				
+				s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='피자'");
+				JOptionPane.showMessageDialog(null,"검색 완료");
+		}
 		});
 		btn_피자.setBounds(427, 557, 290, 105);
 		contentPane.add(btn_피자);
 		
 		JButton btn_양식 = new JButton(image.양식1);
+		btn_양식.addActionListener(new ActionListener() {
+			JFrame frame;
+			public void actionPerformed(ActionEvent arg0) {
+				Jdbc s_price = new Jdbc();
+				String s = textField.getText();
+				
+				int p = Integer.parseInt(s);
+				
+				s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='양식'");
+				JOptionPane.showMessageDialog(null,"검색 완료");
+		}
+		});
 		btn_양식.setBounds(62, 410, 290, 105);
 		contentPane.add(btn_양식);
 		
 		JButton btn_찜_탕 = new JButton(image.찜1);
 		btn_찜_탕.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
+			JFrame frame;
+			public void actionPerformed(ActionEvent arg0) {
+				Jdbc s_price = new Jdbc();
+				String s = textField.getText();
+				
+				int p = Integer.parseInt(s);
+				
+				s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='찜/탕'");
+				JOptionPane.showMessageDialog(null,"검색 완료");
+		}
 		});
 		btn_찜_탕.setBounds(62, 557, 290, 105);
 		contentPane.add(btn_찜_탕);
