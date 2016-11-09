@@ -1,21 +1,18 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JCheckBox;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Recipe기타 extends JFrame {
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+public class Recipe가공_유제품 extends JFrame {
 
 	private JPanel contentPane;
 
@@ -26,7 +23,7 @@ public class Recipe기타 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Recipe기타 frame = new Recipe기타();
+					Recipe가공_유제품 frame = new Recipe가공_유제품();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,8 +35,9 @@ public class Recipe기타 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Recipe기타() {
+	public Recipe가공_유제품() {
 		RecipeImage image = new RecipeImage();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 354);
 		contentPane = new JPanel();
@@ -50,7 +48,7 @@ public class Recipe기타 extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setToolTipText("");
 		panel.setForeground(Color.BLACK);
-		panel.setBounds(12, 64, 410, 167);
+		panel.setBounds(12, 64, 410, 173);
 		contentPane.add(panel);
 		
 		JCheckBox checkBox = new JCheckBox("\uC7AC\uB8CC1");
@@ -77,7 +75,7 @@ public class Recipe기타 extends JFrame {
 		JCheckBox checkBox_7 = new JCheckBox("\uC7AC\uB8CC1");
 		panel.add(checkBox_7);
 		
-		JLabel label = new JLabel("\uAE30\uD0C0");
+		JLabel label = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
 		label.setBounds(12, 10, 410, 44);
