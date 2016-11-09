@@ -4,9 +4,11 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,7 +45,7 @@ public class RecipeSwing extends JFrame {
 	public RecipeSwing() {
 		
 		RecipeImage image = new RecipeImage();
-		
+		MainButtonHandler main = new MainButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 971, 653);
 		
@@ -113,17 +115,8 @@ public class RecipeSwing extends JFrame {
 		btn_Recipe.setFocusPainted(false);		//투명 버튼
 		btn_Recipe.setContentAreaFilled(false); //투명 버튼
 		btn_Recipe.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							RecipeCook frame = new RecipeCook();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+			public void actionPerformed(ActionEvent e) {	
+				main.recipehandler();
 			}
 		});
 		btn_Recipe.setForeground(Color.BLACK);
@@ -138,7 +131,7 @@ public class RecipeSwing extends JFrame {
 		btn_Exit.setContentAreaFilled(false); //투명 버튼
 		btn_Exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				main.exithandler();
 			}
 		});
 		
@@ -148,16 +141,7 @@ public class RecipeSwing extends JFrame {
 		btn_delivery.setContentAreaFilled(false); //투명 버튼
 		btn_delivery.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							RecipeDelivery frame = new RecipeDelivery();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				main.deliveryhandler();
 			}
 		});
 		btn_delivery.setBounds(557, 62, 278, 271);
@@ -166,16 +150,7 @@ public class RecipeSwing extends JFrame {
 		JButton btn_Inquire = new JButton();
 		btn_Inquire.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipeinquires frame = new Recipeinquires();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				main.inquireshandler();
 				
 			}
 		});
@@ -192,16 +167,7 @@ public class RecipeSwing extends JFrame {
 		JButton btn_manager = new JButton();
 		btn_manager.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							RecipeManager_connect frame = new RecipeManager_connect();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				main.noticehandler();
 			}
 		});
 		btn_manager.setFocusPainted(false);

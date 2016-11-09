@@ -43,6 +43,8 @@ public class RecipeShowinquires extends JFrame {
 	 */
 	public RecipeShowinquires() {
 		RecipeImage image = new RecipeImage();
+		ShowInquiresButtonHandler sinq = new ShowInquiresButtonHandler();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 577, 403);
 		contentPane = new JPanel(){
@@ -121,11 +123,7 @@ public class RecipeShowinquires extends JFrame {
 		JButton btnNewButton = new JButton();
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Jdbc ask = new Jdbc();
-				String text = new String(textArea.getText());
-				int i = ask.returnSQL("select max(ask_num) from ask;");
-				ask.insertSQL("delete from ask where ask_num = "+i+";");
-				JOptionPane.showMessageDialog(null,"삭제 완료");
+				sinq.deletehandler(textArea);
 			}
 		});
 		btnNewButton.setFocusPainted(false);

@@ -19,9 +19,7 @@ public class RecipeManager_connect extends JFrame {
 	private JPanel contentPane;
 	private JTextField tf_password;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -35,12 +33,10 @@ public class RecipeManager_connect extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public RecipeManager_connect() {
 		RecipeImage image = new RecipeImage();
-
+		ManagerConnectButtonHandler man_con = new ManagerConnectButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 278, 88);
 		contentPane = new JPanel();
@@ -54,27 +50,8 @@ public class RecipeManager_connect extends JFrame {
 		btn_lock.setBorderPainted(false);
 		btn_lock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String password = "1111";
-				String passwordcp = new String(tf_password.getText());
-				if(password.compareTo(passwordcp) == 0)
-				{
-					EventQueue.invokeLater(new Runnable() {
-						public void run() {
-							try {
-								RecipeManager frame = new RecipeManager();
-								frame.setVisible(true);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						}
-					});
-				}
-				else
-				{
-					JOptionPane.showMessageDialog(null,"비밀번호를 다시 입력 해 주세요.");
-				}
+				man_con.lockhandler(tf_password);
 			}
-
 		});
 		btn_lock.setBounds(180, 10, 30, 32);
 		contentPane.add(btn_lock);

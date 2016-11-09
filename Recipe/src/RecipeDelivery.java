@@ -43,7 +43,7 @@ public class RecipeDelivery extends JFrame {
 	public RecipeDelivery() {
 		
 		RecipeImage image = new RecipeImage();
-
+		DeliveryButtonHandler delivery = new DeliveryButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 786, 802);
 		ImageIcon background = new ImageIcon("Image/background_ora.jpg");
@@ -94,21 +94,10 @@ public class RecipeDelivery extends JFrame {
 		});
 		JButton btn_중식 = new JButton(image.중식1);
 		btn_중식.addActionListener(new ActionListener() {
-			JFrame frame;
+			JFrame frame; //?
 			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Jdbc s_price = new Jdbc();
-					String s = textField.getText();
-					
-					int p = Integer.parseInt(s);
-				
-					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='중식'");
-					JOptionPane.showMessageDialog(null,"검색 완료");
-					}catch(java.lang.NumberFormatException e){
-						JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-					}
-			
-				}
+				delivery.chinahandler(textField);
+			}
 		});
 		btn_중식.setBounds(62, 116, 290, 105);
 		contentPane.add(btn_중식);
@@ -117,17 +106,7 @@ public class RecipeDelivery extends JFrame {
 		btn_치킨.addActionListener(new ActionListener() {
 			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Jdbc s_price = new Jdbc();
-					String s = textField.getText();
-				
-					int p = Integer.parseInt(s);
-				
-					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='치킨'");
-					JOptionPane.showMessageDialog(null,"검색 완료");
-				}catch(java.lang.NumberFormatException e){
-					JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-				}
+				delivery.chickenhandler(textField);
 			}
 		});
 		btn_치킨.setBounds(427, 116, 290, 105);
@@ -137,17 +116,7 @@ public class RecipeDelivery extends JFrame {
 		btn_일식.addActionListener(new ActionListener() {
 				JFrame frame;
 				public void actionPerformed(ActionEvent arg0) {
-					try{
-						Jdbc s_price = new Jdbc();
-						String s = textField.getText();
-					
-						int p = Integer.parseInt(s);
-					
-						s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='일식'");
-						JOptionPane.showMessageDialog(null,"검색 완료");
-					}catch(java.lang.NumberFormatException e){
-						JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-					}
+					delivery.japanfoodhandler(textField);
 				}
 		});
 		btn_일식.setBounds(62, 259, 290, 105);
@@ -157,17 +126,7 @@ public class RecipeDelivery extends JFrame {
 		btn_한식_분식.addActionListener(new ActionListener() {
 			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Jdbc s_price = new Jdbc();
-					String s = textField.getText();
-				
-					int p = Integer.parseInt(s);
-				
-					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='한식/분식'");
-					JOptionPane.showMessageDialog(null,"검색 완료");
-				}catch(java.lang.NumberFormatException e){
-					JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-				}
+				delivery.koreanfoodhandler(textField);
 			}
 		});
 		btn_한식_분식.setBounds(427, 259, 290, 105);
@@ -177,17 +136,7 @@ public class RecipeDelivery extends JFrame {
 		btn_족발_보쌈.addActionListener(new ActionListener() {
 			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Jdbc s_price = new Jdbc();
-					String s = textField.getText();
-				
-					int p = Integer.parseInt(s);
-				
-					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='족발/보쌈'");
-					JOptionPane.showMessageDialog(null,"검색 완료");
-				}catch(java.lang.NumberFormatException e){
-					JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-				}
+				delivery.figsfeethandler(textField);
 			}
 		});
 		btn_족발_보쌈.setBounds(427, 410, 290, 105);
@@ -197,17 +146,7 @@ public class RecipeDelivery extends JFrame {
 		btn_피자.addActionListener(new ActionListener() {
 			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Jdbc s_price = new Jdbc();
-					String s = textField.getText();
-				
-					int p = Integer.parseInt(s);
-				
-					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='피자'");
-					JOptionPane.showMessageDialog(null,"검색 완료");
-				}catch(java.lang.NumberFormatException e){
-					JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-				}
+				delivery.pizzahandler(textField);
 			}
 		});
 		btn_피자.setBounds(427, 557, 290, 105);
@@ -217,17 +156,7 @@ public class RecipeDelivery extends JFrame {
 		btn_양식.addActionListener(new ActionListener() {
 			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Jdbc s_price = new Jdbc();
-					String s = textField.getText();
-				
-					int p = Integer.parseInt(s);
-				
-					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='양식'");
-					JOptionPane.showMessageDialog(null,"검색 완료");
-				}catch(java.lang.NumberFormatException e){
-					JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-				}
+				delivery.westernfoodhandler(textField);
 			}
 		});
 		btn_양식.setBounds(62, 410, 290, 105);
@@ -237,17 +166,7 @@ public class RecipeDelivery extends JFrame {
 		btn_찜_탕.addActionListener(new ActionListener() {
 			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				try{
-					Jdbc s_price = new Jdbc();
-					String s = textField.getText();
-				
-					int p = Integer.parseInt(s);
-				
-					s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='찜/탕'");
-					JOptionPane.showMessageDialog(null,"검색 완료");
-				}catch(java.lang.NumberFormatException e){
-					JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
-				}
+				delivery.steamhandler(textField);
 			}
 		});
 		btn_찜_탕.setBounds(62, 557, 290, 105);

@@ -43,6 +43,7 @@ public class RecipeManager extends JFrame {
 	 */
 	public RecipeManager() {
 		RecipeImage image = new RecipeImage();
+		ManagerButtonHandler manager = new ManagerButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1160, 797);
 		contentPane = new JPanel(){
@@ -67,16 +68,7 @@ public class RecipeManager extends JFrame {
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							RecipeShowinquires frame = new RecipeShowinquires();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				manager.inquireshandler();
 			}
 		});
 		btnNewButton.setBounds(32, 40, 158, 59);
@@ -166,36 +158,7 @@ public class RecipeManager extends JFrame {
 		btnNewButton_1.setContentAreaFilled(false); //투명 버튼
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try{
-				String str = (String)comboBox.getSelectedItem();
-				Integer num = new Integer(textField.getText());
-				String text = new String(textArea.getText());
-				Jdbc notice = new Jdbc();
-				if(str == "등록")
-				{
-					str = "insert into";
-					notice.insertSQL(str+" notice(notice_num,notice_text) values("+num+",'"+text+"');");
-					JOptionPane.showMessageDialog(null,"입력 완료");
-				}
-				else if(str == "수정")
-				{
-					str = "update";
-					notice.insertSQL(str+" notice set notice_text = '"+text+"' where notice_num = "+num+";");
-					JOptionPane.showMessageDialog(null,"수정 완료");
-				}
-				else
-				{
-					str = "delete";
-					notice.insertSQL(str+" from notice where notice_num = "+num+";");
-					JOptionPane.showMessageDialog(null,"삭제 완료");
-				}
-				System.out.println(str);
-				System.out.println(num);
-				System.out.println(text);
-				}
-				catch(Exception k){
-					JOptionPane.showMessageDialog(null,"잘못된 입력 입니다.");
-				}
+				manager.noticehandler(comboBox, textField, textArea);
 			}
 		});
 		btnNewButton_1.setBounds(978, 168, 64, 57);
@@ -332,6 +295,11 @@ public class RecipeManager extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		JButton button_3 = new JButton();
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				manager.recipehandler();
+			}
+		});
 		button_3.setFocusPainted(false);
 		button_3.setContentAreaFilled(false);
 		button_3.setBorderPainted(false);
@@ -343,6 +311,11 @@ public class RecipeManager extends JFrame {
 		contentPane.add(label_14);
 		
 		JButton button_2 = new JButton();
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				manager.deliveryhandler();
+			}
+		});
 		button_2.setFocusPainted(false);
 		button_2.setContentAreaFilled(false);
 		button_2.setBorderPainted(false);

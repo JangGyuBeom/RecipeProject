@@ -1,9 +1,10 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,9 +14,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.UIManager;
-import java.awt.Font;
-import java.awt.Graphics;
 
 public class Recipeinquires extends JFrame {
 
@@ -38,6 +36,7 @@ public class Recipeinquires extends JFrame {
 	public Recipeinquires() {
 		
 		RecipeImage image = new RecipeImage();
+		WriteInquiresButtonHandler inq = new WriteInquiresButtonHandler();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 451, 411);
@@ -68,13 +67,7 @@ public class Recipeinquires extends JFrame {
 		btn_Send.setContentAreaFilled(false); //투명 버튼
 		btn_Send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Jdbc ask = new Jdbc();
-				String text = new String(textArea.getText());
-				int i = ask.returnSQL("select max(ask_num) from ask;");
-				i++;
-				ask.insertSQL("insert into ask(ask_num,ask_text) values("+i+",'"+text+"');");
-				System.out.println(i);
-				JOptionPane.showMessageDialog(null,"전송 완료");
+			  inq.sendhandler(textArea);
 			}
 		});
 		btn_Send.setBounds(293, 321, 130, 42);

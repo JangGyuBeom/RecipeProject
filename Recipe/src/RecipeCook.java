@@ -41,7 +41,7 @@ public class RecipeCook extends JFrame {
 	public RecipeCook() {
 		
 		RecipeImage image = new RecipeImage();
-		
+		RecipeButtonHandler cook = new RecipeButtonHandler();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 633, 502);
@@ -108,16 +108,7 @@ public class RecipeCook extends JFrame {
 		btn_채소_과일.setBorderPainted(false);
 		btn_채소_과일.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipe채소_과일 frame = new Recipe채소_과일();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				cook.채소_과일handler();
 			}
 		});
 		btn_채소_과일.setBounds(91, 119, 161, 41);
@@ -134,16 +125,7 @@ public class RecipeCook extends JFrame {
 		JButton btn_육류 = new JButton();
 		btn_육류.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipe육류 frame = new Recipe육류();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				cook.육류handler();
 			}
 		});
 		btn_육류.setFocusPainted(false);
@@ -164,16 +146,7 @@ public class RecipeCook extends JFrame {
 		btn_수산물.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 12));
 		btn_수산물.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipe수산물 frame = new Recipe수산물();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				cook.수산물handler();
 			}
 		});
 		btn_수산물.setFocusPainted(false);
@@ -193,16 +166,7 @@ public class RecipeCook extends JFrame {
 		JButton btn_곡물_견과류 = new JButton();
 		btn_곡물_견과류.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipe곡물_견과류 frame = new Recipe곡물_견과류();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				cook.곡물_견과류handler();
 			}
 		});
 		btn_곡물_견과류.setFocusPainted(false);
@@ -222,16 +186,7 @@ public class RecipeCook extends JFrame {
 		JButton btn_양념_소스 = new JButton();
 		btn_양념_소스.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipe양념_소스 frame = new Recipe양념_소스();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				cook.양념_소스handler();
 			}
 		});
 		btn_양념_소스.setFocusPainted(false);
@@ -251,16 +206,7 @@ public class RecipeCook extends JFrame {
 		JButton btn_가공_유제품 = new JButton();
 		btn_가공_유제품.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipe가공_유제품 frame = new Recipe가공_유제품();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				cook.가공_유제품handler();
 			}
 		});
 		btn_가공_유제품.setFocusPainted(false);
@@ -280,16 +226,7 @@ public class RecipeCook extends JFrame {
 		JButton btn_기타 = new JButton();
 		btn_기타.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Recipe기타 frame = new Recipe기타();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
+				cook.기타handler();
 			}
 		});
 		btn_기타.setFocusPainted(false);
