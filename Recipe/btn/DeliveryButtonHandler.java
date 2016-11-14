@@ -12,13 +12,12 @@ public class DeliveryButtonHandler {
 			
 			int p = Integer.parseInt(s);
 		
-			s_price.d_returnSQL("select * from delivery where d_price<="+p+" and d_group='중식'");
+			s_price.d_ret
+			urnSQL("select * from delivery where d_price<="+p+" and d_group='중식'");
 			JOptionPane.showMessageDialog(null,"검색 완료");
 			}catch(java.lang.NumberFormatException e){
 				JOptionPane.showMessageDialog(null,"'가격'을 입력해 주세요");
 			}
-	
-		
 	}
 	
 	public void chickenhandler(JTextField textField){ //치킨
