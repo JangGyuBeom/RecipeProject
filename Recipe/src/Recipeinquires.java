@@ -18,20 +18,6 @@ import javax.swing.border.EmptyBorder;
 public class Recipeinquires extends JFrame {
 
 	private JPanel contentPane;
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Recipeinquires frame = new Recipeinquires();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	
 	public Recipeinquires() {
 		

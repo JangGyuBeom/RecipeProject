@@ -22,25 +22,6 @@ public class RecipeManager extends JFrame {
 	private JTextField textField_7;
 	private JTextField textField_9;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RecipeManager frame = new RecipeManager();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public RecipeManager() {
 		RecipeImage image = new RecipeImage();
 		ManagerButtonHandler manager = new ManagerButtonHandler();
@@ -297,7 +278,7 @@ public class RecipeManager extends JFrame {
 		JButton button_3 = new JButton();
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				manager.recipehandler();
+				manager.recipehandler(comboBox_1,textField_6,textField_7,textArea_1,textField_9);
 			}
 		});
 		button_3.setFocusPainted(false);
@@ -313,7 +294,7 @@ public class RecipeManager extends JFrame {
 		JButton button_2 = new JButton();
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				manager.deliveryhandler();
+				manager.deliveryhandler(comboBox_2,textField_1,textField_2,textField_3,textField_4,textField_5);
 			}
 		});
 		button_2.setFocusPainted(false);

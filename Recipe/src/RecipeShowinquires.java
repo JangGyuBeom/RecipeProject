@@ -82,42 +82,9 @@ public class RecipeShowinquires extends JFrame {
 		JTextArea textArea = new JTextArea();
 		textArea.setFont(new Font("¹ÙÅÁ", Font.BOLD, 17));
 		
-		try {
 
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			System.err.println("ClassNotFoundException : " + e.getMessage());
-		}
-		try {
-			Connection conn = null;
-
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:9000/recipe?useSSL=false",
-					"hoonju", "19950905"); // Xshell
-			/*conn = DriverManager.getConnection("jdbc:mysql://165.229.88.102:3306/recipe?useSSL=false",
-					"hoonju", "19950905");  // ÇÐ±³
-*/			
-			
-
-			java.sql.Statement st = null;
-			ResultSet rset = null;
-			st = conn.createStatement();
-			String sql = "select ask_num,ask_text from ask order by ask_num desc;";
-			rset = st.executeQuery(sql);
-			System.out.println(sql);
-			/*if (st.execute("select del_name from delivery where del_price>50000;")) {
-				rset = st.getResultSet();
-			}*/
-
-			while (rset.next()) {
-				//String str = rset.getNString(1);
-				System.out.println("NUM : "+rset.getInt(1)+" | Text :"+rset.getString(2)+"\n");
-				textArea.append("NUM : "+rset.getInt(1)+" | Text :"+rset.getString(2)+"\n");
-			}
-		} catch (SQLException sqex) {
-			System.out.println("SQLException: " + sqex.getMessage());
-			System.out.println("SQLState: " + sqex.getSQLState());
-		}
-
+		ShowInquiresConnection sc = new ShowInquiresConnection();
+		sc.makeSQL(textArea);
 		scrollPane.setViewportView(textArea);
 		
 		JButton btnNewButton = new JButton();

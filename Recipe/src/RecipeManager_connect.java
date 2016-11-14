@@ -19,21 +19,6 @@ public class RecipeManager_connect extends JFrame {
 	private JPanel contentPane;
 	private JTextField tf_password;
 
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RecipeManager_connect frame = new RecipeManager_connect();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	
 	public RecipeManager_connect() {
 		RecipeImage image = new RecipeImage();
 		ManagerConnectButtonHandler man_con = new ManagerConnectButtonHandler();
