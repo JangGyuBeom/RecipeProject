@@ -35,7 +35,7 @@ public class ManagerButtonHandler {
 	}
 
 	public void recipehandler(JComboBox comboBox, JTextField textField_1, JTextField textField_2, JTextArea textArea, JTextField textField_3) {
-		try{	
+		/*try{	
 			String sql;
 			ManagerConnection mc = new ManagerConnection();
 			String str = (String)comboBox.getSelectedItem();
@@ -59,11 +59,11 @@ public class ManagerButtonHandler {
 			mc.makeSQL(sql);
 		} catch(Exception k){
 			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
-		}
+		}*/
 	}
 
 	public void deliveryhandler(JComboBox comboBox, JTextField textField_1, JTextField textField_2, JTextField textField_3, JTextField textField_4, JTextField textField_5) {
-		try{
+		/*try{
 			String sql;
 			ManagerConnection mc = new ManagerConnection();
 			String str = (String)comboBox.getSelectedItem();
@@ -88,7 +88,7 @@ public class ManagerButtonHandler {
 			mc.makeSQL(sql);
 		} catch(Exception k){
 			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
-		}
+		}*/
 	}
 
 	public void inquireshandler() {
@@ -102,7 +102,5 @@ public class ManagerButtonHandler {
 				}
 			}
 		});
-
 	}
-
 }
