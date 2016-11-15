@@ -46,10 +46,10 @@ public class RecipeDelivery extends JFrame {
 		DeliveryButtonHandler delivery = new DeliveryButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 786, 802);
-		ImageIcon background = new ImageIcon("Image/background_ora.jpg");
+		
 		contentPane = new JPanel(){
 			public void paintComponent(Graphics g){
-				g.drawImage(background.getImage(),0,0,null);
+				g.drawImage(image.background_ora.getImage(),0,0,null);
 				setOpaque(false);
 				super.paintComponent(g);
 			}
