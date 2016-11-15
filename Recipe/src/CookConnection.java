@@ -2,10 +2,11 @@ import java.sql.*;
 import java.util.*;
 
 public class CookConnection {
+	Jdbc jdbc = new Jdbc();
+	ResultSet rset;
 	Vector makeD_SQL(String sql){
 		Vector vec = new Vector();
-		Jdbc jdbc = new Jdbc();
-		ResultSet rset = jdbc.readSQL(sql);
+		rset = jdbc.readSQL(sql);
 		try {
 			while(rset.next()){
 				vec.addElement(rset.getString(1));
@@ -15,5 +16,9 @@ public class CookConnection {
 			e.printStackTrace();
 		}
 		return vec;
+	}
+	ResultSet makeDR_SQL(String sql){
+		rset = jdbc.readSQL(sql);
+		return rset;
 	}
 }
