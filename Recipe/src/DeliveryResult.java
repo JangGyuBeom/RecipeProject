@@ -38,7 +38,7 @@ public class DeliveryResult extends JFrame {
 		
 		RecipeImage image = new RecipeImage();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 832, 478);
+		setBounds(100, 100, 1159, 478);
 		 		contentPane = new JPanel(){
 		 			public void paintComponent(Graphics g){
 		 				g.drawImage(image.background_ora.getImage(),0,0,null);
@@ -61,7 +61,7 @@ public class DeliveryResult extends JFrame {
 		scrollPane_1.setViewportView(list);
 
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(270, 82, 365, 297);
+		scrollPane_2.setBounds(270, 82, 323, 297);
 		contentPane.add(scrollPane_2);
 
 		JTextArea textArea = new JTextArea();
@@ -71,7 +71,7 @@ public class DeliveryResult extends JFrame {
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
-		textField.setBounds(647, 82, 157, 35);
+		textField.setBounds(962, 82, 157, 35);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -81,16 +81,16 @@ public class DeliveryResult extends JFrame {
 		lblNewLabel.setBounds(30, 22, 217, 50);
 		contentPane.add(lblNewLabel);
 		
-		JLabel label = new JLabel("\uBA54\uB274");
+		JLabel label = new JLabel("\uBC30\uB2EC \uAC00\uB2A5 \uBA54\uB274");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label.setBounds(270, 22, 365, 50);
+		label.setBounds(270, 22, 323, 50);
 		contentPane.add(label);
 		
 		JLabel label_1 = new JLabel("\uC804\uD654 \uBC88\uD638");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_1.setBounds(647, 22, 157, 50);
+		label_1.setBounds(962, 22, 157, 50);
 		contentPane.add(label_1);
 		
 		JButton button = new JButton();
@@ -108,6 +108,19 @@ public class DeliveryResult extends JFrame {
 		JLabel label_2 = new JLabel(image.Back);
 		label_2.setBounds(12, 389, 50, 41);
 		contentPane.add(label_2);
+		
+		JScrollPane scrollPane_3 = new JScrollPane();
+		scrollPane_3.setBounds(617, 82, 323, 297);
+		contentPane.add(scrollPane_3);
+		
+		JTextArea textArea_1 = new JTextArea();
+		scrollPane_3.setViewportView(textArea_1);
+		
+		JLabel label_3 = new JLabel("\uC804\uCCB4 \uBA54\uB274");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		label_3.setBounds(617, 22, 323, 50);
+		contentPane.add(label_3);
 
 		DeliveryResultButtonHandler drsult = new DeliveryResultButtonHandler();
 
