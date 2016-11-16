@@ -8,16 +8,17 @@ public class DeliveryButtonHandler {
 	CookConnection cc = new CookConnection();
 	String sql;
 	Vector vec;
+	Integer price;
 	public void chinahandler(JTextField textField) { // 중식
 		try {
-			Integer price = new Integer(textField.getText());
+			price = new Integer(textField.getText());
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='중식'";
 			vec = cc.makeD_SQL(sql);
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -40,7 +41,7 @@ public class DeliveryButtonHandler {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -63,7 +64,7 @@ public class DeliveryButtonHandler {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -85,7 +86,7 @@ public class DeliveryButtonHandler {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -109,7 +110,7 @@ public class DeliveryButtonHandler {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -132,7 +133,7 @@ public class DeliveryButtonHandler {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -155,7 +156,7 @@ public class DeliveryButtonHandler {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -177,7 +178,7 @@ public class DeliveryButtonHandler {
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						DeliveryResult frame = new DeliveryResult(vec);
+						DeliveryResult frame = new DeliveryResult(vec,price);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
