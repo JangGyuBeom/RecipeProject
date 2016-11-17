@@ -9,7 +9,8 @@ public class DeliveryResultButtonHandler{
 	CookConnection cc = new CookConnection();
 	String sql;
 	ResultSet rset;
-	public void DeliveryResultHandler(String str, JTextField textField, JTextArea textArea, Integer price) {
+	public void DeliveryResultHandler(String str, JTextField textField, JTextArea textArea, Integer price, JTextArea textArea_1) {
+		textArea.setText("");
 		textArea.setText("");
 		sql = "select d_food, d_price from delivery where d_name = '"+str+"' and d_price <= "+price+";";
 		rset = cc.makeDR_SQL(sql);
@@ -21,12 +22,12 @@ public class DeliveryResultButtonHandler{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		textArea.append("------------------------\n");
+
 		sql = "select d_food, d_price from delivery where d_name = '"+str+"';";
 		rset = cc.makeDR_SQL(sql);
 		try{
 			while(rset.next()){
-				textArea.append(rset.getString(1)+"\t"+rset.getInt(2)+"\n");
+				textArea_1.append(rset.getString(1)+"\t"+rset.getInt(2)+"\n");
 			}
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
