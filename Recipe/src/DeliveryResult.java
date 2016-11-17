@@ -65,7 +65,6 @@ public class DeliveryResult extends JFrame {
 		contentPane.add(scrollPane_2);
 
 		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("±¼¸²", Font.PLAIN, 13));
 		scrollPane_2.setViewportView(textArea);
 
 		textField = new JTextField();

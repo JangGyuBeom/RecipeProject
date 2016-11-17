@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -49,7 +50,6 @@ public class Recipe채소_과일 extends JFrame {
 		panel.setForeground(Color.BLACK);
 		panel.setBounds(12, 64, 410, 192);
 		contentPane.add(panel);
-		
 		JCheckBox checkBox = new JCheckBox("\uC591\uD30C");
 		panel.add(checkBox);
 		
@@ -109,6 +109,48 @@ public class Recipe채소_과일 extends JFrame {
 		
 		JCheckBox checkBox_19 = new JCheckBox("\uC2DC\uAE08\uCE58");
 		panel.add(checkBox_19);
+		
+		JCheckBox chckbxRbf = new JCheckBox("\uADE4");
+		panel.add(chckbxRbf);
+		
+		JCheckBox checkBox_23 = new JCheckBox("\uBC30");
+		panel.add(checkBox_23);
+		
+		JCheckBox checkBox_21 = new JCheckBox("\uBA54\uB860");
+		panel.add(checkBox_21);
+		
+		JCheckBox checkBox_22 = new JCheckBox("\uC624\uB80C\uC9C0");
+		panel.add(checkBox_22);
+		
+		JCheckBox checkBox_24 = new JCheckBox("\uB354\uB355");
+		panel.add(checkBox_24);
+		
+		JCheckBox checkBox_25 = new JCheckBox("\uC5F0\uADFC");
+		panel.add(checkBox_25);
+		
+		JCheckBox checkBox_26 = new JCheckBox("\uC11D\uC774\uBC84\uC12F");
+		panel.add(checkBox_26);
+		
+		JCheckBox checkBox_29 = new JCheckBox("\uC591\uC1A1\uC774\uBC84\uC12F");
+		panel.add(checkBox_29);
+		
+		JCheckBox checkBox_27 = new JCheckBox("\uACE0\uC0AC\uB9AC");
+		panel.add(checkBox_27);
+		
+		JCheckBox checkBox_28 = new JCheckBox("\uC219\uC8FC");
+		panel.add(checkBox_28);
+		
+		JCheckBox checkBox_30 = new JCheckBox("\uCF69\uB098\uBB3C");
+		panel.add(checkBox_30);
+		
+		JCheckBox checkBox_31 = new JCheckBox("\uC465");
+		panel.add(checkBox_31);
+		
+		JCheckBox checkBox_32 = new JCheckBox("\uACF0\uCDE8");
+		panel.add(checkBox_32);
+		
+		JCheckBox checkBox_33 = new JCheckBox("\uD53C\uB9DD");
+		panel.add(checkBox_33);
 		
 		JLabel lblNewLabel = new JLabel("\uCC44\uC18C/\uACFC\uC77C");
 		lblNewLabel.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
