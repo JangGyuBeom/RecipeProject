@@ -4,15 +4,17 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class DeliveryButtonHandler {
+public class DeliveryButtonHandler extends Price {
 	CookConnection cc = new CookConnection();
 	String sql;
-	Vector vec;
-	Integer price;
-	public void chinahandler(JTextField textField) { // 중식
+	Vector<?> vec;
+	int price;
+	
+	public void chinahandler() { // 중식
 		try {
-			price = new Integer(textField.getText());
-
+			
+			price = getPrice();
+			
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='중식'";
 			vec = cc.makeD_SQL(sql);
 			EventQueue.invokeLater(new Runnable() {
@@ -31,10 +33,10 @@ public class DeliveryButtonHandler {
 
 	}
 
-	public void chickenhandler(JTextField textField) { // 치킨
+	public void chickenhandler() { // 치킨
 
 		try {
-			Integer price = new Integer(textField.getText());
+			price = getPrice();
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='치킨'";
 			vec = cc.makeD_SQL(sql);
@@ -55,9 +57,9 @@ public class DeliveryButtonHandler {
 
 	}
 
-	public void japanfoodhandler(JTextField textField) { // 일식
+	public void japanfoodhandler() { // 일식
 		try {
-			Integer price = new Integer(textField.getText());
+			price = getPrice();
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='일식'";
 			vec = cc.makeD_SQL(sql);
@@ -76,10 +78,10 @@ public class DeliveryButtonHandler {
 		}
 	}
 
-	public void koreanfoodhandler(JTextField textField) { // 한식
+	public void koreanfoodhandler() { // 한식
 
 		try {
-			Integer price = new Integer(textField.getText());
+			price = getPrice();
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='한식/분식'";
 			vec = cc.makeD_SQL(sql);
@@ -100,10 +102,10 @@ public class DeliveryButtonHandler {
 
 	}
 
-	public void westernfoodhandler(JTextField textField) { // 양식
+	public void westernfoodhandler() { // 양식
 
 		try {
-			Integer price = new Integer(textField.getText());
+			price = getPrice();
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='양식'";
 			vec = cc.makeD_SQL(sql);
@@ -123,10 +125,10 @@ public class DeliveryButtonHandler {
 
 	}
 
-	public void figsfeethandler(JTextField textField) { // 족발
+	public void figsfeethandler() { // 족발
 
 		try {
-			Integer price = new Integer(textField.getText());
+			price = getPrice();
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='족발/보쌈'";
 			vec = cc.makeD_SQL(sql);
@@ -146,10 +148,10 @@ public class DeliveryButtonHandler {
 
 	}
 
-	public void steamhandler(JTextField textField) { // 찜
+	public void steamhandler() { // 찜
 
 		try {
-			Integer price = new Integer(textField.getText());
+			price = getPrice();
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='찜/탕'";
 			vec = cc.makeD_SQL(sql);
@@ -168,10 +170,10 @@ public class DeliveryButtonHandler {
 		}
 	}
 
-	public void pizzahandler(JTextField textField) { // 피자
+	public void pizzahandler() { // 피자
 
 		try {
-			Integer price = new Integer(textField.getText());
+			price = getPrice();
 
 			sql = "select distinct d_name from delivery where d_price<=" + price + " and d_group='피자'";
 			vec = cc.makeD_SQL(sql);

@@ -1,6 +1,6 @@
 import java.awt.EventQueue;
 
-public class RecipeButtonHandler {
+public class RecipeButtonHandler extends Material{
 	
 	public void searchhandler(){ //°Ë»ö
 		

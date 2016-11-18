@@ -41,7 +41,7 @@ public class RecipeDelivery extends JFrame {
 	 * Create the frame.
 	 */
 	public RecipeDelivery() {
-		
+		Price p = new Price();
 		RecipeImage image = new RecipeImage();
 		DeliveryButtonHandler delivery = new DeliveryButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,35 +88,34 @@ public class RecipeDelivery extends JFrame {
 		textField.setBounds(204, 21, 513, 54);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		textField.addActionListener(new ActionListener() {
-			public void actionPerformed (ActionEvent arg0){
-			}
-		});
+		
 		JButton btn_중식 = new JButton(image.중식1);
 		btn_중식.addActionListener(new ActionListener() {
-			JFrame frame; //?
 			public void actionPerformed(ActionEvent arg0) {
-				delivery.chinahandler(textField);
+				p.setPrice(new Integer(textField.getText()));
+				delivery.chinahandler();
 			}
 		});
 		btn_중식.setBounds(62, 116, 290, 105);
 		contentPane.add(btn_중식);
 		
+		
 		JButton btn_치킨 = new JButton(image.치킨1);
 		btn_치킨.addActionListener(new ActionListener() {
-			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				delivery.chickenhandler(textField);
+				p.setPrice(new Integer(textField.getText()));
+				delivery.chickenhandler();
 			}
 		});
 		btn_치킨.setBounds(427, 116, 290, 105);
 		contentPane.add(btn_치킨);
 		
+		
 		JButton btn_일식 = new JButton(image.일식1);
 		btn_일식.addActionListener(new ActionListener() {
-				JFrame frame;
 				public void actionPerformed(ActionEvent arg0) {
-					delivery.japanfoodhandler(textField);
+					p.setPrice(new Integer(textField.getText()));
+					delivery.japanfoodhandler();
 				}
 		});
 		btn_일식.setBounds(62, 259, 290, 105);
@@ -124,9 +123,9 @@ public class RecipeDelivery extends JFrame {
 		
 		JButton btn_한식_분식 = new JButton(image.분식1);
 		btn_한식_분식.addActionListener(new ActionListener() {
-			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				delivery.koreanfoodhandler(textField);
+				p.setPrice(new Integer(textField.getText()));
+				delivery.koreanfoodhandler();
 			}
 		});
 		btn_한식_분식.setBounds(427, 259, 290, 105);
@@ -134,9 +133,9 @@ public class RecipeDelivery extends JFrame {
 		
 		JButton btn_족발_보쌈 = new JButton(image.족발1);
 		btn_족발_보쌈.addActionListener(new ActionListener() {
-			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				delivery.figsfeethandler(textField);
+				p.setPrice(new Integer(textField.getText()));
+				delivery.figsfeethandler();
 			}
 		});
 		btn_족발_보쌈.setBounds(427, 410, 290, 105);
@@ -144,9 +143,9 @@ public class RecipeDelivery extends JFrame {
 		
 		JButton btn_피자 = new JButton(image.피자1);
 		btn_피자.addActionListener(new ActionListener() {
-			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				delivery.pizzahandler(textField);
+				p.setPrice(new Integer(textField.getText()));
+				delivery.pizzahandler();
 			}
 		});
 		btn_피자.setBounds(427, 557, 290, 105);
@@ -154,9 +153,9 @@ public class RecipeDelivery extends JFrame {
 		
 		JButton btn_양식 = new JButton(image.양식1);
 		btn_양식.addActionListener(new ActionListener() {
-			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				delivery.westernfoodhandler(textField);
+				p.setPrice(new Integer(textField.getText()));
+				delivery.westernfoodhandler();
 			}
 		});
 		btn_양식.setBounds(62, 410, 290, 105);
@@ -164,9 +163,9 @@ public class RecipeDelivery extends JFrame {
 		
 		JButton btn_찜_탕 = new JButton(image.찜1);
 		btn_찜_탕.addActionListener(new ActionListener() {
-			JFrame frame;
 			public void actionPerformed(ActionEvent arg0) {
-				delivery.steamhandler(textField);
+				p.setPrice(new Integer(textField.getText()));
+				delivery.steamhandler();
 			}
 		});
 		btn_찜_탕.setBounds(62, 557, 290, 105);
