@@ -4,6 +4,17 @@ public class RecipeButtonHandler {
 	
 	public void searchhandler(){ //검색
 		
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						RecipeResult frame = new RecipeResult();
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+		
 	}
 
 	public void 채소_과일handler(){

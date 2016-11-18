@@ -70,12 +70,13 @@ public class RecipeCook extends JFrame {
 		btn_back.setBounds(12, 413, 50, 41);
 		contentPane.add(btn_back);
 		
-		JButton btn_search = new JButton("");
+		JButton btn_search = new JButton();
 		btn_search.setBorderPainted(false); 	//투명 버튼
 		btn_search.setFocusPainted(false);		//투명 버튼
 		btn_search.setContentAreaFilled(false); //투명 버튼
 		btn_search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				cook.searchhandler();
 			}
 		});
 		btn_search.setBounds(531, 21, 97, 54);
@@ -95,7 +96,7 @@ public class RecipeCook extends JFrame {
 		contentPane.add(money_image);
 		
 		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.RIGHT);
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setBackground(new Color(245, 245, 245));
 		textField.setFont(new Font("휴먼둥근헤드라인", Font.PLAIN, 38));
 		textField.setColumns(10);
