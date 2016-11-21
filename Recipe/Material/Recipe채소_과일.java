@@ -175,11 +175,11 @@ public class Recipe盲家_苞老 extends JFrame {
 		lblNewLabel.setBounds(12, 10, 410, 55);
 		contentPane.add(lblNewLabel);
 		
-		CheckM cm = new CheckM();
+		Material M = new Material();
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cm.Check盲家_苞老(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7,checkBox_8,checkBox_9,checkBox_10,checkBox_11,checkBox_12,checkBox_13,checkBox_14,checkBox_15,checkBox_16,checkBox_17,checkBox_18,checkBox_19,checkBox_20,checkBox_21,checkBox_22,checkBox_23,checkBox_24,checkBox_25,checkBox_26,checkBox_27,checkBox_28,checkBox_29,checkBox_30,checkBox_31,checkBox_32,checkBox_33,checkBox_34,checkBox_35,checkBox_36,checkBox_37,checkBox_38,checkBox_39,checkBox_40,checkBox_41,checkBox_42,checkBox_43,checkBox_44,checkBox_45);
+				M.SearchM(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7,checkBox_8,checkBox_9,checkBox_10,checkBox_11,checkBox_12,checkBox_13,checkBox_14,checkBox_15,checkBox_16,checkBox_17,checkBox_18,checkBox_19,checkBox_20,checkBox_21,checkBox_22,checkBox_23,checkBox_24,checkBox_25,checkBox_26,checkBox_27,checkBox_28,checkBox_29,checkBox_30,checkBox_31,checkBox_32,checkBox_33,checkBox_34,checkBox_35,checkBox_36,checkBox_37,checkBox_38,checkBox_39,checkBox_40,checkBox_41,checkBox_42,checkBox_43,checkBox_44,checkBox_45);
 				dispose();
 			}
 		});

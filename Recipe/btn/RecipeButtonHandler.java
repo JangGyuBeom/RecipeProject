@@ -1,5 +1,7 @@
 import java.awt.EventQueue;
 
+import javax.swing.JOptionPane;
+
 public class RecipeButtonHandler extends Material{
 	
 	public void searchhandler(){ //검색
@@ -7,8 +9,8 @@ public class RecipeButtonHandler extends Material{
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						mat = getMat();
-						System.out.println(mat);
+						
+						System.out.println(Material);
 						RecipeResult frame = new RecipeResult();
 						frame.setVisible(true);
 					} catch (Exception e) {
@@ -17,6 +19,11 @@ public class RecipeButtonHandler extends Material{
 				}
 			});
 		
+	}
+	
+	public void reset(){
+		Material.clear();
+		JOptionPane.showMessageDialog(null,"선택된 재료 초기화");
 	}
 
 	public void 채소_과일handler(){

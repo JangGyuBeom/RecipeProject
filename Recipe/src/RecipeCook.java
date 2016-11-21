@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
@@ -42,6 +43,7 @@ public class RecipeCook extends JFrame {
 		
 		RecipeImage image = new RecipeImage();
 		RecipeButtonHandler cook = new RecipeButtonHandler();
+	
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 633, 502);
@@ -243,5 +245,23 @@ public class RecipeCook extends JFrame {
 		label_5.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
 		label_5.setBounds(379, 255, 161, 47);
 		contentPane.add(label_5);
+		
+		
+		JButton btnNewButton = new JButton(image.reset);
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cook.reset();
+			}
+		});
+		btnNewButton.setBounds(429, 326, 66, 63);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uC7AC\uB8CC \uCD08\uAE30\uD654");
+		lblNewLabel_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(421, 354, 74, 18);
+		contentPane.add(lblNewLabel_1);
 	}
 }

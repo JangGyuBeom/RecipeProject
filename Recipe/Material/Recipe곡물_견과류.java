@@ -63,11 +63,11 @@ public class Recipe°î¹°_°ß°ú·ù extends JFrame {
 		label.setBounds(12, 10, 410, 44);
 		contentPane.add(label);
 		
-		CheckM cm = new CheckM();
+		Material M = new Material();
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cm.Check°î¹°_°ß°ú·ù(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7);
+				M.SearchM(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7);
 				dispose();
 			}
 		});
