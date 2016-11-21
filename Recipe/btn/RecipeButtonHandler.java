@@ -7,6 +7,8 @@ public class RecipeButtonHandler extends Material{
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
+						mat = getMat();
+						System.out.println(mat);
 						RecipeResult frame = new RecipeResult();
 						frame.setVisible(true);
 					} catch (Exception e) {

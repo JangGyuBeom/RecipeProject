@@ -16,25 +16,6 @@ public class Recipe°î¹°_°ß°ú·ù extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-/*	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Recipe°î¹°_°ß°ú·ù frame = new Recipe°î¹°_°ß°ú·ù();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
-	/**
-	 * Create the frame.
-	 */
 	public Recipe°î¹°_°ß°ú·ù() {
 		
 		RecipeImage image = new RecipeImage();
@@ -52,8 +33,8 @@ public class Recipe°î¹°_°ß°ú·ù extends JFrame {
 		panel.setBounds(12, 64, 410, 191);
 		contentPane.add(panel);
 		
-		JCheckBox chckbxDkahsem = new JCheckBox("\uAE68");
-		panel.add(chckbxDkahsem);
+		JCheckBox checkBox= new JCheckBox("\uAE68");
+		panel.add(checkBox);
 		
 		JCheckBox checkBox_1 = new JCheckBox("\uB545\uCF69");
 		panel.add(checkBox_1);
@@ -82,9 +63,11 @@ public class Recipe°î¹°_°ß°ú·ù extends JFrame {
 		label.setBounds(12, 10, 410, 44);
 		contentPane.add(label);
 		
+		CheckM cm = new CheckM();
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				cm.Check°î¹°_°ß°ú·ù(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7);
 				dispose();
 			}
 		});

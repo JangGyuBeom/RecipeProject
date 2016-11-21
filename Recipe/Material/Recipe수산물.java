@@ -16,25 +16,6 @@ public class Recipe수산물 extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Recipe수산물 frame = new Recipe수산물();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
-	/**
-	 * Create the frame.
-	 */
 	public Recipe수산물() {
 		RecipeImage image = new RecipeImage();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -107,9 +88,11 @@ public class Recipe수산물 extends JFrame {
 		label.setBounds(12, 10, 410, 44);
 		contentPane.add(label);
 		
+		CheckM cm = new CheckM();
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				cm.Check수산물(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7,checkBox_9,checkBox_10,checkBox_11,checkBox_12,checkBox_13,checkBox_14,checkBox_15,checkBox_16,checkBox_17);
 				dispose();
 			}
 		});
