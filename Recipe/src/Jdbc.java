@@ -13,10 +13,10 @@ public class Jdbc {
 		}
 		
 		try {	
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:9000/recipe?useSSL=false",
+			/*conn = DriverManager.getConnection("jdbc:mysql://localhost:9000/recipe?useSSL=false",
 				"hoonju", "19950905"); // Xshell
-			/*conn = DriverManager.getConnection("jdbc:mysql://165.229.88.102:3306/recipe?useSSL=false&autoReconnect=true",
-				"hoonju", "19950905");  // 학교*/
+*/			conn = DriverManager.getConnection("jdbc:mysql://165.229.88.102:3306/recipe?useSSL=false&autoReconnect=true",
+				"hoonju", "19950905");  // 학교
 			st = conn.createStatement();
 		} catch (SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
