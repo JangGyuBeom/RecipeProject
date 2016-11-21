@@ -120,6 +120,7 @@ public class Recipe가공_유제품 extends JFrame {
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				dispose();
 			}
 		});
