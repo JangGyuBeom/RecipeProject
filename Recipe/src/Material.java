@@ -7,7 +7,7 @@ public class Material extends Price {
 	public static ArrayList<String> Material = new ArrayList<String>();
 	ArrayList<String> fName = new ArrayList<String>();
 	public static int allSumMaterialPrice = 0;
-	//int sumMaterialRice;  
+
 	CookConnection cc = new CookConnection();
 
 	// 채소_과일
@@ -485,6 +485,7 @@ public class Material extends Price {
 					sumprice += cc.sumMaterial_SQL(fName.get(i), Material.get(j));
 				}
 				cookprice = cc.sumMaterial_SQL("select f_price from cook where f_name = '" + fName.get(i) + "';");
+				
 				if (price >= cookprice - sumprice) {
 					vec.addElement(fName.get(i));
 				}

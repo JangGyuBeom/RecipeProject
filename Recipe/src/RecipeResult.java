@@ -24,6 +24,7 @@ public class RecipeResult extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private JTextField textField_1;
 	
 	
 
@@ -110,7 +111,7 @@ public class RecipeResult extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel label_4 = new JLabel("\uC608\uC0C1\uC2DC\uAC04");
+		JLabel label_4 = new JLabel("\uC608\uC0C1 \uC2DC\uAC04");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
 		label_4.setBounds(786, 10, 192, 50);
@@ -135,6 +136,20 @@ public class RecipeResult extends JFrame {
 		label_5.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
 		label_5.setBounds(532, 10, 238, 50);
 		contentPane.add(label_5);
+		
+		JLabel label_6 = new JLabel("\uCD94\uAC00 \uBE44\uC6A9");
+		label_6.setHorizontalAlignment(SwingConstants.CENTER);
+		label_6.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		label_6.setBounds(786, 99, 192, 50);
+		contentPane.add(label_6);
+		
+		textField_1 = new JTextField();
+		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_1.setColumns(10);
+		textField_1.setBounds(786, 154, 192, 29);
+		
+		
+		contentPane.add(textField_1);
 		
 		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();
 		ListSelectionListener ls = new ListSelectionListener() {
