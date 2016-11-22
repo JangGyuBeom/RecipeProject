@@ -157,7 +157,7 @@ public class DeliveryResult extends JFrame {
 				
 				if (!e.getValueIsAdjusting()) {
 					str = (String) list.getSelectedValue();
-					drsult.DeliveryResultHandler(str,textField,textArea,price,textArea_1);
+					drsult.DeliveryResultHandler(str,textField,textArea,price,textArea_1,textArea_2,textArea_3);
 				}
 			}
 		};

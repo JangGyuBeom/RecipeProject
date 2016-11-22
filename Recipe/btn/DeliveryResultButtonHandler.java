@@ -9,14 +9,17 @@ public class DeliveryResultButtonHandler{
 	CookConnection cc = new CookConnection();
 	String sql;
 	ResultSet rset;
-	public void DeliveryResultHandler(String str, JTextField textField, JTextArea textArea, Integer price, JTextArea textArea_1) {
+	public void DeliveryResultHandler(String str, JTextField textField, JTextArea textArea, Integer price, JTextArea textArea_1, JTextArea textArea_2, JTextArea textArea_3) {
 		textArea.setText("");
-		textArea.setText("");
+		textArea_1.setText("");
+		textArea_2.setText("");
+		textArea_3.setText("");
 		sql = "select d_food, d_price from delivery where d_name = '"+str+"' and d_price <= "+price+";";
 		rset = cc.makeDR_SQL(sql);
 		try{
 			while(rset.next()){
-				textArea.append(rset.getString(1)+"\t"+rset.getInt(2)+"\n");
+				textArea.append(rset.getString(1)+"\n");
+				textArea_2.append(rset.getInt(2)+"\n");
 			}
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -27,7 +30,8 @@ public class DeliveryResultButtonHandler{
 		rset = cc.makeDR_SQL(sql);
 		try{
 			while(rset.next()){
-				textArea_1.append(rset.getString(1)+"\t"+rset.getInt(2)+"\n");
+				textArea_1.append(rset.getString(1)+"\n");
+				textArea_3.append(rset.getInt(2)+"\n");
 			}
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
