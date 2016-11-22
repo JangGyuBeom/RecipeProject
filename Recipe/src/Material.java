@@ -474,14 +474,15 @@ public class Material extends Price {
 		ResultSet rset;
 		int sumprice;
 		int cookprice;
+	
 		rset = cc.makeDR_SQL("select f_name from cook where f_price between " + price + " and " + allSumMaterialPrice + ";");
 		try {
 			while (rset.next()) {
 				fName.add(rset.getString(1));
+				
 			}
 			for (int i = 0; i < fName.size(); i++) {
 				sumprice = 0;
-
 				for (int j = 0; j < Material.size(); j++) {
 					sumprice += cc.sumMaterial_SQL(fName.get(i), Material.get(j));
 				}

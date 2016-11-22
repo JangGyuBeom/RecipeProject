@@ -5,8 +5,8 @@ import javax.swing.JOptionPane;
 
 public class RecipeButtonHandler extends Material{
 	CookConnection cc = new CookConnection();
-	int price;
 	Vector<String> vec;
+	int price;
 	String sql;
 	
 	
@@ -16,7 +16,7 @@ public class RecipeButtonHandler extends Material{
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						int price = getPrice();
+						price = getPrice();
 						sql = "select f_name from cook where f_price <= "+price+";";
 						vec = cc.makeD_SQL(sql);
 						sumMaterialPrice();
@@ -24,6 +24,8 @@ public class RecipeButtonHandler extends Material{
 						vec = isSearchM(vec);
 						RecipeResult frame = new RecipeResult(vec);
 						frame.setVisible(true);
+						
+					
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
