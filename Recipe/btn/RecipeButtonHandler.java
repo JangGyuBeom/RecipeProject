@@ -1,17 +1,29 @@
 import java.awt.EventQueue;
+import java.util.*;
 
 import javax.swing.JOptionPane;
 
 public class RecipeButtonHandler extends Material{
+	CookConnection cc = new CookConnection();
+	int price;
+	Vector<String> vec;
+	String sql;
 	
+	
+
 	public void searchhandler(){ //°Ë»ö
 		
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
-						
-						System.out.println(Material);
-						RecipeResult frame = new RecipeResult();
+						int price = getPrice();
+						sql = "select f_name from cook where f_price <= "+price+";";
+						vec = cc.makeD_SQL(sql);
+						if(Material != null)
+							sumMaterialPrice();
+						vec.addElement("----------------------------------------------------");
+						vec = isSearchM(vec);
+						RecipeResult frame = new RecipeResult(vec);
 						frame.setVisible(true);
 					} catch (Exception e) {
 						e.printStackTrace();
