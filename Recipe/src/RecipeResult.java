@@ -77,7 +77,7 @@ public class RecipeResult extends JFrame {
 		JButton button = new JButton(image.Back);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				vec.clear();
 				dispose();
 			}
 		});

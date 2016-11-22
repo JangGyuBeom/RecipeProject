@@ -21,7 +21,8 @@ public class RecipeButtonHandler extends Material{
 						vec = cc.makeD_SQL(sql);
 						sumMaterialPrice();
 						vec.addElement("------------------------------------------------");
-						vec = isSearchM(vec);
+						if(Material.size() > 0)
+							vec = isSearchM(vec);
 						RecipeResult frame = new RecipeResult(vec);
 						frame.setVisible(true);
 					} catch (Exception e) {

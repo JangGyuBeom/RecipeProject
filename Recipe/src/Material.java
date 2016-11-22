@@ -461,6 +461,7 @@ public class Material extends Price {
 	}
 
 	public void sumMaterialPrice() {
+		allSumMaterialPrice = 0;
 		int price = getPrice();
 		allSumMaterialPrice += price;
 		for (int i = 0; i < Material.size(); i++) {
