@@ -19,6 +19,7 @@ public class RecipeImage {
 	
 	//cook
 	ImageIcon Search = new ImageIcon("Image/search.png");
+	ImageIcon Add = new ImageIcon("Image/add.png");
 	ImageIcon Money = new ImageIcon("Image/money.png");
 	ImageIcon background_ora = new ImageIcon("Image/background_ora.jpg");
 	ImageIcon reset = new ImageIcon("Image/reset.png");

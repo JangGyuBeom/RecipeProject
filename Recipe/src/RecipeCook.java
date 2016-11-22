@@ -17,6 +17,9 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
 
 public class RecipeCook extends JFrame {
 
@@ -44,9 +47,10 @@ public class RecipeCook extends JFrame {
 
 		RecipeImage image = new RecipeImage();
 		RecipeButtonHandler cook = new RecipeButtonHandler();
+		Material M = new Material();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 633, 502);
+		setBounds(100, 100, 636, 499);
 		contentPane = new JPanel() {
 			public void paintComponent(Graphics g) {
 				g.drawImage(image.background_ora.getImage(), 0, 0, null);
@@ -69,7 +73,7 @@ public class RecipeCook extends JFrame {
 		btn_back.setFocusPainted(false);
 		btn_back.setContentAreaFilled(false);
 		btn_back.setBorderPainted(false);
-		btn_back.setBounds(12, 413, 50, 41);
+		btn_back.setBounds(12, 410, 50, 41);
 		contentPane.add(btn_back);
 
 		JButton btn_search = new JButton();
@@ -91,7 +95,7 @@ public class RecipeCook extends JFrame {
 		contentPane.add(btn_search);
 
 		JLabel back_image = new JLabel(image.Back);
-		back_image.setBounds(12, 413, 50, 41);
+		back_image.setBounds(12, 410, 50, 41);
 		contentPane.add(back_image);
 
 		JLabel serach_image = new JLabel(image.Search);
@@ -261,12 +265,15 @@ public class RecipeCook extends JFrame {
 				cook.reset();
 			}
 		});
-		btnNewButton.setBounds(429, 326, 66, 63);
+		btnNewButton.setBounds(425, 318, 74, 73);
 		contentPane.add(btnNewButton);
 
 		JLabel lblNewLabel_1 = new JLabel("\uC7AC\uB8CC \uCD08\uAE30\uD654");
 		lblNewLabel_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(421, 354, 74, 18);
+		lblNewLabel_1.setBounds(425, 345, 74, 18);
 		contentPane.add(lblNewLabel_1);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btn_back, btn_search, serach_image, money_image, textField, btn_채소_과일, back_image, lblNewLabel, btn_육류, label, btn_수산물, label_1, btn_곡물_견과류, label_2, btn_양념_소스, label_3, btn_가공_유제품, label_4, btn_기타, label_5, btnNewButton, lblNewLabel_1}));
+		
+		
 	}
 }

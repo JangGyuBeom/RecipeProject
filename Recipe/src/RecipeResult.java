@@ -29,8 +29,11 @@ public class RecipeResult extends JFrame {
 
 	public RecipeResult(Vector<String> vec) {
 		RecipeImage image = new RecipeImage();
+		Material M = new Material();
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1020, 525);
+		setBounds(100, 100, 1020, 584);
 		contentPane = new JPanel(){
  			public void paintComponent(Graphics g){
  				g.drawImage(image.background_ora.getImage(),0,0,null);
@@ -43,7 +46,7 @@ public class RecipeResult extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(30, 70, 217, 297);
+		scrollPane.setBounds(30, 70, 217, 406);
 		contentPane.add(scrollPane);
 		
 		JList list = new JList();
@@ -51,10 +54,11 @@ public class RecipeResult extends JFrame {
 		list.setListData(vec);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(270, 179, 500, 297);
+		scrollPane_1.setBounds(270, 253, 708, 223);
 		contentPane.add(scrollPane_1);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setLineWrap(true);
 		scrollPane_1.setViewportView(textArea);
 		
 		JLabel label = new JLabel("\uC694\uB9AC");
@@ -66,49 +70,71 @@ public class RecipeResult extends JFrame {
 		JLabel label_1 = new JLabel("\uB808\uC2DC\uD53C");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_1.setBounds(270, 119, 500, 50);
+		label_1.setBounds(270, 193, 708, 50);
 		contentPane.add(label_1);
 		
 		JButton button = new JButton(image.Back);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				dispose();
 			}
 		});
 		button.setFocusPainted(false);
 		button.setContentAreaFilled(false);
 		button.setBorderPainted(false);
-		button.setBounds(12, 388, 50, 41);
+		button.setBounds(12, 495, 50, 41);
 		contentPane.add(button);
 		
 		JLabel label_2 = new JLabel((Icon) null);
-		label_2.setBounds(12, 388, 50, 41);
+		label_2.setBounds(12, 495, 50, 41);
 		contentPane.add(label_2);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(270, 73, 500, 50);
+		scrollPane_2.setBounds(532, 73, 238, 110);
 		contentPane.add(scrollPane_2);
 		
 		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setLineWrap(true);
 		scrollPane_2.setViewportView(textArea_1);
 		
-		JLabel label_3 = new JLabel("\uC7AC\uB8CC");
+		JLabel label_3 = new JLabel("\uC120\uD0DD\uD55C \uC7AC\uB8CC");
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_3.setBounds(270, 10, 500, 50);
+		label_3.setBounds(270, 10, 238, 50);
 		contentPane.add(label_3);
 		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBounds(786, 75, 192, 29);
+		textField.setBounds(786, 71, 192, 29);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel label_4 = new JLabel("\uC608\uC0C1\uC2DC\uAC04");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_4.setBounds(802, 10, 158, 50);
+		label_4.setBounds(786, 10, 192, 50);
 		contentPane.add(label_4);
+		
+		JScrollPane scrollPane_3 = new JScrollPane();
+		scrollPane_3.setBounds(270, 73, 238, 110);
+		contentPane.add(scrollPane_3);
+		
+		
+		
+		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setLineWrap(true);
+		scrollPane_3.setViewportView(textArea_2);
+		
+		for(int i=0; i < M.Material.size(); i++){
+			textArea_2.append(M.Material.get(i)+"  ");
+		}
+		
+		JLabel label_5 = new JLabel("\uD544\uC694 \uC7AC\uB8CC");
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		label_5.setBounds(532, 10, 238, 50);
+		contentPane.add(label_5);
 		
 		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();
 		ListSelectionListener ls = new ListSelectionListener() {

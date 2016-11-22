@@ -7,7 +7,7 @@ public class Material extends Price {
 	public static ArrayList<String> Material = new ArrayList<String>();
 	ArrayList<String> fName = new ArrayList<String>();
 	public static int allSumMaterialPrice = 0;
-	int sumMaterialRice;
+	//int sumMaterialRice;  
 	CookConnection cc = new CookConnection();
 
 	// 채소_과일
@@ -361,6 +361,7 @@ public class Material extends Price {
 	 * 
 	 * }
 	 */
+	
 	// 곡물_견과류
 	public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 			JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7) {
