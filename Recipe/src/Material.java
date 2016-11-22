@@ -463,8 +463,7 @@ public class Material extends Price {
 		int price = getPrice();
 		allSumMaterialPrice += price;
 		for (int i = 0; i < Material.size(); i++) {
-			allSumMaterialPrice += cc
-					.sumMaterial_SQL("select mat_price from material where mat_name = '" + Material.get(i) + "';");
+			allSumMaterialPrice += cc.sumMaterial_SQL("select mat_price from material where mat_name = '" + Material.get(i) + "';");
 		}
 	}
 
@@ -489,7 +488,6 @@ public class Material extends Price {
 					vec.addElement(fName.get(i));
 				}
 			}
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

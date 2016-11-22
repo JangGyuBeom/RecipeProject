@@ -28,8 +28,8 @@ public class CookConnection {
 		return price;
 	}
 	int sumMaterial_SQL(String fname,String material){
-		int price;
-		sql = "select mat_price from material where exists (select mat_name from comat where f_name = '"+fname+"' and mat_name = '"+material+"');";
+		int price = 0;
+		sql = "select mat_price from material where mat_name = '"+material+"' and exists (select mat_name from comat where f_name = '"+fname+"' and mat_name = '"+material+"');";
 		price = jdbc.returnSQL(sql);
 		return price;
 	}
