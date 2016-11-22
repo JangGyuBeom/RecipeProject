@@ -485,7 +485,7 @@ public class Material extends Price {
 					sumprice += cc.sumMaterial_SQL(fName.get(i), Material.get(j));
 				}
 				cookprice = cc.sumMaterial_SQL("select f_price from cook where f_name = '" + fName.get(i) + "';");
-				if (cookprice >= (allSumMaterialPrice - sumprice) && (allSumMaterialPrice - sumprice) >= 0) {
+				if (price >= cookprice - sumprice) {
 					vec.addElement(fName.get(i));
 				}
 			}
