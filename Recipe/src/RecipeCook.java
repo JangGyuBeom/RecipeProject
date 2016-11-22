@@ -29,7 +29,7 @@ public class RecipeCook extends JFrame {
 
 	/**
 	 * Launch the application.
-	 */
+	 *//*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,7 +41,7 @@ public class RecipeCook extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	public RecipeCook() {
 
@@ -64,7 +64,7 @@ public class RecipeCook extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton btn_back = new JButton();
+		JButton btn_back = new JButton(image.Back);
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -93,10 +93,6 @@ public class RecipeCook extends JFrame {
 		});
 		btn_search.setBounds(531, 21, 97, 54);
 		contentPane.add(btn_search);
-
-		JLabel back_image = new JLabel(image.Back);
-		back_image.setBounds(12, 410, 50, 41);
-		contentPane.add(back_image);
 
 		JLabel serach_image = new JLabel(image.Search);
 		serach_image.setBounds(529, 10, 86, 73);
@@ -272,7 +268,7 @@ public class RecipeCook extends JFrame {
 		lblNewLabel_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(425, 345, 74, 18);
 		contentPane.add(lblNewLabel_1);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btn_back, btn_search, serach_image, money_image, textField, btn_채소_과일, back_image, lblNewLabel, btn_육류, label, btn_수산물, label_1, btn_곡물_견과류, label_2, btn_양념_소스, label_3, btn_가공_유제품, label_4, btn_기타, label_5, btnNewButton, lblNewLabel_1}));
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btn_back, btn_search, serach_image, money_image, textField, btn_채소_과일, lblNewLabel, btn_육류, label, btn_수산물, label_1, btn_곡물_견과류, label_2, btn_양념_소스, label_3, btn_가공_유제품, label_4, btn_기타, label_5, btnNewButton, lblNewLabel_1}));
 		
 		
 	}

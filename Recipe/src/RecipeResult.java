@@ -87,12 +87,8 @@ public class RecipeResult extends JFrame {
 		button.setBounds(12, 495, 50, 41);
 		contentPane.add(button);
 		
-		JLabel label_2 = new JLabel((Icon) null);
-		label_2.setBounds(12, 495, 50, 41);
-		contentPane.add(label_2);
-		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(532, 73, 238, 110);
+		scrollPane_2.setBounds(532, 70, 238, 113);
 		contentPane.add(scrollPane_2);
 		
 		JTextArea textArea_1 = new JTextArea();
@@ -107,7 +103,7 @@ public class RecipeResult extends JFrame {
 		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBounds(786, 71, 192, 29);
+		textField.setBounds(786, 70, 192, 29);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -118,7 +114,7 @@ public class RecipeResult extends JFrame {
 		contentPane.add(label_4);
 		
 		JScrollPane scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBounds(270, 73, 238, 110);
+		scrollPane_3.setBounds(270, 70, 238, 113);
 		contentPane.add(scrollPane_3);
 		
 		
@@ -134,7 +130,7 @@ public class RecipeResult extends JFrame {
 		JLabel label_5 = new JLabel("\uD544\uC694 \uC7AC\uB8CC");
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_5.setBounds(532, 10, 238, 50);
+		label_5.setBounds(563, 10, 158, 50);
 		contentPane.add(label_5);
 		
 		JLabel label_6 = new JLabel("\uCD94\uAC00 \uBE44\uC6A9");
@@ -150,6 +146,30 @@ public class RecipeResult extends JFrame {
 		
 		
 		contentPane.add(textField_1);
+		
+		JButton btnNewButton = new JButton(image.ComMoney);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								RecipeCompareMaterial frame = new RecipeCompareMaterial();
+								frame.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+					});
+				
+
+			}
+		});
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setBounds(720, 13, 33, 47);
+		contentPane.add(btnNewButton);
 		
 		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();
 		ListSelectionListener ls = new ListSelectionListener() {

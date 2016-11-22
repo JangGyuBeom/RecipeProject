@@ -20,7 +20,7 @@ public class RecipeButtonHandler extends Material{
 						sql = "select f_name from cook where f_price <= "+price+";";
 						vec = cc.makeD_SQL(sql);
 						sumMaterialPrice();
-						vec.addElement("--------------------------------------------------");
+						vec.addElement("------------------------------------------------");
 						vec = isSearchM(vec);
 						RecipeResult frame = new RecipeResult(vec);
 						frame.setVisible(true);
