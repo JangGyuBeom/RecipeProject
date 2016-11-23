@@ -25,7 +25,7 @@ public class RecipeResult extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	
+	String rName;
 	
 
 	public RecipeResult(Vector<String> vec) {
@@ -117,8 +117,6 @@ public class RecipeResult extends JFrame {
 		scrollPane_3.setBounds(270, 70, 238, 113);
 		contentPane.add(scrollPane_3);
 		
-		
-		
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setLineWrap(true);
 		scrollPane_3.setViewportView(textArea_2);
@@ -142,27 +140,35 @@ public class RecipeResult extends JFrame {
 		textField_1 = new JTextField();
 		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_1.setColumns(10);
-		textField_1.setBounds(786, 154, 192, 29);
-		
-		
+		textField_1.setBounds(786, 154, 192, 29);		
 		contentPane.add(textField_1);
+			
+		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();
+		ListSelectionListener ls = new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent e) {
+				String str;
+				if (!e.getValueIsAdjusting()) {
+					str = (String) list.getSelectedValue();
+					rName = str; //선택된 레시피 이름을 복사하기 위해서 만든 변수 - 재료값 비교에 쓰임
+					rRsult.RecipeResultHandler(str,textArea_1,textArea,textField,textField_1);
+				}
+			}
+		};
+		list.addListSelectionListener(ls);
 		
 		JButton btnNewButton = new JButton(image.ComMoney);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
-								RecipeCompareMaterial frame = new RecipeCompareMaterial();
+								RecipeCompareMaterial frame = new RecipeCompareMaterial(rName); //레시피 이름을 RecipeCompareMaterial 클래스로 넘김
 								frame.setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
 						}
 					});
-				
-
 			}
 		});
 		btnNewButton.setFocusPainted(false);
@@ -170,18 +176,5 @@ public class RecipeResult extends JFrame {
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setBounds(720, 13, 33, 47);
 		contentPane.add(btnNewButton);
-		
-		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();
-		ListSelectionListener ls = new ListSelectionListener() {
-			public void valueChanged(ListSelectionEvent e) {
-				String str;
-				
-				if (!e.getValueIsAdjusting()) {
-					str = (String) list.getSelectedValue();
-					rRsult.RecipeResultHandler(str,textArea_1,textArea,textField);
-				}
-			}
-		};
-		list.addListSelectionListener(ls);
 	}
 }

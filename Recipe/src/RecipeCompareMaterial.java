@@ -1,19 +1,15 @@
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Graphics;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.Icon;
 import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class RecipeCompareMaterial extends JFrame {
@@ -26,12 +22,13 @@ public class RecipeCompareMaterial extends JFrame {
 	
 	/**
 	 * Create the frame.
+	 * @param matName 
+	 * @param str 
 	 */
-	public RecipeCompareMaterial() {
+	public RecipeCompareMaterial(String rName) {
 		
 		RecipeImage image = new RecipeImage();
-		
-		
+		RecipeResultButtonHandler rb = new RecipeResultButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 708, 429);
 		contentPane = new JPanel(){
@@ -75,7 +72,7 @@ public class RecipeCompareMaterial extends JFrame {
 		
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
-		
+
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(231, 83, 136, 232);
 		contentPane.add(scrollPane_1);
@@ -96,6 +93,8 @@ public class RecipeCompareMaterial extends JFrame {
 		
 		JTextArea textArea_3 = new JTextArea();
 		scrollPane_3.setViewportView(textArea_3);
+	
+		rb.RecipeCompareMaterialHandler(rName,textArea,textArea_1,textArea_2,textArea_3); 
 		
 		JButton button = new JButton(image.Back);
 		button.addActionListener(new ActionListener() {
