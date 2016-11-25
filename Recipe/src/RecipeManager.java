@@ -306,5 +306,27 @@ public class RecipeManager extends JFrame {
 		JLabel label_15 = new JLabel(image.modi);
 		label_15.setBounds(978, 623, 64, 57);
 		contentPane.add(label_15);
+		
+		
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(387, 469, 111, 99);
+		contentPane.add(scrollPane_2);
+		
+		JTextArea textArea_2 = new JTextArea();
+		scrollPane_2.setViewportView(textArea_2);
+		
+		JButton btnNewButton_2 = new JButton("New button");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textArea_2.append(textField_7.getText());
+				
+				
+			}
+		});
+		btnNewButton_2.setBounds(390, 422, 97, 23);
+		contentPane.add(btnNewButton_2);
+	
+		
+		
 	}
 }
