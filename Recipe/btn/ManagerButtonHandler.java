@@ -6,11 +6,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class ManagerButtonHandler {
-
+	String sql;
+	ManagerConnection mc = new ManagerConnection();
 	public void noticehandler(JComboBox comboBox, JTextField textField, JTextArea textArea) {
 		try {
-			String sql;
-			ManagerConnection mc = new ManagerConnection();
 			String str = (String) comboBox.getSelectedItem();
 			Integer num = new Integer(textField.getText());
 			String text = new String(textArea.getText());
@@ -34,36 +33,39 @@ public class ManagerButtonHandler {
 
 	}
 
-	public void recipehandler(JComboBox comboBox, JTextField textField_1, JTextField textField_2, JTextArea textArea, JTextField textField_3) {
-		/*try{	
-			String sql;
-			ManagerConnection mc = new ManagerConnection();
-			String str = (String)comboBox.getSelectedItem();
-			String food = new String(textField_1.getText());
-			Integer price = new Integer(textField_2.getText());
-			String cooking = new String(textArea.getText());
-			String time= new String(textField_3.getText());
+	public void recipehandler(String str, String foodname, Integer price, String cooking, String time) {
+		try{	
 			if (str == "등록") {
 				str = "insert into";
-				sql = str + " cook(f_name,f_price,f_recipe,f_time) values('" + food + "'," + price + ",'"+cooking+"','"+time+"');";
+				sql = str + " cook(f_name,f_price,f_recipe,f_time) values('" + foodname + "'," + price + ",'"+cooking+"','"+time+"');";
 				JOptionPane.showMessageDialog(null, "입력 완료");
 			} else if (str == "수정") {
 				str = "update";
-				sql = str + " cook set f_price = " + price + " and f_recipe = '"+cooking+"' and f_time = '"+time+"' where f_name = '" + food + "';";
+				sql = str + " cook set f_price = " + price + " and f_recipe = '"+cooking+"' and f_time = '"+time+"' where f_name = '" + foodname + "';";
 				JOptionPane.showMessageDialog(null, "수정 완료");
 			} else {
 				str = "delete";
-				sql = str + " from cook where f_name = '" + food + "';";
+				sql = str + " from cook where f_name = '" + foodname + "';";
 				JOptionPane.showMessageDialog(null, "삭제 완료");
 			}
 			mc.makeSQL(sql);
 		} catch(Exception k){
-			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
-		}*/
+			JOptionPane.showMessageDialog(null, "빈 공간이 있습니다.");
+		}
 	}
-
+	public void recipehandler(String str, String foodname){
+		try{
+			str = "delete";
+			sql = str + " from cook where f_name = '" + foodname + "';";
+			mc.makeSQL(sql);
+			JOptionPane.showMessageDialog(null, "삭제 완료");
+		}catch(Exception k){
+			JOptionPane.showMessageDialog(null, "레시피이름을 입력하지 않았습니다.\n입력해 주세요.");
+		}
+	}
+	
 	public void deliveryhandler(JComboBox comboBox, JTextField textField_1, JTextField textField_2, JTextField textField_3, JTextField textField_4, JTextField textField_5) {
-		/*try{
+		try{
 			String sql;
 			ManagerConnection mc = new ManagerConnection();
 			String str = (String)comboBox.getSelectedItem();
@@ -87,8 +89,8 @@ public class ManagerButtonHandler {
 			}
 			mc.makeSQL(sql);
 		} catch(Exception k){
-			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
-		}*/
+			JOptionPane.showMessageDialog(null, "빈공간이 있습니다.");
+		}
 	}
 
 	public void inquireshandler() {
@@ -102,5 +104,8 @@ public class ManagerButtonHandler {
 				}
 			}
 		});
+	}
+	public void PassWordHandler(){
+		
 	}
 }

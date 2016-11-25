@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -28,6 +29,11 @@ public class RecipeManager extends JFrame {
 	public RecipeManager() {
 		RecipeImage image = new RecipeImage();
 		ManagerButtonHandler manager = new ManagerButtonHandler();
+		ArrayList<String> mat = new ArrayList<String>();	//재료 이름 저장     세개 묶어서 쓸수 있는데 그러면 클레스를 하나더 늘려서 구조체처럼 만들어야함.
+		ArrayList<Integer> matprice = new ArrayList<Integer>();	//재료 가격 저장		
+		ArrayList<String> cat = new ArrayList<String>();	//카테고리 저장
+		DefaultListModel<String> model = new DefaultListModel<String>();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1160, 1063);
 		contentPane = new JPanel(){
@@ -277,7 +283,19 @@ public class RecipeManager extends JFrame {
 		JButton button_3 = new JButton();
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				manager.recipehandler(comboBox_1,textField_6,textField_7,textArea_1,textField_9);
+				String str = (String)comboBox_1.getSelectedItem();	//콤보박스 내용
+				String foodname = new String(textField_6.getText()); //레시피 이름
+				Integer price = new Integer(textField_7.getText());	//레시피 가격
+				String cooking = new String(textArea_1.getText());	//레시피 순서
+				String time= new String(textField_9.getText());		//시간
+				if(str == "등록")
+					manager.recipehandler(str,foodname,price,cooking,time);
+				else if(str == "수정"){
+					manager.recipehandler(str, foodname, price, cooking, time);
+				}
+				else{
+					manager.recipehandler(str,foodname);
+				}
 			}
 		});
 		button_3.setFocusPainted(false);
@@ -311,42 +329,74 @@ public class RecipeManager extends JFrame {
 		scrollPane_2.setBounds(663, 615, 219, 200);
 		contentPane.add(scrollPane_2);
 		
-		JTextArea textArea_2 = new JTextArea();
-		scrollPane_2.setViewportView(textArea_2);
+		JList list = new JList();
+		scrollPane_2.setViewportView(list);
 		
-		JButton btnNewButton_2 = new JButton("New button");
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"\uCC44\uC18C_\uACFC\uC77C", "\uC721\uB958", "\uC218\uC0B0\uBB3C", "\uACE1\uBB3C_\uACAC\uACFC\uB958", "\uC591\uB150_\uC18C\uC2A4", "\uAC00\uACF5_\uC720\uC81C\uD488", "\uAE30\uD0C0"}));
+		comboBox_3.setBounds(430, 680, 100, 48);
+		contentPane.add(comboBox_3);
+		
+		JButton btnNewButton_2 = new JButton("\uCD94\uAC00");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				textArea_2.append(textField_7.getText());
+				model.clear();	//JList 의 초기화를 위해서 여기서 clear() 를 해야함.
+				mat.add(textField_8.getText());
+				try{
+					Integer mp = new Integer(textField_10.getText());	//int 형으로 바꿔주기 위해서 쓴다.
+					matprice.add(mp);
+				} catch (Exception k) {
+					JOptionPane.showMessageDialog(null, "가격에 정수를 입력해 주세요.");
+				}			
+				cat.add((String)comboBox_3.getSelectedItem());
+
+				// 위쪽은 sql 문 만들려고 하는거 아래쪽은 JList 창에 표현 할려고 하는거
 				
+				for(int i = 0; i < mat.size(); i++)
+					model.addElement(mat.get(i)+"    "+matprice.get(i)+"    "+cat.get(i));
+				list.setModel(model);
+			}	
+		});
+		JButton button_4 = new JButton("\uC81C\uAC70");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int index = list.getSelectedIndex();
+				model.remove(index);
+				mat.remove(index);
+				matprice.remove(index);
+				cat.remove(index);
 				
+				list.setModel(model); //Jlist 에 다시 값을 보여주기 위해서
 			}
 		});
-		btnNewButton_2.setBounds(578, 676, 73, 56);
+		button_4.setBounds(553, 706, 76, 32);
+		contentPane.add(button_4);
+		
+		btnNewButton_2.setBounds(553, 669, 76, 32);
 		contentPane.add(btnNewButton_2);
 		
 		textField_8 = new JTextField();
 		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_8.setColumns(10);
-		textField_8.setBounds(339, 663, 116, 21);
+		textField_8.setBounds(166, 707, 116, 21);
 		contentPane.add(textField_8);
 		
 		JLabel label_16 = new JLabel("\uC7AC\uB8CC\uC774\uB984");
 		label_16.setHorizontalAlignment(SwingConstants.CENTER);
 		label_16.setFont(new Font("돋움", Font.BOLD, 14));
-		label_16.setBounds(339, 627, 116, 26);
+		label_16.setBounds(166, 671, 116, 26);
 		contentPane.add(label_16);
 		
 		JLabel label_17 = new JLabel("\uC7AC\uB8CC\uAC00\uACA9");
 		label_17.setHorizontalAlignment(SwingConstants.CENTER);
 		label_17.setFont(new Font("돋움", Font.BOLD, 14));
-		label_17.setBounds(339, 702, 116, 26);
+		label_17.setBounds(302, 671, 116, 26);
 		contentPane.add(label_17);
 		
 		textField_10 = new JTextField();
 		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_10.setColumns(10);
-		textField_10.setBounds(339, 738, 116, 21);
+		textField_10.setBounds(302, 707, 116, 21);
 		contentPane.add(textField_10);
 		
 		JLabel label_18 = new JLabel("\uC7AC\uB8CC\uBC14\uAD6C\uB2C8");
@@ -355,10 +405,7 @@ public class RecipeManager extends JFrame {
 		label_18.setBounds(721, 576, 93, 26);
 		contentPane.add(label_18);
 		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"\uCC44\uC18C_\uACFC\uC77C", "\uC721\uB958", "\uC218\uC0B0\uBB3C", "\uACE1\uBB3C_\uACAC\uACFC\uB958", "\uC591\uB150_\uC18C\uC2A4", "\uAC00\uACF5_\uC720\uC81C\uD488", "\uAE30\uD0C0"}));
-		comboBox_3.setBounds(466, 680, 100, 48);
-		contentPane.add(comboBox_3);
+
 		
 		JLabel label = new JLabel("\uBE44\uBC00\uBC88\uD638 \uBCC0\uACBD");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -382,6 +429,8 @@ public class RecipeManager extends JFrame {
 		});
 		button_1.setBounds(1035, 69, 97, 23);
 		contentPane.add(button_1);
+		
+
 		
 		
 		
