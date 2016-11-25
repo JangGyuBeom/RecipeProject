@@ -1,4 +1,5 @@
 import java.awt.EventQueue;
+import java.sql.*;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -6,7 +7,14 @@ import javax.swing.JTextField;
 public class ManagerConnectButtonHandler  {
 	
 	public void lockhandler(JTextField tf_password){
-		String password = "1111";
+		String sql;
+		String password;
+		ManagerConnection MC = new ManagerConnection();
+		
+		sql = "select pw from password;";
+		
+		password = MC.makePW_SQL(sql);
+		
 		String passwordcp = new String(tf_password.getText());
 		if(password.compareTo(passwordcp) == 0)
 		{

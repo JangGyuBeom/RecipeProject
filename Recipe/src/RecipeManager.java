@@ -23,6 +23,7 @@ public class RecipeManager extends JFrame {
 	private JTextField textField_9;
 	private JTextField textField_8;
 	private JTextField textField_10;
+	private JTextField textField_11;
 
 	public RecipeManager() {
 		RecipeImage image = new RecipeImage();
@@ -358,7 +359,30 @@ public class RecipeManager extends JFrame {
 		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"\uCC44\uC18C_\uACFC\uC77C", "\uC721\uB958", "\uC218\uC0B0\uBB3C", "\uACE1\uBB3C_\uACAC\uACFC\uB958", "\uC591\uB150_\uC18C\uC2A4", "\uAC00\uACF5_\uC720\uC81C\uD488", "\uAE30\uD0C0"}));
 		comboBox_3.setBounds(466, 680, 100, 48);
 		contentPane.add(comboBox_3);
-	
+		
+		JLabel label = new JLabel("\uBE44\uBC00\uBC88\uD638 \uBCC0\uACBD");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("돋움", Font.BOLD, 14));
+		label.setBounds(789, 66, 107, 26);
+		contentPane.add(label);
+		
+		textField_11 = new JTextField();
+		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_11.setColumns(10);
+		textField_11.setBounds(908, 70, 116, 21);
+		contentPane.add(textField_11);
+		
+		JButton button_1 = new JButton("\uBCC0\uACBD");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ManagerConnection MC = new ManagerConnection();
+				MC.makeSQL("update password set pw = '"+textField_11.getText()+"';");
+				JOptionPane.showMessageDialog(null,"변경되었습니다.\n 변경된 비밀번호는 = "+textField_11.getText()+"입니다.");
+			}
+		});
+		button_1.setBounds(1035, 69, 97, 23);
+		contentPane.add(button_1);
+		
 		
 		
 	}
