@@ -279,31 +279,7 @@ public class RecipeManager extends JFrame {
 		JLabel lblNewLabel_3 = new JLabel(image.modi);
 		lblNewLabel_3.setBounds(978, 145, 64, 57);
 		contentPane.add(lblNewLabel_3);
-		
-		JButton button_3 = new JButton();
-		button_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String str = (String)comboBox_1.getSelectedItem();	//콤보박스 내용
-				String foodname = new String(textField_6.getText()); //레시피 이름
-				Integer price = new Integer(textField_7.getText());	//레시피 가격
-				String cooking = new String(textArea_1.getText());	//레시피 순서
-				String time= new String(textField_9.getText());		//시간
-				if(str == "등록")
-					manager.recipehandler(str,foodname,price,cooking,time);
-				else if(str == "수정"){
-					manager.recipehandler(str, foodname, price, cooking, time);
-				}
-				else{
-					manager.recipehandler(str,foodname);
-				}
-			}
-		});
-		button_3.setFocusPainted(false);
-		button_3.setContentAreaFilled(false);
-		button_3.setBorderPainted(false);
-		button_3.setBounds(965, 545, 64, 57);
-		contentPane.add(button_3);
-		
+				
 		JLabel label_14 = new JLabel(image.modi);
 		label_14.setBounds(965, 545, 64, 57);
 		contentPane.add(label_14);
@@ -357,6 +333,7 @@ public class RecipeManager extends JFrame {
 				list.setModel(model);
 			}	
 		});
+		
 		JButton button_4 = new JButton("\uC81C\uAC70");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -369,6 +346,35 @@ public class RecipeManager extends JFrame {
 				list.setModel(model); //Jlist 에 다시 값을 보여주기 위해서
 			}
 		});
+		
+		JButton button_3 = new JButton();
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String str = (String)comboBox_1.getSelectedItem();	//콤보박스 내용
+				String foodname = new String(textField_6.getText()); //레시피 이름
+				Integer price;
+				String cooking = new String(textArea_1.getText());	//레시피 순서
+				String time= new String(textField_9.getText());		//시간
+				if(str == "등록"){
+					price = new Integer(textField_7.getText());	//레시피 가격
+					manager.recipehandler(str,foodname,price,cooking,time,mat,matprice,cat);
+				}
+					
+				else if(str == "수정"){
+					price = new Integer(textField_7.getText());	//레시피 가격
+					manager.recipehandler(str, foodname, price, cooking, time,mat,matprice,cat);
+				}
+				else{
+					manager.recipehandler(foodname);
+				}
+			}
+		});
+		button_3.setFocusPainted(false);
+		button_3.setContentAreaFilled(false);
+		button_3.setBorderPainted(false);
+		button_3.setBounds(965, 545, 64, 57);
+		contentPane.add(button_3);
+		
 		button_4.setBounds(553, 706, 76, 32);
 		contentPane.add(button_4);
 		
