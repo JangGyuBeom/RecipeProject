@@ -13,11 +13,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JPasswordField;
 
 public class RecipeManager_connect extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField tf_password;
+	private final JPasswordField passwordField = new JPasswordField();
 
 	public RecipeManager_connect() {
 		RecipeImage image = new RecipeImage();
@@ -35,7 +36,7 @@ public class RecipeManager_connect extends JFrame {
 		btn_lock.setBorderPainted(false);
 		btn_lock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				man_con.lockhandler(tf_password);
+				man_con.lockhandler(passwordField);
 			}
 		});
 		btn_lock.setBounds(180, 10, 30, 32);
@@ -60,12 +61,8 @@ public class RecipeManager_connect extends JFrame {
 		JLabel back_image = new JLabel(image.Back_black);
 		back_image.setBounds(222, 10, 30, 32);
 		contentPane.add(back_image);
-		
-		tf_password = new JTextField();
-		tf_password.setFont(new Font("«‘√ ∑“µ∏øÚ", Font.BOLD, 16));
-		tf_password.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_password.setBounds(12, 10, 154, 32);
-		contentPane.add(tf_password);
-		tf_password.setColumns(10);
+		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
+		passwordField.setBounds(12, 10, 154, 32);
+		contentPane.add(passwordField);
 	}
 }

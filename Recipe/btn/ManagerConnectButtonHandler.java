@@ -2,11 +2,12 @@ import java.awt.EventQueue;
 import java.sql.*;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class ManagerConnectButtonHandler  {
 	
-	public void lockhandler(JTextField tf_password){
+	public void lockhandler(JPasswordField f_password){
 		String sql;
 		String password;
 		ManagerConnection MC = new ManagerConnection();
@@ -15,7 +16,7 @@ public class ManagerConnectButtonHandler  {
 		
 		password = MC.makePW_SQL(sql);
 		
-		String passwordcp = new String(tf_password.getText());
+		String passwordcp = new String(f_password.getText());
 		if(password.compareTo(passwordcp) == 0)
 		{
 			EventQueue.invokeLater(new Runnable() {
