@@ -93,40 +93,40 @@ public class Recipe가공_유제품 extends JFrame {
 		JCheckBox checkBox_10 = new JCheckBox("\uB5A1\uAD6D\uC6A9 \uB5A1");
 		panel.add(checkBox_10);
 		
-		JLabel label = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
-		label.setBounds(12, 10, 410, 44);
-		contentPane.add(label);
+		JLabel lb_가공_유제품 = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
+		lb_가공_유제품.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가공_유제품.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
+		lb_가공_유제품.setBounds(12, 10, 410, 44);
+		contentPane.add(lb_가공_유제품);
 		
 		Material M = new Material();
-		JButton button = new JButton();
-		button.addActionListener(new ActionListener() {
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		button.setFocusPainted(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
-		button.setBounds(12, 282, 50, 41);
-		contentPane.add(button);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 282, 50, 41);
+		contentPane.add(btn_back);
 		
-		JLabel label_1 = new JLabel(image.Back);
-		label_1.setBounds(12, 282, 50, 41);
-		contentPane.add(label_1);
+		JLabel lb_back = new JLabel(image.Back);
+		lb_back.setBounds(12, 282, 50, 41);
+		contentPane.add(lb_back);
 		
-		JButton btnNewButton = new JButton(image.Add);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btn_add = new JButton(image.Add);
+		btn_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				M.SearchM(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7,checkBox_8,checkBox_9,checkBox_10,checkBox_11,checkBox_12,checkBox_13,checkBox_14,checkBox_15,checkBox_16,checkBox_17,checkBox_18,checkBox_19);
 				JOptionPane.showMessageDialog(null,"추가 완료");
 			}
 		});
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setBounds(311, 211, 111, 112);
-		contentPane.add(btnNewButton);
+		btn_add.setFocusPainted(false);
+		btn_add.setContentAreaFilled(false);
+		btn_add.setBorderPainted(false);
+		btn_add.setBounds(311, 211, 111, 112);
+		contentPane.add(btn_add);
 	}
 }

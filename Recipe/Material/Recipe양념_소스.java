@@ -113,41 +113,41 @@ public class Recipe¾ç³ä_¼Ò½º extends JFrame {
 		JCheckBox checkBox_1 = new JCheckBox("\uD6C4\uCDA7\uAC00\uB8E8");
 		panel.add(checkBox_1);
 		
-		JLabel label = new JLabel("\uC591\uB150/\uC18C\uC2A4");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 24));
-		label.setBounds(12, 10, 410, 44);
-		contentPane.add(label);
+		JLabel lb_¾ç³ä_¼Ò½º = new JLabel("\uC591\uB150/\uC18C\uC2A4");
+		lb_¾ç³ä_¼Ò½º.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_¾ç³ä_¼Ò½º.setFont(new Font("Å¸ÀÌÆ÷_½Ö¹®µ¿ B", Font.PLAIN, 24));
+		lb_¾ç³ä_¼Ò½º.setBounds(12, 10, 410, 44);
+		contentPane.add(lb_¾ç³ä_¼Ò½º);
 		
 		Material M = new Material();
-		JButton button = new JButton();
-		button.addActionListener(new ActionListener() {
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
 				dispose();
 			}
 		});
-		button.setFocusPainted(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
-		button.setBounds(12, 323, 50, 41);
-		contentPane.add(button);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 323, 50, 41);
+		contentPane.add(btn_back);
 		
-		JLabel label_1 = new JLabel(image.Back);
-		label_1.setBounds(12, 323, 50, 41);
-		contentPane.add(label_1);
+		JLabel lb_back = new JLabel(image.Back);
+		lb_back.setBounds(12, 323, 50, 41);
+		contentPane.add(lb_back);
 		
-		JButton button_1 = new JButton(image.Add);
-		button_1.addActionListener(new ActionListener() {
+		JButton btn_add = new JButton(image.Add);
+		btn_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				M.SearchM(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7,checkBox_8,checkBox_9,checkBox_10,checkBox_11,checkBox_12,checkBox_13,checkBox_14,checkBox_15,checkBox_16,checkBox_17,checkBox_18,checkBox_19,checkBox_20,checkBox_21,checkBox_22,checkBox_23,checkBox_24,checkBox_25,checkBox_27);
 				JOptionPane.showMessageDialog(null,"Ãß°¡ ¿Ï·á");
 			}
 		});
-		button_1.setFocusPainted(false);
-		button_1.setContentAreaFilled(false);
-		button_1.setBorderPainted(false);
-		button_1.setBounds(311, 252, 111, 112);
-		contentPane.add(button_1);
+		btn_add.setFocusPainted(false);
+		btn_add.setContentAreaFilled(false);
+		btn_add.setBorderPainted(false);
+		btn_add.setBounds(311, 252, 111, 112);
+		contentPane.add(btn_add);
 	}
 
 }

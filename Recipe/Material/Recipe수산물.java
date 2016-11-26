@@ -83,42 +83,42 @@ public class Recipe수산물 extends JFrame {
 		JCheckBox checkBox_3 = new JCheckBox("\uD574\uC0BC");
 		panel.add(checkBox_3);
 		
-		JLabel label = new JLabel("\uC218\uC0B0\uBB3C");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
-		label.setBounds(12, 10, 410, 44);
-		contentPane.add(label);
+		JLabel lb_수산물 = new JLabel("\uC218\uC0B0\uBB3C");
+		lb_수산물.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_수산물.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 24));
+		lb_수산물.setBounds(12, 10, 410, 44);
+		contentPane.add(lb_수산물);
 		
 		Material M = new Material();
-		JButton button = new JButton();
-		button.addActionListener(new ActionListener() {
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				dispose();
 			}
 		});
-		button.setFocusPainted(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
-		button.setBounds(12, 265, 50, 41);
-		contentPane.add(button);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 265, 50, 41);
+		contentPane.add(btn_back);
 		
-		JLabel label_1 = new JLabel(image.Back);
-		label_1.setBounds(12, 265, 50, 41);
-		contentPane.add(label_1);
+		JLabel lb_back = new JLabel(image.Back);
+		lb_back.setBounds(12, 265, 50, 41);
+		contentPane.add(lb_back);
 		
-		JButton button_1 = new JButton(image.Add);
-		button_1.addActionListener(new ActionListener() {
+		JButton btn_add = new JButton(image.Add);
+		btn_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				M.SearchM(checkBox,checkBox_1,checkBox_2,checkBox_3,checkBox_4,checkBox_5,checkBox_6,checkBox_7,checkBox_9,checkBox_10,checkBox_11,checkBox_12,checkBox_13,checkBox_14,checkBox_15,checkBox_16,checkBox_17);
 				JOptionPane.showMessageDialog(null,"추가 완료");
 			}
 		});
-		button_1.setFocusPainted(false);
-		button_1.setContentAreaFilled(false);
-		button_1.setBorderPainted(false);
-		button_1.setBounds(311, 194, 111, 112);
-		contentPane.add(button_1);
+		btn_add.setFocusPainted(false);
+		btn_add.setContentAreaFilled(false);
+		btn_add.setBorderPainted(false);
+		btn_add.setBounds(311, 194, 111, 112);
+		contentPane.add(btn_add);
 	}
 
 }
