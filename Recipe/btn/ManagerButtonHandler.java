@@ -63,6 +63,7 @@ public class ManagerButtonHandler {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			for (int i = 0; i < mat.size(); i++) {
 				cp = 0;
 				for(int j = 0; j < matname.size(); j++){
