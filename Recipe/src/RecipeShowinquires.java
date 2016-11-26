@@ -1,49 +1,27 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.Icon;
-import java.awt.event.ActionListener;
-import java.sql.*;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
-import java.awt.Font;
-import java.awt.Graphics;
+import javax.swing.border.EmptyBorder;
 
 public class RecipeShowinquires extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RecipeShowinquires frame = new RecipeShowinquires();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
 	public RecipeShowinquires() {
 		RecipeImage image = new RecipeImage();
 		ShowInquiresButtonHandler sinq = new ShowInquiresButtonHandler();
+		ShowInquiresConnection sc = new ShowInquiresConnection();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 577, 403);
@@ -83,7 +61,7 @@ public class RecipeShowinquires extends JFrame {
 		ta_문의창.setFont(new Font("바탕", Font.BOLD, 17));
 		
 
-		ShowInquiresConnection sc = new ShowInquiresConnection();
+		
 		sc.makeSQL(ta_문의창);
 		sp_문의창.setViewportView(ta_문의창);
 		

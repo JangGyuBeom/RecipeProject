@@ -1,16 +1,12 @@
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -19,27 +15,8 @@ import javax.swing.border.EmptyBorder;
 public class RecipeDelivery extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField tf_money;
+	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RecipeDelivery frame = new RecipeDelivery();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public RecipeDelivery() {
 		Price p = new Price();
 		RecipeImage image = new RecipeImage();
@@ -81,7 +58,7 @@ public class RecipeDelivery extends JFrame {
 		back_image.setBounds(12, 713, 50, 41);
 		contentPane.add(back_image);
 		
-		tf_money = new JTextField();
+		JTextField tf_money = new JTextField();
 		tf_money.setBackground(new Color(245, 245, 245));
 		tf_money.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_money.setFont(new Font("»ﬁ∏’µ’±Ÿ«ÏµÂ∂Û¿Œ", Font.PLAIN, 38));

@@ -15,10 +15,12 @@ import javax.swing.border.EmptyBorder;
 
 public class Recipe가공_유제품 extends JFrame {
 
+
 	private JPanel contentPane;
 
 	public Recipe가공_유제품() {
 		RecipeImage image = new RecipeImage();
+		Material M = new Material();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 371);
@@ -99,7 +101,7 @@ public class Recipe가공_유제품 extends JFrame {
 		lb_가공_유제품.setBounds(12, 10, 410, 44);
 		contentPane.add(lb_가공_유제품);
 		
-		Material M = new Material();
+		
 		JButton btn_back = new JButton();
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -19,6 +19,8 @@ public class Recipe¾ç³ä_¼Ò½º extends JFrame {
 
 	public Recipe¾ç³ä_¼Ò½º() {
 		RecipeImage image = new RecipeImage();
+		Material M = new Material();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 412);
 		contentPane = new JPanel();
@@ -119,7 +121,7 @@ public class Recipe¾ç³ä_¼Ò½º extends JFrame {
 		lb_¾ç³ä_¼Ò½º.setBounds(12, 10, 410, 44);
 		contentPane.add(lb_¾ç³ä_¼Ò½º);
 		
-		Material M = new Material();
+		
 		JButton btn_back = new JButton();
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	

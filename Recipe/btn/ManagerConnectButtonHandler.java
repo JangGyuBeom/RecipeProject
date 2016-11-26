@@ -1,9 +1,7 @@
 import java.awt.EventQueue;
-import java.sql.*;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 public class ManagerConnectButtonHandler  {
 	

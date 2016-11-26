@@ -1,8 +1,7 @@
-import java.awt.*;
-import java.util.*;
+import java.awt.EventQueue;
+import java.util.Vector;
 
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 public class DeliveryButtonHandler extends Price {
 	CookConnection cc = new CookConnection();

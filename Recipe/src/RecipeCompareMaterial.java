@@ -1,30 +1,22 @@
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JButton;
-import javax.swing.Icon;
-import java.awt.event.ActionListener;
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class RecipeCompareMaterial extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	
-	/**
-	 * Create the frame.
-	 * @param matName 
-	 * @param str 
-	 */
 	public RecipeCompareMaterial(String rName) {
 		
 		RecipeImage image = new RecipeImage();

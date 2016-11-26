@@ -1,36 +1,33 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.event.*;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Graphics;
-
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import javax.swing.Icon;
-import java.awt.event.ActionListener;
-import java.util.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 public class RecipeResult extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField tf_예상시간;
-	private JTextField tf_추가비용;
 	String rName;
 	
 
 	public RecipeResult(Vector<String> vec) {
 		RecipeImage image = new RecipeImage();
 		Material M = new Material();
+		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -101,7 +98,7 @@ public class RecipeResult extends JFrame {
 		lb_선택재료.setBounds(270, 10, 238, 50);
 		contentPane.add(lb_선택재료);
 		
-		tf_예상시간 = new JTextField();
+		JTextField tf_예상시간 = new JTextField();
 		tf_예상시간.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_예상시간.setBounds(786, 70, 192, 29);
 		contentPane.add(tf_예상시간);
@@ -137,13 +134,13 @@ public class RecipeResult extends JFrame {
 		lb_추가비용.setBounds(786, 99, 192, 50);
 		contentPane.add(lb_추가비용);
 		
-		tf_추가비용 = new JTextField();
+		JTextField tf_추가비용 = new JTextField();
 		tf_추가비용.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_추가비용.setColumns(10);
 		tf_추가비용.setBounds(786, 154, 192, 29);		
 		contentPane.add(tf_추가비용);
 			
-		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();
+		
 		ListSelectionListener ls = new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 				String str;

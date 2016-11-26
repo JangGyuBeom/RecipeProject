@@ -1,31 +1,30 @@
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
+import java.util.ArrayList;
 
-import javax.swing.*;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class RecipeManager extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField tf_공지번호;
-	private JTextField tf_가게이름;
-	private JTextField tf_음식이름;
-	private JTextField tf_가격;
-	private JTextField tf_전화번호;
-	private JTextField tf_카테고리;
-	private JTextField tf_음식이름2;
-	private JTextField tf_가격2;
-	private JTextField tf_예상시간;
-	private JTextField tf_재료이름;
-	private JTextField tf_재료가격;
-	private JTextField tf_비밀번호;
-
+	
 	public RecipeManager() {
 		RecipeImage image = new RecipeImage();
 		ManagerButtonHandler manager = new ManagerButtonHandler();
@@ -116,7 +115,7 @@ public class RecipeManager extends JFrame {
 		lb_공지번호.setBounds(302, 109, 93, 26);
 		contentPane.add(lb_공지번호);
 		
-		tf_공지번호 = new JTextField();
+		JTextField tf_공지번호 = new JTextField();
 		tf_공지번호.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_공지번호.setBounds(292, 145, 116, 21);
 		contentPane.add(tf_공지번호);
@@ -196,31 +195,31 @@ public class RecipeManager extends JFrame {
 		lb_카테고리.setBounds(789, 871, 93, 26);
 		contentPane.add(lb_카테고리);
 		
-		tf_가게이름 = new JTextField();
+		JTextField tf_가게이름 = new JTextField();
 		tf_가게이름.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_가게이름.setColumns(10);
 		tf_가게이름.setBounds(257, 916, 116, 21);
 		contentPane.add(tf_가게이름);
 		
-		tf_음식이름 = new JTextField();
+		JTextField tf_음식이름 = new JTextField();
 		tf_음식이름.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_음식이름.setColumns(10);
 		tf_음식이름.setBounds(382, 916, 116, 21);
 		contentPane.add(tf_음식이름);
 		
-		tf_가격 = new JTextField();
+		JTextField tf_가격 = new JTextField();
 		tf_가격.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_가격.setColumns(10);
 		tf_가격.setBounds(513, 916, 116, 21);
 		contentPane.add(tf_가격);
 		
-		tf_전화번호 = new JTextField();
+		JTextField tf_전화번호 = new JTextField();
 		tf_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_전화번호.setColumns(10);
 		tf_전화번호.setBounds(641, 916, 116, 21);
 		contentPane.add(tf_전화번호);
 		
-		tf_카테고리 = new JTextField();
+		JTextField tf_카테고리 = new JTextField();
 		tf_카테고리.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_카테고리.setColumns(10);
 		tf_카테고리.setBounds(780, 916, 116, 21);
@@ -250,19 +249,19 @@ public class RecipeManager extends JFrame {
 		lb_예상시간.setBounds(530, 309, 93, 26);
 		contentPane.add(lb_예상시간);
 		
-		tf_음식이름2 = new JTextField();
+		JTextField tf_음식이름2 = new JTextField();
 		tf_음식이름2.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_음식이름2.setColumns(10);
 		tf_음식이름2.setBounds(266, 354, 116, 21);
 		contentPane.add(tf_음식이름2);
 		
-		tf_가격2 = new JTextField();
+		JTextField tf_가격2 = new JTextField();
 		tf_가격2.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_가격2.setColumns(10);
 		tf_가격2.setBounds(391, 354, 116, 21);
 		contentPane.add(tf_가격2);
 		
-		tf_예상시간 = new JTextField();
+		JTextField tf_예상시간 = new JTextField();
 		tf_예상시간.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_예상시간.setColumns(10);
 		tf_예상시간.setBounds(523, 354, 116, 21);
@@ -312,6 +311,20 @@ public class RecipeManager extends JFrame {
 		cb_카테고리.setModel(new DefaultComboBoxModel(new String[] {"\uCC44\uC18C_\uACFC\uC77C", "\uC721\uB958", "\uC218\uC0B0\uBB3C", "\uACE1\uBB3C_\uACAC\uACFC\uB958", "\uC591\uB150_\uC18C\uC2A4", "\uAC00\uACF5_\uC720\uC81C\uD488", "\uAE30\uD0C0"}));
 		cb_카테고리.setBounds(430, 680, 100, 48);
 		contentPane.add(cb_카테고리);
+		
+		JTextField tf_재료이름 = new JTextField();
+		tf_재료이름.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_재료이름.setColumns(10);
+		tf_재료이름.setBounds(166, 707, 116, 21);
+		contentPane.add(tf_재료이름);
+		
+		JTextField tf_재료가격 = new JTextField();
+		tf_재료가격.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_재료가격.setColumns(10);
+		tf_재료가격.setBounds(302, 707, 116, 21);
+		contentPane.add(tf_재료가격);
+		
+		
 		
 		JButton btn_추가 = new JButton("\uCD94\uAC00");
 		btn_추가.addActionListener(new ActionListener() {
@@ -381,11 +394,7 @@ public class RecipeManager extends JFrame {
 		btn_추가.setBounds(553, 669, 76, 32);
 		contentPane.add(btn_추가);
 		
-		tf_재료이름 = new JTextField();
-		tf_재료이름.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_재료이름.setColumns(10);
-		tf_재료이름.setBounds(166, 707, 116, 21);
-		contentPane.add(tf_재료이름);
+		
 		
 		JLabel lb_재료이름 = new JLabel("\uC7AC\uB8CC\uC774\uB984");
 		lb_재료이름.setHorizontalAlignment(SwingConstants.CENTER);
@@ -399,11 +408,7 @@ public class RecipeManager extends JFrame {
 		lb_재료가격.setBounds(302, 671, 116, 26);
 		contentPane.add(lb_재료가격);
 		
-		tf_재료가격 = new JTextField();
-		tf_재료가격.setHorizontalAlignment(SwingConstants.CENTER);
-		tf_재료가격.setColumns(10);
-		tf_재료가격.setBounds(302, 707, 116, 21);
-		contentPane.add(tf_재료가격);
+		
 		
 		JLabel lb_재료바구니 = new JLabel("\uC7AC\uB8CC\uBC14\uAD6C\uB2C8");
 		lb_재료바구니.setHorizontalAlignment(SwingConstants.CENTER);
@@ -419,7 +424,7 @@ public class RecipeManager extends JFrame {
 		lb_비밀번호.setBounds(789, 66, 107, 26);
 		contentPane.add(lb_비밀번호);
 		
-		tf_비밀번호 = new JTextField();
+		JTextField tf_비밀번호 = new JTextField();
 		tf_비밀번호.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_비밀번호.setColumns(10);
 		tf_비밀번호.setBounds(908, 70, 116, 21);

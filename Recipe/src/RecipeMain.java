@@ -4,10 +4,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -44,6 +40,8 @@ public class RecipeMain extends JFrame {
 		
 		RecipeImage image = new RecipeImage();
 		MainButtonHandler main = new MainButtonHandler();
+		MainConnection notice = new MainConnection();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 971, 653);
 		
@@ -71,7 +69,7 @@ public class RecipeMain extends JFrame {
 		txtrAsdasdasd.setForeground(new Color(0, 0, 0));
 		txtrAsdasdasd.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 20));
 		
-		MainConnection notice = new MainConnection();
+		
 		notice.makeSQL(txtrAsdasdasd);
 
 		sp_공지사항.setViewportView(txtrAsdasdasd);

@@ -1,8 +1,12 @@
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Vector;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -13,27 +17,11 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.Icon;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class DeliveryResult extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField tf_전화번호;
-
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the frame.
-	 * 
-	 * @param vec
-	 * @param price 
-	 */
+	
 	public DeliveryResult(Vector vec, Integer price) {
 		
 		RecipeImage image = new RecipeImage();
@@ -77,7 +65,7 @@ public class DeliveryResult extends JFrame {
 		JTextArea list_전체메뉴 = new JTextArea();
 		sp_전체메뉴.setViewportView(list_전체메뉴);
 
-		tf_전화번호 = new JTextField();
+		JTextField tf_전화번호 = new JTextField();
 		tf_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
 		tf_전화번호.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
 		tf_전화번호.setBounds(1009, 82, 157, 35);

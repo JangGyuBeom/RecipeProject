@@ -1,6 +1,7 @@
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import javax.swing.*;
+import javax.swing.JTextArea;
 
 public class ShowInquiresConnection {
 	public void makeSQL(JTextArea textArea){

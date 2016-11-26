@@ -1,5 +1,4 @@
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 
 public class ShowInquiresButtonHandler {	
 	public void deletehandler(){

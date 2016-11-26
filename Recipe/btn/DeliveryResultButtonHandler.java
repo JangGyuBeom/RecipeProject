@@ -1,9 +1,9 @@
 
-import java.awt.*;
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import javax.swing.*;
-import javax.swing.event.*;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class DeliveryResultButtonHandler{
 	CookConnection cc = new CookConnection();

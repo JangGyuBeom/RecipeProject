@@ -19,6 +19,8 @@ public class Recipe수산물 extends JFrame {
 
 	public Recipe수산물() {
 		RecipeImage image = new RecipeImage();
+		Material M = new Material();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 354);
 		contentPane = new JPanel();
@@ -89,7 +91,7 @@ public class Recipe수산물 extends JFrame {
 		lb_수산물.setBounds(12, 10, 410, 44);
 		contentPane.add(lb_수산물);
 		
-		Material M = new Material();
+		
 		JButton btn_back = new JButton();
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

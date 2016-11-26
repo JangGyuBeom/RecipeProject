@@ -1,25 +1,20 @@
 import java.awt.Color;
-import java.awt.EventQueue;
+import java.awt.Component;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JScrollPane;
+
 import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
 
 public class RecipeCook extends JFrame {
 
@@ -27,27 +22,10 @@ public class RecipeCook extends JFrame {
 	private JTextField tf_money;
 	Price p = new Price();
 
-	/**
-	 * Launch the application.
-	 *//*
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RecipeCook frame = new RecipeCook();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
-
 	public RecipeCook() {
 
 		RecipeImage image = new RecipeImage();
 		RecipeButtonHandler cook = new RecipeButtonHandler();
-		Material M = new Material();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 636, 499);
@@ -59,7 +37,6 @@ public class RecipeCook extends JFrame {
 			}
 		};
 		contentPane.setBackground(new Color(255, 255, 255));
-		// contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

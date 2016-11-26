@@ -1,7 +1,6 @@
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +19,8 @@ public class Recipe盲家_苞老 extends JFrame {
 
 	public Recipe盲家_苞老() {
 		RecipeImage image = new RecipeImage();
+		Material M = new Material();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 487);
 		contentPane = new JPanel();
@@ -176,7 +177,7 @@ public class Recipe盲家_苞老 extends JFrame {
 		lb_盲家_苞老.setBounds(12, 10, 410, 55);
 		contentPane.add(lb_盲家_苞老);
 		
-		Material M = new Material();
+		
 		JButton btn_back = new JButton();
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
