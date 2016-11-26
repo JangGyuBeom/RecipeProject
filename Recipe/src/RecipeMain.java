@@ -19,7 +19,7 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class RecipeSwing extends JFrame {
+public class RecipeMain extends JFrame {
 
 	private JPanel contentPane;
 
@@ -31,7 +31,7 @@ public class RecipeSwing extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					RecipeSwing frame = new RecipeSwing();
+					RecipeMain frame = new RecipeMain();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class RecipeSwing extends JFrame {
 	}
 
 
-	public RecipeSwing() {
+	public RecipeMain() {
 		
 		RecipeImage image = new RecipeImage();
 		MainButtonHandler main = new MainButtonHandler();
