@@ -8,16 +8,16 @@ public class RecipeResultButtonHandler extends Material {
 	ResultSet rset;
 	String sql;
 	
-	public void RecipeResultHandler(String str, JTextArea textArea_1, JTextArea textArea, JTextField textField, JTextField textField_1){
+	public void RecipeResultHandler(String str, JTextArea 필요재료, JTextArea 레시피, JTextField 예상시간, JTextField 추가비용){
 		int cookprice = 0;
 		int sumprice = 0;
-		textArea.setText("");
-		textArea_1.setText("");
+		레시피.setText("");
+		필요재료.setText("");
 		sql = "select mat_name from comat where f_name = '"+str+"';";
 		rset = cc.makeDR_SQL(sql);
 		try {
 			while(rset.next()){
-				textArea_1.append(rset.getString(1)+"   ");
+				필요재료.append(rset.getString(1)+"   ");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -27,7 +27,7 @@ public class RecipeResultButtonHandler extends Material {
 		rset = cc.makeDR_SQL(sql);
 		try {
 			while(rset.next()){
-				textArea.append(rset.getString(1));
+				레시피.append(rset.getString(1));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -37,7 +37,7 @@ public class RecipeResultButtonHandler extends Material {
 		rset = cc.makeDR_SQL(sql);
 		try {
 			while(rset.next()){
-				textField.setText(rset.getString(1));
+				예상시간.setText(rset.getString(1));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -50,27 +50,21 @@ public class RecipeResultButtonHandler extends Material {
 		}
 		int P = cookprice - sumprice;
 		String SP = Integer.toString(P);
-		textField_1.setText(SP);
+		추가비용.setText(SP);
 	}
-	public void RecipeCompareMaterialHandler(String rName, JTextArea textArea, JTextArea textArea_1, JTextArea textArea_2, JTextArea textArea_3){
+	public void RecipeCompareMaterialHandler(String rName, JTextArea 재료, JTextArea 빅마트, JTextArea 홈마트, JTextArea 포스마트){
 		sql = "select mat_name from comat where f_name = '"+rName+"';";
 		rset = cc.makeDR_SQL(sql);
 		ArrayList<String> mn = new ArrayList<String>();
-		textArea.setText("");
-		textArea_1.setText("");
-		textArea_2.setText("");
-		textArea_3.setText("");
+		재료.setText("");
+		빅마트.setText("");
+		홈마트.setText("");
+		포스마트.setText("");
 		try {
 			while(rset.next()){
-				textArea.append(rset.getString(1)+"\n");
+				재료.append(rset.getString(1)+"\n");
 				mn.add(rset.getString(1));
-//				sql = "select big, home, poce from mprice where mat_name = '"+rset.getString(1)+"';";     <- 원래 이렇게 하고 싶었는데 오류뜸 .. ㅠㅠ
-//				mP = cc.makeDR_SQL(sql);
-//				while(mP.next()){
-//					textArea_1.append(mP.getString(1));
-//					textArea_2.append(mP.getString(2));
-//					textArea_3.append(mP.getString(3));
-//				}
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -81,9 +75,9 @@ public class RecipeResultButtonHandler extends Material {
 			rset = cc.makeDR_SQL(sql);
 			try {
 				while(rset.next()){
-					textArea_1.append(rset.getString(1)+"\n");
-					textArea_2.append(rset.getString(2)+"\n");
-					textArea_3.append(rset.getString(3)+"\n");
+					빅마트.append(rset.getString(1)+"\n");
+					홈마트.append(rset.getString(2)+"\n");
+					포스마트.append(rset.getString(3)+"\n");
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

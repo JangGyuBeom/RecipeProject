@@ -12,11 +12,11 @@ public class ManagerButtonHandler {
 	ManagerConnection mc = new ManagerConnection();
 	
 
-	public void noticehandler(JComboBox comboBox, JTextField textField, JTextArea textArea) {
+	public void noticehandler(JComboBox 공지사항, JTextField 공지번호, JTextArea 공지내용) {
 		try {
-			String str = (String) comboBox.getSelectedItem();
-			Integer num = new Integer(textField.getText());
-			String text = new String(textArea.getText());
+			String str = (String) 공지사항.getSelectedItem();
+			Integer num = new Integer(공지번호.getText());
+			String text = new String(공지내용.getText());
 			if (str == "등록") {
 				str = "insert into";
 				sql = str + " notice(notice_num,notice_text) values(" + num + ",'" + text + "');";
@@ -130,17 +130,17 @@ public class ManagerButtonHandler {
 		JOptionPane.showMessageDialog(null, "삭제 완료");
 	}
 
-	public void deliveryhandler(JComboBox comboBox, JTextField textField_1, JTextField textField_2,
-			JTextField textField_3, JTextField textField_4, JTextField textField_5) {
+	public void deliveryhandler(JComboBox 배달음식, JTextField 가게이름, JTextField 음식이름,
+			JTextField 가격, JTextField 전화번호, JTextField 카테고리) {
 		try {
 			String sql;
 			ManagerConnection mc = new ManagerConnection();
-			String str = (String) comboBox.getSelectedItem();
-			String name = new String(textField_1.getText());
-			String food = new String(textField_2.getText());
-			Integer price = new Integer(textField_3.getText());
-			String tel = new String(textField_4.getText());
-			String group = new String(textField_5.getText());
+			String str = (String) 배달음식.getSelectedItem();
+			String name = new String(가게이름.getText());
+			String food = new String(음식이름.getText());
+			Integer price = new Integer(가격.getText());
+			String tel = new String(전화번호.getText());
+			String group = new String(카테고리.getText());
 			if (str == "등록") {
 				str = "insert into";
 				sql = str + " delivery(d_name,d_food,d_price,d_tel,d_group) values('" + name + "','" + food + "',"

@@ -13,18 +13,18 @@ import javax.swing.border.EmptyBorder;
 public class RecipeManager extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_9;
-	private JTextField textField_8;
-	private JTextField textField_10;
-	private JTextField textField_11;
+	private JTextField tf_공지번호;
+	private JTextField tf_가게이름;
+	private JTextField tf_음식이름;
+	private JTextField tf_가격;
+	private JTextField tf_전화번호;
+	private JTextField tf_카테고리;
+	private JTextField tf_음식이름2;
+	private JTextField tf_가격2;
+	private JTextField tf_예상시간;
+	private JTextField tf_재료이름;
+	private JTextField tf_재료가격;
+	private JTextField tf_비밀번호;
 
 	public RecipeManager() {
 		RecipeImage image = new RecipeImage();
@@ -48,320 +48,320 @@ public class RecipeManager extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton();
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btn_문의보기 = new JButton();
+		btn_문의보기.setFocusPainted(false);
+		btn_문의보기.setContentAreaFilled(false);
+		btn_문의보기.setBorderPainted(false);
+		btn_문의보기.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				manager.inquireshandler();
 			}
 		});
-		btnNewButton.setBounds(32, 29, 158, 59);
-		contentPane.add(btnNewButton);
+		btn_문의보기.setBounds(32, 29, 158, 59);
+		contentPane.add(btn_문의보기);
 		
-		JLabel lblNewLabel = new JLabel("\uACF5\uC9C0\uC0AC\uD56D : ");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
-		lblNewLabel.setBounds(12, 135, 107, 48);
-		contentPane.add(lblNewLabel);
+		JLabel lb_공지사항 = new JLabel("\uACF5\uC9C0\uC0AC\uD56D : ");
+		lb_공지사항.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_공지사항.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		lb_공지사항.setBounds(12, 135, 107, 48);
+		contentPane.add(lb_공지사항);
 		
-		JLabel label_1 = new JLabel("\uB808\uC2DC\uD53C : ");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
-		label_1.setBounds(12, 340, 107, 48);
-		contentPane.add(label_1);
+		JLabel lb_레시피 = new JLabel("\uB808\uC2DC\uD53C : ");
+		lb_레시피.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_레시피.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		lb_레시피.setBounds(12, 340, 107, 48);
+		contentPane.add(lb_레시피);
 		
-		JLabel label_2 = new JLabel("\uBC30\uB2EC\uC74C\uC2DD : ");
-		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		label_2.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
-		label_2.setBounds(12, 902, 107, 48);
-		contentPane.add(label_2);
+		JLabel lb_배달음식 = new JLabel("\uBC30\uB2EC\uC74C\uC2DD : ");
+		lb_배달음식.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_배달음식.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		lb_배달음식.setBounds(12, 902, 107, 48);
+		contentPane.add(lb_배달음식);
 		
-		JLabel lblNewLabel_1 = new JLabel("문의보기");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		lblNewLabel_1.setBounds(32, 40, 158, 59);
-		contentPane.add(lblNewLabel_1);
+		JLabel lb_문의보기 = new JLabel("문의보기");
+		lb_문의보기.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_문의보기.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_문의보기.setBounds(32, 40, 158, 59);
+		contentPane.add(lb_문의보기);
 		
-		JComboBox comboBox = new JComboBox();  //공지사항
-		comboBox.setFont(new Font("돋움", Font.BOLD, 15));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
-		comboBox.setBounds(115, 135, 100, 48);
-		((JLabel) comboBox.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
-		contentPane.add(comboBox);
-		
-		
+		JComboBox cb_공지사항 = new JComboBox();  //공지사항
+		cb_공지사항.setFont(new Font("돋움", Font.BOLD, 15));
+		cb_공지사항.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
+		cb_공지사항.setBounds(115, 135, 100, 48);
+		((JLabel) cb_공지사항.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+		contentPane.add(cb_공지사항);
 		
 		
-		JComboBox comboBox_1 = new JComboBox(); //레시피
-		comboBox_1.setFont(new Font("돋움", Font.BOLD, 15));
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
-		comboBox_1.setBounds(115, 339, 100, 48);
-		((JLabel) comboBox_1.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
-		contentPane.add(comboBox_1);
 		
-		JComboBox comboBox_2 = new JComboBox(); //배달
-		comboBox_2.setFont(new Font("돋움", Font.BOLD, 15));
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
-		comboBox_2.setBounds(115, 902, 100, 48);
-		((JLabel) comboBox_2.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
-		contentPane.add(comboBox_2);
+		
+		JComboBox cb_레시피 = new JComboBox(); //레시피
+		cb_레시피.setFont(new Font("돋움", Font.BOLD, 15));
+		cb_레시피.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
+		cb_레시피.setBounds(115, 339, 100, 48);
+		((JLabel) cb_레시피.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+		contentPane.add(cb_레시피);
+		
+		JComboBox cb_배달음식 = new JComboBox(); //배달
+		cb_배달음식.setFont(new Font("돋움", Font.BOLD, 15));
+		cb_배달음식.setModel(new DefaultComboBoxModel(new String[] {"등록", "수정", "삭제"}));
+		cb_배달음식.setBounds(115, 902, 100, 48);
+		((JLabel) cb_배달음식.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
+		contentPane.add(cb_배달음식);
 		
 
 		
-		JLabel lblNewLabel_2 = new JLabel("공지 번호");
-		lblNewLabel_2.setFont(new Font("돋움", Font.BOLD, 14));
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(302, 109, 93, 26);
-		contentPane.add(lblNewLabel_2);
+		JLabel lb_공지번호 = new JLabel("공지 번호");
+		lb_공지번호.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_공지번호.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_공지번호.setBounds(302, 109, 93, 26);
+		contentPane.add(lb_공지번호);
 		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBounds(292, 145, 116, 21);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tf_공지번호 = new JTextField();
+		tf_공지번호.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_공지번호.setBounds(292, 145, 116, 21);
+		contentPane.add(tf_공지번호);
+		tf_공지번호.setColumns(10);
 		
 		
 		
-		JLabel label_3 = new JLabel("공지 내용");
-		label_3.setFont(new Font("돋움", Font.BOLD, 14));
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setBounds(588, 109, 93, 26);
-		contentPane.add(label_3);
+		JLabel lb_공지내용 = new JLabel("공지 내용");
+		lb_공지내용.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_공지내용.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_공지내용.setBounds(588, 109, 93, 26);
+		contentPane.add(lb_공지내용);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(502, 145, 274, 123);
-		contentPane.add(scrollPane);
+		JScrollPane sp_공지내용 = new JScrollPane();
+		sp_공지내용.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		sp_공지내용.setBounds(502, 145, 274, 123);
+		contentPane.add(sp_공지내용);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
+		JTextArea ta_공지내용 = new JTextArea();
+		sp_공지내용.setViewportView(ta_공지내용);
 		
-		JButton btnNewButton_1 = new JButton();
-		btnNewButton_1.setBorderPainted(false); 	//투명 버튼
-		btnNewButton_1.setFocusPainted(false);		//투명 버튼
-		btnNewButton_1.setContentAreaFilled(false); //투명 버튼
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btn_공지사항 = new JButton();
+		btn_공지사항.setBorderPainted(false); 	//투명 버튼
+		btn_공지사항.setFocusPainted(false);		//투명 버튼
+		btn_공지사항.setContentAreaFilled(false); //투명 버튼
+		btn_공지사항.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				manager.noticehandler(comboBox, textField, textArea);
+				manager.noticehandler(cb_공지사항, tf_공지번호, ta_공지내용);
 			}
 		});
-		btnNewButton_1.setBounds(978, 145, 64, 57);
-		contentPane.add(btnNewButton_1);
+		btn_공지사항.setBounds(978, 145, 64, 57);
+		contentPane.add(btn_공지사항);
 		
-		JButton button = new JButton();
-		button.addActionListener(new ActionListener() {
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 			}
 		});
-		button.setFocusPainted(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
-		button.setBounds(12, 974, 50, 41);
-		contentPane.add(button);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 974, 50, 41);
+		contentPane.add(btn_back);
 		
-		JLabel label_4 = new JLabel(image.Back);
-		label_4.setBounds(12, 974, 50, 41);
-		contentPane.add(label_4);
+		JLabel lb_back = new JLabel(image.Back);
+		lb_back.setBounds(12, 974, 50, 41);
+		contentPane.add(lb_back);
 		
-		JLabel label_5 = new JLabel("\uAC00\uAC8C\uC774\uB984");
-		label_5.setFont(new Font("돋움", Font.BOLD, 14));
-		label_5.setHorizontalAlignment(SwingConstants.CENTER);
-		label_5.setBounds(266, 871, 93, 26);
-		contentPane.add(label_5);
+		JLabel lb_가게이름 = new JLabel("\uAC00\uAC8C\uC774\uB984");
+		lb_가게이름.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_가게이름.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가게이름.setBounds(266, 871, 93, 26);
+		contentPane.add(lb_가게이름);
 		
-		JLabel label_6 = new JLabel("\uC74C\uC2DD\uC774\uB984");
-		label_6.setFont(new Font("돋움", Font.BOLD, 14));
-		label_6.setHorizontalAlignment(SwingConstants.CENTER);
-		label_6.setBounds(390, 871, 93, 26);
-		contentPane.add(label_6);
+		JLabel lb_음식이름 = new JLabel("\uC74C\uC2DD\uC774\uB984");
+		lb_음식이름.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_음식이름.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_음식이름.setBounds(390, 871, 93, 26);
+		contentPane.add(lb_음식이름);
 		
-		JLabel label_7 = new JLabel("\uAC00\uACA9");
-		label_7.setFont(new Font("돋움", Font.BOLD, 14));
-		label_7.setHorizontalAlignment(SwingConstants.CENTER);
-		label_7.setBounds(523, 871, 93, 26);
-		contentPane.add(label_7);
+		JLabel lb_가격 = new JLabel("\uAC00\uACA9");
+		lb_가격.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_가격.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가격.setBounds(523, 871, 93, 26);
+		contentPane.add(lb_가격);
 		
-		JLabel label_8 = new JLabel("\uC804\uD654\uBC88\uD638");
-		label_8.setFont(new Font("돋움", Font.BOLD, 14));
-		label_8.setHorizontalAlignment(SwingConstants.CENTER);
-		label_8.setBounds(648, 871, 93, 26);
-		contentPane.add(label_8);
+		JLabel lb_전화번호 = new JLabel("\uC804\uD654\uBC88\uD638");
+		lb_전화번호.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_전화번호.setBounds(648, 871, 93, 26);
+		contentPane.add(lb_전화번호);
 		
-		JLabel label_9 = new JLabel("\uCE74\uD14C\uACE0\uB9AC");
-		label_9.setFont(new Font("돋움", Font.BOLD, 14));
-		label_9.setHorizontalAlignment(SwingConstants.CENTER);
-		label_9.setBounds(789, 871, 93, 26);
-		contentPane.add(label_9);
+		JLabel lb_카테고리 = new JLabel("\uCE74\uD14C\uACE0\uB9AC");
+		lb_카테고리.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_카테고리.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_카테고리.setBounds(789, 871, 93, 26);
+		contentPane.add(lb_카테고리);
 		
-		textField_1 = new JTextField();
-		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_1.setColumns(10);
-		textField_1.setBounds(257, 916, 116, 21);
-		contentPane.add(textField_1);
+		tf_가게이름 = new JTextField();
+		tf_가게이름.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_가게이름.setColumns(10);
+		tf_가게이름.setBounds(257, 916, 116, 21);
+		contentPane.add(tf_가게이름);
 		
-		textField_2 = new JTextField();
-		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_2.setColumns(10);
-		textField_2.setBounds(382, 916, 116, 21);
-		contentPane.add(textField_2);
+		tf_음식이름 = new JTextField();
+		tf_음식이름.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_음식이름.setColumns(10);
+		tf_음식이름.setBounds(382, 916, 116, 21);
+		contentPane.add(tf_음식이름);
 		
-		textField_3 = new JTextField();
-		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_3.setColumns(10);
-		textField_3.setBounds(513, 916, 116, 21);
-		contentPane.add(textField_3);
+		tf_가격 = new JTextField();
+		tf_가격.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_가격.setColumns(10);
+		tf_가격.setBounds(513, 916, 116, 21);
+		contentPane.add(tf_가격);
 		
-		textField_4 = new JTextField();
-		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_4.setColumns(10);
-		textField_4.setBounds(641, 916, 116, 21);
-		contentPane.add(textField_4);
+		tf_전화번호 = new JTextField();
+		tf_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_전화번호.setColumns(10);
+		tf_전화번호.setBounds(641, 916, 116, 21);
+		contentPane.add(tf_전화번호);
 		
-		textField_5 = new JTextField();
-		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_5.setColumns(10);
-		textField_5.setBounds(780, 916, 116, 21);
-		contentPane.add(textField_5);
+		tf_카테고리 = new JTextField();
+		tf_카테고리.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_카테고리.setColumns(10);
+		tf_카테고리.setBounds(780, 916, 116, 21);
+		contentPane.add(tf_카테고리);
 		
-		JLabel label_10 = new JLabel("\uC74C\uC2DD\uC774\uB984");
-		label_10.setFont(new Font("돋움", Font.BOLD, 14));
-		label_10.setHorizontalAlignment(SwingConstants.CENTER);
-		label_10.setBounds(275, 309, 93, 26);
-		contentPane.add(label_10);
+		JLabel lb_음식이름2 = new JLabel("\uC74C\uC2DD\uC774\uB984");
+		lb_음식이름2.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_음식이름2.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_음식이름2.setBounds(275, 309, 93, 26);
+		contentPane.add(lb_음식이름2);
 		
-		JLabel label_11 = new JLabel("\uAC00\uACA9");
-		label_11.setFont(new Font("돋움", Font.BOLD, 14));
-		label_11.setHorizontalAlignment(SwingConstants.CENTER);
-		label_11.setBounds(399, 309, 93, 26);
-		contentPane.add(label_11);
+		JLabel lb_가격2 = new JLabel("\uAC00\uACA9");
+		lb_가격2.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_가격2.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가격2.setBounds(399, 309, 93, 26);
+		contentPane.add(lb_가격2);
 		
-		JLabel label_12 = new JLabel("\uC694\uB9AC\uC21C\uC11C");
-		label_12.setFont(new Font("돋움", Font.BOLD, 14));
-		label_12.setHorizontalAlignment(SwingConstants.CENTER);
-		label_12.setBounds(727, 309, 93, 26);
-		contentPane.add(label_12);
+		JLabel lb_요리순서 = new JLabel("\uC694\uB9AC\uC21C\uC11C");
+		lb_요리순서.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_요리순서.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_요리순서.setBounds(727, 309, 93, 26);
+		contentPane.add(lb_요리순서);
 		
-		JLabel label_13 = new JLabel("\uC608\uC0C1\uC2DC\uAC04");
-		label_13.setFont(new Font("돋움", Font.BOLD, 14));
-		label_13.setHorizontalAlignment(SwingConstants.CENTER);
-		label_13.setBounds(530, 309, 93, 26);
-		contentPane.add(label_13);
+		JLabel lb_예상시간 = new JLabel("\uC608\uC0C1\uC2DC\uAC04");
+		lb_예상시간.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_예상시간.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_예상시간.setBounds(530, 309, 93, 26);
+		contentPane.add(lb_예상시간);
 		
-		textField_6 = new JTextField();
-		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_6.setColumns(10);
-		textField_6.setBounds(266, 354, 116, 21);
-		contentPane.add(textField_6);
+		tf_음식이름2 = new JTextField();
+		tf_음식이름2.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_음식이름2.setColumns(10);
+		tf_음식이름2.setBounds(266, 354, 116, 21);
+		contentPane.add(tf_음식이름2);
 		
-		textField_7 = new JTextField();
-		textField_7.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_7.setColumns(10);
-		textField_7.setBounds(391, 354, 116, 21);
-		contentPane.add(textField_7);
+		tf_가격2 = new JTextField();
+		tf_가격2.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_가격2.setColumns(10);
+		tf_가격2.setBounds(391, 354, 116, 21);
+		contentPane.add(tf_가격2);
 		
-		textField_9 = new JTextField();
-		textField_9.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_9.setColumns(10);
-		textField_9.setBounds(523, 354, 116, 21);
-		contentPane.add(textField_9);
+		tf_예상시간 = new JTextField();
+		tf_예상시간.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_예상시간.setColumns(10);
+		tf_예상시간.setBounds(523, 354, 116, 21);
+		contentPane.add(tf_예상시간);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane_1.setBounds(663, 354, 219, 192);
-		contentPane.add(scrollPane_1);
+		JScrollPane cp_요리순서 = new JScrollPane();
+		cp_요리순서.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		cp_요리순서.setBounds(663, 354, 219, 192);
+		contentPane.add(cp_요리순서);
 		
-		JTextArea textArea_1 = new JTextArea();
-		scrollPane_1.setViewportView(textArea_1);
+		JTextArea ta_요리순서 = new JTextArea();
+		cp_요리순서.setViewportView(ta_요리순서);
 		
-		JLabel lblNewLabel_3 = new JLabel(image.modi);
-		lblNewLabel_3.setBounds(978, 145, 64, 57);
-		contentPane.add(lblNewLabel_3);
+		JLabel lb_공지사항2 = new JLabel(image.modi);
+		lb_공지사항2.setBounds(978, 145, 64, 57);
+		contentPane.add(lb_공지사항2);
 				
-		JLabel label_14 = new JLabel(image.modi);
-		label_14.setBounds(965, 545, 64, 57);
-		contentPane.add(label_14);
+		JLabel lb_레시피2 = new JLabel(image.modi);
+		lb_레시피2.setBounds(965, 545, 64, 57);
+		contentPane.add(lb_레시피2);
 		
-		JButton button_2 = new JButton();
-		button_2.addActionListener(new ActionListener() {
+		JButton btn_배달음식 = new JButton();
+		btn_배달음식.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				manager.deliveryhandler(comboBox_2,textField_1,textField_2,textField_3,textField_4,textField_5);
+				manager.deliveryhandler(cb_배달음식,tf_가게이름,tf_음식이름,tf_가격,tf_전화번호,tf_카테고리);
 			}
 		});
-		button_2.setFocusPainted(false);
-		button_2.setContentAreaFilled(false);
-		button_2.setBorderPainted(false);
-		button_2.setBounds(978, 916, 64, 57);
-		contentPane.add(button_2);
+		btn_배달음식.setFocusPainted(false);
+		btn_배달음식.setContentAreaFilled(false);
+		btn_배달음식.setBorderPainted(false);
+		btn_배달음식.setBounds(978, 916, 64, 57);
+		contentPane.add(btn_배달음식);
 		
-		JLabel label_15 = new JLabel(image.modi);
-		label_15.setBounds(978, 916, 64, 57);
-		contentPane.add(label_15);
+		JLabel lb_배달음식2 = new JLabel(image.modi);
+		lb_배달음식2.setBounds(978, 916, 64, 57);
+		contentPane.add(lb_배달음식2);
 		
 		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(663, 615, 219, 200);
-		contentPane.add(scrollPane_2);
+		JScrollPane sp_재료바구니 = new JScrollPane();
+		sp_재료바구니.setBounds(663, 615, 219, 200);
+		contentPane.add(sp_재료바구니);
 		
-		JList list = new JList();
-		scrollPane_2.setViewportView(list);
+		JList list_재료바구니 = new JList();
+		sp_재료바구니.setViewportView(list_재료바구니);
 		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"\uCC44\uC18C_\uACFC\uC77C", "\uC721\uB958", "\uC218\uC0B0\uBB3C", "\uACE1\uBB3C_\uACAC\uACFC\uB958", "\uC591\uB150_\uC18C\uC2A4", "\uAC00\uACF5_\uC720\uC81C\uD488", "\uAE30\uD0C0"}));
-		comboBox_3.setBounds(430, 680, 100, 48);
-		contentPane.add(comboBox_3);
+		JComboBox cb_카테고리 = new JComboBox();
+		cb_카테고리.setModel(new DefaultComboBoxModel(new String[] {"\uCC44\uC18C_\uACFC\uC77C", "\uC721\uB958", "\uC218\uC0B0\uBB3C", "\uACE1\uBB3C_\uACAC\uACFC\uB958", "\uC591\uB150_\uC18C\uC2A4", "\uAC00\uACF5_\uC720\uC81C\uD488", "\uAE30\uD0C0"}));
+		cb_카테고리.setBounds(430, 680, 100, 48);
+		contentPane.add(cb_카테고리);
 		
-		JButton btnNewButton_2 = new JButton("\uCD94\uAC00");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btn_추가 = new JButton("\uCD94\uAC00");
+		btn_추가.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				model.clear();	//JList 의 초기화를 위해서 여기서 clear() 를 해야함.
-				mat.add(textField_8.getText());
+				mat.add(tf_재료이름.getText());
 				try{
-					Integer mp = new Integer(textField_10.getText());	//int 형으로 바꿔주기 위해서 쓴다.
+					Integer mp = new Integer(tf_재료가격.getText());	//int 형으로 바꿔주기 위해서 쓴다.
 					matprice.add(mp);
 				} catch (Exception k) {
 					JOptionPane.showMessageDialog(null, "가격에 정수를 입력해 주세요.");
 				}			
-				cat.add((String)comboBox_3.getSelectedItem());
+				cat.add((String)cb_카테고리.getSelectedItem());
 
 				// 위쪽은 sql 문 만들려고 하는거 아래쪽은 JList 창에 표현 할려고 하는거
 				
 				for(int i = 0; i < mat.size(); i++)
 					model.addElement(mat.get(i)+"    "+matprice.get(i)+"    "+cat.get(i));
-				list.setModel(model);
+				list_재료바구니.setModel(model);
 			}	
 		});
 		
-		JButton button_4 = new JButton("\uC81C\uAC70");
-		button_4.addActionListener(new ActionListener() {
+		JButton btn_제거 = new JButton("\uC81C\uAC70");
+		btn_제거.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int index = list.getSelectedIndex();
+				int index = list_재료바구니.getSelectedIndex();
 				model.remove(index);
 				mat.remove(index);
 				matprice.remove(index);
 				cat.remove(index);
 				
-				list.setModel(model); //Jlist 에 다시 값을 보여주기 위해서
+				list_재료바구니.setModel(model); //Jlist 에 다시 값을 보여주기 위해서
 			}
 		});
 		
-		JButton button_3 = new JButton();
-		button_3.addActionListener(new ActionListener() {
+		JButton btn_레시피 = new JButton();
+		btn_레시피.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String str = (String)comboBox_1.getSelectedItem();	//콤보박스 내용
-				String foodname = new String(textField_6.getText()); //레시피 이름
+				String str = (String)cb_레시피.getSelectedItem();	//콤보박스 내용
+				String foodname = new String(tf_음식이름2.getText()); //레시피 이름
 				Integer price;
-				String cooking = new String(textArea_1.getText());	//레시피 순서
-				String time= new String(textField_9.getText());		//시간
+				String cooking = new String(ta_요리순서.getText());	//레시피 순서
+				String time= new String(tf_예상시간.getText());		//시간
 				if(str == "등록"){
-					price = new Integer(textField_7.getText());	//레시피 가격
+					price = new Integer(tf_가격2.getText());	//레시피 가격
 					manager.recipehandler(str,foodname,price,cooking,time,mat,matprice,cat);
 				}
 					
 				else if(str == "수정"){
-					price = new Integer(textField_7.getText());	//레시피 가격
+					price = new Integer(tf_가격2.getText());	//레시피 가격
 					manager.recipehandler(str, foodname, price, cooking, time,mat,matprice,cat);
 				}
 				else{
@@ -369,72 +369,72 @@ public class RecipeManager extends JFrame {
 				}
 			}
 		});
-		button_3.setFocusPainted(false);
-		button_3.setContentAreaFilled(false);
-		button_3.setBorderPainted(false);
-		button_3.setBounds(965, 545, 64, 57);
-		contentPane.add(button_3);
+		btn_레시피.setFocusPainted(false);
+		btn_레시피.setContentAreaFilled(false);
+		btn_레시피.setBorderPainted(false);
+		btn_레시피.setBounds(965, 545, 64, 57);
+		contentPane.add(btn_레시피);
 		
-		button_4.setBounds(553, 706, 76, 32);
-		contentPane.add(button_4);
+		btn_제거.setBounds(553, 706, 76, 32);
+		contentPane.add(btn_제거);
 		
-		btnNewButton_2.setBounds(553, 669, 76, 32);
-		contentPane.add(btnNewButton_2);
+		btn_추가.setBounds(553, 669, 76, 32);
+		contentPane.add(btn_추가);
 		
-		textField_8 = new JTextField();
-		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_8.setColumns(10);
-		textField_8.setBounds(166, 707, 116, 21);
-		contentPane.add(textField_8);
+		tf_재료이름 = new JTextField();
+		tf_재료이름.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_재료이름.setColumns(10);
+		tf_재료이름.setBounds(166, 707, 116, 21);
+		contentPane.add(tf_재료이름);
 		
-		JLabel label_16 = new JLabel("\uC7AC\uB8CC\uC774\uB984");
-		label_16.setHorizontalAlignment(SwingConstants.CENTER);
-		label_16.setFont(new Font("돋움", Font.BOLD, 14));
-		label_16.setBounds(166, 671, 116, 26);
-		contentPane.add(label_16);
+		JLabel lb_재료이름 = new JLabel("\uC7AC\uB8CC\uC774\uB984");
+		lb_재료이름.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_재료이름.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_재료이름.setBounds(166, 671, 116, 26);
+		contentPane.add(lb_재료이름);
 		
-		JLabel label_17 = new JLabel("\uC7AC\uB8CC\uAC00\uACA9");
-		label_17.setHorizontalAlignment(SwingConstants.CENTER);
-		label_17.setFont(new Font("돋움", Font.BOLD, 14));
-		label_17.setBounds(302, 671, 116, 26);
-		contentPane.add(label_17);
+		JLabel lb_재료가격 = new JLabel("\uC7AC\uB8CC\uAC00\uACA9");
+		lb_재료가격.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_재료가격.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_재료가격.setBounds(302, 671, 116, 26);
+		contentPane.add(lb_재료가격);
 		
-		textField_10 = new JTextField();
-		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_10.setColumns(10);
-		textField_10.setBounds(302, 707, 116, 21);
-		contentPane.add(textField_10);
+		tf_재료가격 = new JTextField();
+		tf_재료가격.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_재료가격.setColumns(10);
+		tf_재료가격.setBounds(302, 707, 116, 21);
+		contentPane.add(tf_재료가격);
 		
-		JLabel label_18 = new JLabel("\uC7AC\uB8CC\uBC14\uAD6C\uB2C8");
-		label_18.setHorizontalAlignment(SwingConstants.CENTER);
-		label_18.setFont(new Font("돋움", Font.BOLD, 14));
-		label_18.setBounds(721, 576, 93, 26);
-		contentPane.add(label_18);
+		JLabel lb_재료바구니 = new JLabel("\uC7AC\uB8CC\uBC14\uAD6C\uB2C8");
+		lb_재료바구니.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_재료바구니.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_재료바구니.setBounds(721, 576, 93, 26);
+		contentPane.add(lb_재료바구니);
 		
 
 		
-		JLabel label = new JLabel("\uBE44\uBC00\uBC88\uD638 \uBCC0\uACBD");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("돋움", Font.BOLD, 14));
-		label.setBounds(789, 66, 107, 26);
-		contentPane.add(label);
+		JLabel lb_비밀번호 = new JLabel("\uBE44\uBC00\uBC88\uD638 \uBCC0\uACBD");
+		lb_비밀번호.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_비밀번호.setFont(new Font("돋움", Font.BOLD, 14));
+		lb_비밀번호.setBounds(789, 66, 107, 26);
+		contentPane.add(lb_비밀번호);
 		
-		textField_11 = new JTextField();
-		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_11.setColumns(10);
-		textField_11.setBounds(908, 70, 116, 21);
-		contentPane.add(textField_11);
+		tf_비밀번호 = new JTextField();
+		tf_비밀번호.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_비밀번호.setColumns(10);
+		tf_비밀번호.setBounds(908, 70, 116, 21);
+		contentPane.add(tf_비밀번호);
 		
-		JButton button_1 = new JButton("\uBCC0\uACBD");
-		button_1.addActionListener(new ActionListener() {
+		JButton btn_비밀번호 = new JButton("\uBCC0\uACBD");
+		btn_비밀번호.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ManagerConnection MC = new ManagerConnection();
-				MC.makeSQL("update password set pw = '"+textField_11.getText()+"';");
-				JOptionPane.showMessageDialog(null,"변경되었습니다.\n 변경된 비밀번호는 = "+textField_11.getText()+"입니다.");
+				MC.makeSQL("update password set pw = '"+tf_비밀번호.getText()+"';");
+				JOptionPane.showMessageDialog(null,"변경되었습니다.\n 변경된 비밀번호는 = "+tf_비밀번호.getText()+"입니다.");
 			}
 		});
-		button_1.setBounds(1035, 69, 97, 23);
-		contentPane.add(button_1);
+		btn_비밀번호.setBounds(1035, 69, 97, 23);
+		contentPane.add(btn_비밀번호);
 		
 
 		

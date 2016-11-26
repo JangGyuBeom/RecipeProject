@@ -9,39 +9,39 @@ public class DeliveryResultButtonHandler{
 	CookConnection cc = new CookConnection();
 	String sql;
 	ResultSet rset;
-	public void DeliveryResultHandler(String str, JTextField textField, JTextArea textArea, Integer price, JTextArea textArea_1, JTextArea textArea_2, JTextArea textArea_3) {
-		textArea.setText("");
-		textArea_1.setText("");
-		textArea_2.setText("");
-		textArea_3.setText("");
-		sql = "select d_food, d_price from delivery where d_name = '"+str+"' and d_price <= "+price+";";
+	public void DeliveryResultHandler(String name, JTextField 전화번호, JTextArea 배달가능, Integer price, JTextArea 전체메뉴, JTextArea 배달가능가격, JTextArea 전체메뉴가격) {
+		배달가능.setText("");
+		전체메뉴.setText("");
+		배달가능가격.setText("");
+		전체메뉴가격.setText("");
+		sql = "select d_food, d_price from delivery where d_name = '"+name+"' and d_price <= "+price+";";
 		rset = cc.makeDR_SQL(sql);
 		try{
 			while(rset.next()){
-				textArea.append(rset.getString(1)+"\n");
-				textArea_2.append(rset.getInt(2)+"\n");
+				배달가능.append(rset.getString(1)+"\n");
+				배달가능가격.append(rset.getInt(2)+"\n");
 			}
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		sql = "select d_food, d_price from delivery where d_name = '"+str+"';";
+		sql = "select d_food, d_price from delivery where d_name = '"+name+"';";
 		rset = cc.makeDR_SQL(sql);
 		try{
 			while(rset.next()){
-				textArea_1.append(rset.getString(1)+"\n");
-				textArea_3.append(rset.getInt(2)+"\n");
+				전체메뉴.append(rset.getString(1)+"\n");
+				전체메뉴가격.append(rset.getInt(2)+"\n");
 			}
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql = "select distinct d_tel from delivery where d_name = '"+str+"';";
+		sql = "select distinct d_tel from delivery where d_name = '"+name+"';";
 		rset = cc.makeDR_SQL(sql);
 		try {
 			while(rset.next()){
-				textField.setText(rset.getString(1));
+				전화번호.setText(rset.getString(1));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

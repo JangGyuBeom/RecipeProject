@@ -24,7 +24,7 @@ import java.awt.Component;
 public class RecipeCook extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField tf_money;
 	Price p = new Price();
 
 	/**
@@ -83,7 +83,7 @@ public class RecipeCook extends JFrame {
 		btn_search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					p.setPrice(new Integer(textField.getText()));
+					p.setPrice(new Integer(tf_money.getText()));
 					cook.searchhandler();
 				} catch (Exception p) {
 					JOptionPane.showMessageDialog(null, "금액을 입력해 주세요.");
@@ -103,13 +103,13 @@ public class RecipeCook extends JFrame {
 		money_image.setBounds(12, 21, 202, 59);
 		contentPane.add(money_image);
 
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBackground(new Color(245, 245, 245));
-		textField.setFont(new Font("휴먼둥근헤드라인", Font.PLAIN, 38));
-		textField.setColumns(10);
-		textField.setBounds(198, 21, 321, 54);
-		contentPane.add(textField);
+		tf_money = new JTextField();
+		tf_money.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_money.setBackground(new Color(245, 245, 245));
+		tf_money.setFont(new Font("휴먼둥근헤드라인", Font.PLAIN, 38));
+		tf_money.setColumns(10);
+		tf_money.setBounds(198, 21, 321, 54);
+		contentPane.add(tf_money);
 
 		JButton btn_채소_과일 = new JButton();
 		btn_채소_과일.setFocusPainted(false);
@@ -123,13 +123,13 @@ public class RecipeCook extends JFrame {
 		btn_채소_과일.setBounds(91, 119, 161, 41);
 		contentPane.add(btn_채소_과일);
 
-		JLabel lblNewLabel = new JLabel("\uCC44\uC18C/\uACFC\uC77C");
-		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setBounds(91, 119, 161, 47);
-		contentPane.add(lblNewLabel);
+		JLabel lb_채소_과일 = new JLabel("\uCC44\uC18C/\uACFC\uC77C");
+		lb_채소_과일.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_채소_과일.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_채소_과일.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_채소_과일.setForeground(Color.BLACK);
+		lb_채소_과일.setBounds(91, 119, 161, 47);
+		contentPane.add(lb_채소_과일);
 
 		JButton btn_육류 = new JButton();
 		btn_육류.addActionListener(new ActionListener() {
@@ -143,13 +143,13 @@ public class RecipeCook extends JFrame {
 		btn_육류.setBounds(379, 119, 161, 41);
 		contentPane.add(btn_육류);
 
-		JLabel label = new JLabel("\uC721\uB958");
-		label.setVerticalAlignment(SwingConstants.BOTTOM);
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setForeground(Color.BLACK);
-		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		label.setBounds(379, 119, 161, 47);
-		contentPane.add(label);
+		JLabel lb_육류 = new JLabel("\uC721\uB958");
+		lb_육류.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_육류.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_육류.setForeground(Color.BLACK);
+		lb_육류.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_육류.setBounds(379, 119, 161, 47);
+		contentPane.add(lb_육류);
 
 		JButton btn_수산물 = new JButton();
 		btn_수산물.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 12));
@@ -164,13 +164,13 @@ public class RecipeCook extends JFrame {
 		btn_수산물.setBounds(91, 192, 161, 41);
 		contentPane.add(btn_수산물);
 
-		JLabel label_1 = new JLabel("\uC218\uC0B0\uBB3C");
-		label_1.setVerticalAlignment(SwingConstants.BOTTOM);
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setForeground(Color.BLACK);
-		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		label_1.setBounds(91, 192, 161, 47);
-		contentPane.add(label_1);
+		JLabel lb_수산물 = new JLabel("\uC218\uC0B0\uBB3C");
+		lb_수산물.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_수산물.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_수산물.setForeground(Color.BLACK);
+		lb_수산물.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_수산물.setBounds(91, 192, 161, 47);
+		contentPane.add(lb_수산물);
 
 		JButton btn_곡물_견과류 = new JButton();
 		btn_곡물_견과류.addActionListener(new ActionListener() {
@@ -184,13 +184,13 @@ public class RecipeCook extends JFrame {
 		btn_곡물_견과류.setBounds(379, 192, 182, 54);
 		contentPane.add(btn_곡물_견과류);
 
-		JLabel label_2 = new JLabel("\uACE1\uBB3C/\uACAC\uACFC\uB958");
-		label_2.setVerticalAlignment(SwingConstants.BOTTOM);
-		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		label_2.setForeground(Color.BLACK);
-		label_2.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		label_2.setBounds(356, 192, 214, 47);
-		contentPane.add(label_2);
+		JLabel lb_곡물_견과류 = new JLabel("\uACE1\uBB3C/\uACAC\uACFC\uB958");
+		lb_곡물_견과류.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_곡물_견과류.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_곡물_견과류.setForeground(Color.BLACK);
+		lb_곡물_견과류.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_곡물_견과류.setBounds(356, 192, 214, 47);
+		contentPane.add(lb_곡물_견과류);
 
 		JButton btn_양념_소스 = new JButton();
 		btn_양념_소스.addActionListener(new ActionListener() {
@@ -204,13 +204,13 @@ public class RecipeCook extends JFrame {
 		btn_양념_소스.setBounds(91, 261, 161, 41);
 		contentPane.add(btn_양념_소스);
 
-		JLabel label_3 = new JLabel("\uC591\uB150/\uC18C\uC2A4");
-		label_3.setVerticalAlignment(SwingConstants.BOTTOM);
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setForeground(Color.BLACK);
-		label_3.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		label_3.setBounds(91, 261, 161, 47);
-		contentPane.add(label_3);
+		JLabel lb_양념_소스 = new JLabel("\uC591\uB150/\uC18C\uC2A4");
+		lb_양념_소스.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_양념_소스.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_양념_소스.setForeground(Color.BLACK);
+		lb_양념_소스.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_양념_소스.setBounds(91, 261, 161, 47);
+		contentPane.add(lb_양념_소스);
 
 		JButton btn_가공_유제품 = new JButton();
 		btn_가공_유제품.addActionListener(new ActionListener() {
@@ -224,13 +224,13 @@ public class RecipeCook extends JFrame {
 		btn_가공_유제품.setBounds(79, 330, 189, 47);
 		contentPane.add(btn_가공_유제품);
 
-		JLabel label_4 = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
-		label_4.setVerticalAlignment(SwingConstants.BOTTOM);
-		label_4.setHorizontalAlignment(SwingConstants.CENTER);
-		label_4.setForeground(Color.BLACK);
-		label_4.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		label_4.setBounds(79, 318, 189, 59);
-		contentPane.add(label_4);
+		JLabel lb_가공_유제품 = new JLabel("\uAC00\uACF5/\uC720\uC81C\uD488");
+		lb_가공_유제품.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_가공_유제품.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가공_유제품.setForeground(Color.BLACK);
+		lb_가공_유제품.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_가공_유제품.setBounds(79, 318, 189, 59);
+		contentPane.add(lb_가공_유제품);
 
 		JButton btn_기타 = new JButton();
 		btn_기타.addActionListener(new ActionListener() {
@@ -244,31 +244,31 @@ public class RecipeCook extends JFrame {
 		btn_기타.setBounds(379, 255, 161, 41);
 		contentPane.add(btn_기타);
 
-		JLabel label_5 = new JLabel("\uAE30\uD0C0");
-		label_5.setVerticalAlignment(SwingConstants.BOTTOM);
-		label_5.setHorizontalAlignment(SwingConstants.CENTER);
-		label_5.setForeground(Color.BLACK);
-		label_5.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
-		label_5.setBounds(379, 255, 161, 47);
-		contentPane.add(label_5);
+		JLabel lb_기타 = new JLabel("\uAE30\uD0C0");
+		lb_기타.setVerticalAlignment(SwingConstants.BOTTOM);
+		lb_기타.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_기타.setForeground(Color.BLACK);
+		lb_기타.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 30));
+		lb_기타.setBounds(379, 255, 161, 47);
+		contentPane.add(lb_기타);
 
-		JButton btnNewButton = new JButton(image.reset);
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btn_재료초기화 = new JButton(image.reset);
+		btn_재료초기화.setFocusPainted(false);
+		btn_재료초기화.setContentAreaFilled(false);
+		btn_재료초기화.setBorderPainted(false);
+		btn_재료초기화.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				cook.reset();
 			}
 		});
-		btnNewButton.setBounds(425, 318, 74, 73);
-		contentPane.add(btnNewButton);
+		btn_재료초기화.setBounds(425, 318, 74, 73);
+		contentPane.add(btn_재료초기화);
 
-		JLabel lblNewLabel_1 = new JLabel("\uC7AC\uB8CC \uCD08\uAE30\uD654");
-		lblNewLabel_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(425, 345, 74, 18);
-		contentPane.add(lblNewLabel_1);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btn_back, btn_search, serach_image, money_image, textField, btn_채소_과일, lblNewLabel, btn_육류, label, btn_수산물, label_1, btn_곡물_견과류, label_2, btn_양념_소스, label_3, btn_가공_유제품, label_4, btn_기타, label_5, btnNewButton, lblNewLabel_1}));
+		JLabel lb_재료초기화 = new JLabel("\uC7AC\uB8CC \uCD08\uAE30\uD654");
+		lb_재료초기화.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
+		lb_재료초기화.setBounds(425, 345, 74, 18);
+		contentPane.add(lb_재료초기화);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, btn_back, btn_search, serach_image, money_image, tf_money, btn_채소_과일, lb_채소_과일, btn_육류, lb_육류, btn_수산물, lb_수산물, btn_곡물_견과류, lb_곡물_견과류, btn_양념_소스, lb_양념_소스, btn_가공_유제품, lb_가공_유제품, btn_기타, lb_기타, btn_재료초기화, lb_재료초기화}));
 		
 		
 	}

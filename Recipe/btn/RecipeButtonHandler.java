@@ -10,9 +10,7 @@ public class RecipeButtonHandler extends Material{
 	String sql;
 	
 	
-
 	public void searchhandler(){ //°Ë»ö
-		
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {

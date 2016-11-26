@@ -22,7 +22,7 @@ import java.awt.event.ActionEvent;
 public class DeliveryResult extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField tf_전화번호;
 
 	/**
 	 * Launch the application.
@@ -37,6 +37,9 @@ public class DeliveryResult extends JFrame {
 	public DeliveryResult(Vector vec, Integer price) {
 		
 		RecipeImage image = new RecipeImage();
+		DeliveryResultButtonHandler drsult = new DeliveryResultButtonHandler();
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1233, 478);
 		 		contentPane = new JPanel(){
@@ -50,117 +53,117 @@ public class DeliveryResult extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(30, 82, 217, 297);
-		contentPane.add(scrollPane_1);
-		JList list = new JList();
-		list.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
-		list.setListData(vec);
+		JScrollPane sp_가게이름 = new JScrollPane();
+		sp_가게이름.setBounds(30, 82, 217, 297);
+		contentPane.add(sp_가게이름);
+		JList list_가게이름 = new JList();
+		list_가게이름.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		list_가게이름.setListData(vec);
 
-		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		scrollPane_1.setViewportView(list);
+		list_가게이름.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		sp_가게이름.setViewportView(list_가게이름);
 
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(299, 82, 195, 297);
-		contentPane.add(scrollPane_2);
+		JScrollPane sp_배달가능 = new JScrollPane();
+		sp_배달가능.setBounds(299, 82, 195, 297);
+		contentPane.add(sp_배달가능);
 
-		JTextArea textArea = new JTextArea();
-		scrollPane_2.setViewportView(textArea);
+		JTextArea list_배달가능 = new JTextArea();
+		sp_배달가능.setViewportView(list_배달가능);
 		
-		JScrollPane scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBounds(654, 82, 195, 297);
-		contentPane.add(scrollPane_3);
+		JScrollPane sp_전체메뉴 = new JScrollPane();
+		sp_전체메뉴.setBounds(654, 82, 195, 297);
+		contentPane.add(sp_전체메뉴);
 		
-		JTextArea textArea_1 = new JTextArea();
-		scrollPane_3.setViewportView(textArea_1);
+		JTextArea list_전체메뉴 = new JTextArea();
+		sp_전체메뉴.setViewportView(list_전체메뉴);
 
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
-		textField.setBounds(1009, 82, 157, 35);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tf_전화번호 = new JTextField();
+		tf_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
+		tf_전화번호.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 14));
+		tf_전화번호.setBounds(1009, 82, 157, 35);
+		contentPane.add(tf_전화번호);
+		tf_전화번호.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("\uAC00\uAC8C \uC774\uB984");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		lblNewLabel.setBounds(30, 22, 217, 50);
-		contentPane.add(lblNewLabel);
+		JLabel lb_가게이름 = new JLabel("\uAC00\uAC8C \uC774\uB984");
+		lb_가게이름.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가게이름.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		lb_가게이름.setBounds(30, 22, 217, 50);
+		contentPane.add(lb_가게이름);
 		
-		JLabel label = new JLabel("\uBC30\uB2EC \uAC00\uB2A5 \uBA54\uB274");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label.setBounds(299, 22, 195, 50);
-		contentPane.add(label);
+		JLabel lb_배달가능 = new JLabel("\uBC30\uB2EC \uAC00\uB2A5 \uBA54\uB274");
+		lb_배달가능.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_배달가능.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		lb_배달가능.setBounds(299, 22, 195, 50);
+		contentPane.add(lb_배달가능);
 		
-		JLabel label_1 = new JLabel("\uC804\uD654 \uBC88\uD638");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_1.setBounds(1009, 22, 157, 50);
-		contentPane.add(label_1);
+		JLabel lb_전화번호 = new JLabel("\uC804\uD654 \uBC88\uD638");
+		lb_전화번호.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_전화번호.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		lb_전화번호.setBounds(1009, 22, 157, 50);
+		contentPane.add(lb_전화번호);
 		
-		JButton button = new JButton();
-		button.addActionListener(new ActionListener() {
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
 			}
 		});
-		button.setFocusPainted(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
-		button.setBounds(12, 389, 50, 41);
-		contentPane.add(button);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 389, 50, 41);
+		contentPane.add(btn_back);
 		
-		JLabel label_2 = new JLabel(image.Back);
-		label_2.setBounds(12, 389, 50, 41);
-		contentPane.add(label_2);
+		JLabel lb_back = new JLabel(image.Back);
+		lb_back.setBounds(12, 389, 50, 41);
+		contentPane.add(lb_back);
 		
-		JLabel label_3 = new JLabel("\uC804\uCCB4 \uBA54\uB274");
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_3.setBounds(654, 22, 195, 50);
-		contentPane.add(label_3);
+		JLabel lb_전체메뉴 = new JLabel("\uC804\uCCB4 \uBA54\uB274");
+		lb_전체메뉴.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_전체메뉴.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		lb_전체메뉴.setBounds(654, 22, 195, 50);
+		contentPane.add(lb_전체메뉴);
 		
-		JScrollPane scrollPane_4 = new JScrollPane();
-		scrollPane_4.setBounds(506, 82, 92, 297);
-		contentPane.add(scrollPane_4);
+		JScrollPane sp_가격 = new JScrollPane();
+		sp_가격.setBounds(506, 82, 92, 297);
+		contentPane.add(sp_가격);
 		
-		JTextArea textArea_2 = new JTextArea();
-		scrollPane_4.setViewportView(textArea_2);
+		JTextArea ta_가격 = new JTextArea();
+		sp_가격.setViewportView(ta_가격);
 		
-		JScrollPane scrollPane_5 = new JScrollPane();
-		scrollPane_5.setBounds(861, 82, 92, 297);
-		contentPane.add(scrollPane_5);
+		JScrollPane sp_가격2 = new JScrollPane();
+		sp_가격2.setBounds(861, 82, 92, 297);
+		contentPane.add(sp_가격2);
 		
-		JTextArea textArea_3 = new JTextArea();
-		scrollPane_5.setViewportView(textArea_3);
+		JTextArea ta_가격2 = new JTextArea();
+		sp_가격2.setViewportView(ta_가격2);
 		
-		JLabel label_4 = new JLabel("\uAC00\uACA9");
-		label_4.setHorizontalAlignment(SwingConstants.CENTER);
-		label_4.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_4.setBounds(506, 22, 92, 50);
-		contentPane.add(label_4);
+		JLabel lb_가격 = new JLabel("\uAC00\uACA9");
+		lb_가격.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가격.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		lb_가격.setBounds(506, 22, 92, 50);
+		contentPane.add(lb_가격);
 		
-		JLabel label_5 = new JLabel("\uAC00\uACA9");
-		label_5.setHorizontalAlignment(SwingConstants.CENTER);
-		label_5.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label_5.setBounds(861, 22, 92, 50);
-		contentPane.add(label_5);
+		JLabel lb_가격2 = new JLabel("\uAC00\uACA9");
+		lb_가격2.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_가격2.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		lb_가격2.setBounds(861, 22, 92, 50);
+		contentPane.add(lb_가격2);
 
-		DeliveryResultButtonHandler drsult = new DeliveryResultButtonHandler();
+		
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(97, 24, 227, 215);
 		ListSelectionListener ls = new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
-				String str;
+				String name;
 				
 				if (!e.getValueIsAdjusting()) {
-					str = (String) list.getSelectedValue();
-					drsult.DeliveryResultHandler(str,textField,textArea,price,textArea_1,textArea_2,textArea_3);
+					name = (String) list_가게이름.getSelectedValue();
+					drsult.DeliveryResultHandler(name,tf_전화번호,list_배달가능,price,list_전체메뉴,ta_가격,ta_가격2);
 				}
 			}
 		};
-		list.addListSelectionListener(ls);
+		list_가게이름.addListSelectionListener(ls);
 	}
 }

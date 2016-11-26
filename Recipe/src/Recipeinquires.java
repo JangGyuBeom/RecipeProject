@@ -38,14 +38,14 @@ public class Recipeinquires extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(12, 10, 411, 309);
-		contentPane.add(scrollPane);
+		JScrollPane sp_문의창 = new JScrollPane();
+		sp_문의창.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		sp_문의창.setBounds(12, 10, 411, 309);
+		contentPane.add(sp_문의창);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
-		scrollPane.setViewportView(textArea);
+		JTextArea ta_문의창 = new JTextArea();
+		ta_문의창.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 15));
+		sp_문의창.setViewportView(ta_문의창);
 		
 		JButton btn_Send = new JButton("");
 		btn_Send.setBorderPainted(false); 	//투명 버튼
@@ -53,7 +53,7 @@ public class Recipeinquires extends JFrame {
 		btn_Send.setContentAreaFilled(false); //투명 버튼
 		btn_Send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			  inq.sendhandler(textArea);
+			  inq.sendhandler(ta_문의창);
 			}
 		});
 		btn_Send.setBounds(293, 321, 130, 42);

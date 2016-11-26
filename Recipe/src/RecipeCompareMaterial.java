@@ -42,70 +42,70 @@ public class RecipeCompareMaterial extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel label = new JLabel("\uC7AC\uB8CC");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
-		label.setBounds(31, 23, 136, 50);
-		contentPane.add(label);
+		JLabel lb_재료 = new JLabel("\uC7AC\uB8CC");
+		lb_재료.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_재료.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 28));
+		lb_재료.setBounds(31, 23, 136, 50);
+		contentPane.add(lb_재료);
 		
-		JLabel label_1 = new JLabel("\uBE45\uB9C8\uD2B8");
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 25));
-		label_1.setBounds(231, 23, 79, 50);
-		contentPane.add(label_1);
+		JLabel lb_빅마트 = new JLabel("\uBE45\uB9C8\uD2B8");
+		lb_빅마트.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_빅마트.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 25));
+		lb_빅마트.setBounds(231, 23, 79, 50);
+		contentPane.add(lb_빅마트);
 		
-		JLabel label_2 = new JLabel("\uD648\uB9C8\uD2B8");
-		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		label_2.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 25));
-		label_2.setBounds(334, 23, 79, 50);
-		contentPane.add(label_2);
+		JLabel lb_홈마트 = new JLabel("\uD648\uB9C8\uD2B8");
+		lb_홈마트.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_홈마트.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 25));
+		lb_홈마트.setBounds(334, 23, 79, 50);
+		contentPane.add(lb_홈마트);
 		
-		JLabel label_3 = new JLabel("\uD3EC\uC2A4\uB9C8\uD2B8");
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 19));
-		label_3.setBounds(439, 23, 79, 50);
-		contentPane.add(label_3);
+		JLabel lb_포스마트 = new JLabel("\uD3EC\uC2A4\uB9C8\uD2B8");
+		lb_포스마트.setHorizontalAlignment(SwingConstants.CENTER);
+		lb_포스마트.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 19));
+		lb_포스마트.setBounds(439, 23, 79, 50);
+		contentPane.add(lb_포스마트);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(31, 83, 136, 394);
-		contentPane.add(scrollPane);
+		JScrollPane sp_재료 = new JScrollPane();
+		sp_재료.setBounds(31, 83, 136, 394);
+		contentPane.add(sp_재료);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
+		JTextArea ta_재료 = new JTextArea();
+		sp_재료.setViewportView(ta_재료);
 
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(231, 83, 79, 394);
-		contentPane.add(scrollPane_1);
+		JScrollPane sp_빅마트 = new JScrollPane();
+		sp_빅마트.setBounds(231, 83, 79, 394);
+		contentPane.add(sp_빅마트);
 		
-		JTextArea textArea_1 = new JTextArea();
-		scrollPane_1.setViewportView(textArea_1);
+		JTextArea ta_빅마트 = new JTextArea();
+		sp_빅마트.setViewportView(ta_빅마트);
 		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(334, 83, 79, 394);
-		contentPane.add(scrollPane_2);
+		JScrollPane sp_홈마트 = new JScrollPane();
+		sp_홈마트.setBounds(334, 83, 79, 394);
+		contentPane.add(sp_홈마트);
 		
-		JTextArea textArea_2 = new JTextArea();
-		scrollPane_2.setViewportView(textArea_2);
+		JTextArea ta_홈마트 = new JTextArea();
+		sp_홈마트.setViewportView(ta_홈마트);
 		
-		JScrollPane scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBounds(439, 83, 79, 394);
-		contentPane.add(scrollPane_3);
+		JScrollPane sp_포스마트 = new JScrollPane();
+		sp_포스마트.setBounds(439, 83, 79, 394);
+		contentPane.add(sp_포스마트);
 		
-		JTextArea textArea_3 = new JTextArea();
-		scrollPane_3.setViewportView(textArea_3);
+		JTextArea ta_포스마트 = new JTextArea();
+		sp_포스마트.setViewportView(ta_포스마트);
 	
-		rb.RecipeCompareMaterialHandler(rName,textArea,textArea_1,textArea_2,textArea_3); 
+		rb.RecipeCompareMaterialHandler(rName,ta_재료,ta_빅마트,ta_홈마트,ta_포스마트); 
 		
-		JButton button = new JButton(image.Back);
-		button.addActionListener(new ActionListener() {
+		JButton btn_back = new JButton(image.Back);
+		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		button.setFocusPainted(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
-		button.setBounds(12, 506, 50, 41);
-		contentPane.add(button);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 506, 50, 41);
+		contentPane.add(btn_back);
 	}
 }

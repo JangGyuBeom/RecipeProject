@@ -58,46 +58,46 @@ public class RecipeShowinquires extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton button = new JButton();
-		button.addActionListener(new ActionListener() {
+		JButton btn_back = new JButton();
+		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		button.setFocusPainted(false);
-		button.setContentAreaFilled(false);
-		button.setBorderPainted(false);
-		button.setBounds(12, 314, 50, 41);
-		contentPane.add(button);
+		btn_back.setFocusPainted(false);
+		btn_back.setContentAreaFilled(false);
+		btn_back.setBorderPainted(false);
+		btn_back.setBounds(12, 314, 50, 41);
+		contentPane.add(btn_back);
 		
-		JLabel label = new JLabel(image.Back);
-		label.setBounds(12, 314, 50, 41);
-		contentPane.add(label);
+		JLabel lb_back = new JLabel(image.Back);
+		lb_back.setBounds(12, 314, 50, 41);
+		contentPane.add(lb_back);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(12, 22, 537, 283);
-		contentPane.add(scrollPane);
+		JScrollPane sp_문의창 = new JScrollPane();
+		sp_문의창.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		sp_문의창.setBounds(12, 22, 537, 283);
+		contentPane.add(sp_문의창);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("바탕", Font.BOLD, 17));
+		JTextArea ta_문의창 = new JTextArea();
+		ta_문의창.setFont(new Font("바탕", Font.BOLD, 17));
 		
 
 		ShowInquiresConnection sc = new ShowInquiresConnection();
-		sc.makeSQL(textArea);
-		scrollPane.setViewportView(textArea);
+		sc.makeSQL(ta_문의창);
+		sp_문의창.setViewportView(ta_문의창);
 		
-		JButton btnNewButton = new JButton();
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btn_문의삭제 = new JButton();
+		btn_문의삭제.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				sinq.deletehandler(textArea);
+				sinq.deletehandler();
 			}
 		});
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setBounds(446, 314, 103, 41);
-		contentPane.add(btnNewButton);
+		btn_문의삭제.setFocusPainted(false);
+		btn_문의삭제.setContentAreaFilled(false);
+		btn_문의삭제.setBorderPainted(false);
+		btn_문의삭제.setBounds(446, 314, 103, 41);
+		contentPane.add(btn_문의삭제);
 		
 		JLabel lb_문의삭제 = new JLabel("\uBB38\uC758\uC0AD\uC81C");
 		lb_문의삭제.setFont(new Font("타이포_쌍문동 B", Font.PLAIN, 17));

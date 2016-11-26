@@ -21,11 +21,9 @@ import javax.swing.border.EmptyBorder;
 
 public class RecipeMain extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		
 		EventQueue.invokeLater(new Runnable() {
@@ -51,6 +49,8 @@ public class RecipeMain extends JFrame {
 		
 		contentPane = new JPanel(){
 			
+			private static final long serialVersionUID = 1L;
+
 			public void paintComponent(Graphics g){
 				g.drawImage(image.background.getImage(),0,0,null);
 				setOpaque(false);
@@ -62,10 +62,10 @@ public class RecipeMain extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane_1.setBounds(190, 385, 734, 159);
-		contentPane.add(scrollPane_1);
+		JScrollPane sp_공지사항 = new JScrollPane();
+		sp_공지사항.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		sp_공지사항.setBounds(190, 385, 734, 159);
+		contentPane.add(sp_공지사항);
 		
 		JTextArea txtrAsdasdasd = new JTextArea();
 		txtrAsdasdasd.setForeground(new Color(0, 0, 0));
@@ -74,13 +74,13 @@ public class RecipeMain extends JFrame {
 		MainConnection notice = new MainConnection();
 		notice.makeSQL(txtrAsdasdasd);
 
-		scrollPane_1.setViewportView(txtrAsdasdasd);
+		sp_공지사항.setViewportView(txtrAsdasdasd);
 		txtrAsdasdasd.setBackground(new Color(255, 250, 205));
 		
 		JButton btn_Recipe = new JButton();
-		btn_Recipe.setBorderPainted(false); 	//투명 버튼
-		btn_Recipe.setFocusPainted(false);		//투명 버튼
-		btn_Recipe.setContentAreaFilled(false); //투명 버튼
+		btn_Recipe.setBorderPainted(false);
+		btn_Recipe.setFocusPainted(false);		
+		btn_Recipe.setContentAreaFilled(false); 
 		btn_Recipe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
 				main.recipehandler();
@@ -93,9 +93,9 @@ public class RecipeMain extends JFrame {
 		JButton btn_Exit = new JButton();
 		btn_Exit.setForeground(Color.BLACK);
 		btn_Exit.setBackground(Color.WHITE);
-		btn_Exit.setBorderPainted(false); 	//투명 버튼
-		btn_Exit.setFocusPainted(false);		//투명 버튼
-		btn_Exit.setContentAreaFilled(false); //투명 버튼
+		btn_Exit.setBorderPainted(false); 	
+		btn_Exit.setFocusPainted(false);	
+		btn_Exit.setContentAreaFilled(false);
 		btn_Exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				main.exithandler();
@@ -103,9 +103,9 @@ public class RecipeMain extends JFrame {
 		});
 		
 		JButton btn_delivery = new JButton();
-		btn_delivery.setBorderPainted(false); 	//투명 버튼
-		btn_delivery.setFocusPainted(false);		//투명 버튼
-		btn_delivery.setContentAreaFilled(false); //투명 버튼
+		btn_delivery.setBorderPainted(false); 
+		btn_delivery.setFocusPainted(false);	
+		btn_delivery.setContentAreaFilled(false); 
 		btn_delivery.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				main.deliveryhandler();
