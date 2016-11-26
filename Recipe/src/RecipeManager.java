@@ -329,34 +329,14 @@ public class RecipeManager extends JFrame {
 		JButton btn_추가 = new JButton("\uCD94\uAC00");
 		btn_추가.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				model.clear();	//JList 의 초기화를 위해서 여기서 clear() 를 해야함.
-				mat.add(tf_재료이름.getText());
-				try{
-					Integer mp = new Integer(tf_재료가격.getText());	//int 형으로 바꿔주기 위해서 쓴다.
-					matprice.add(mp);
-				} catch (Exception k) {
-					JOptionPane.showMessageDialog(null, "가격에 정수를 입력해 주세요.");
-				}			
-				cat.add((String)cb_카테고리.getSelectedItem());
-
-				// 위쪽은 sql 문 만들려고 하는거 아래쪽은 JList 창에 표현 할려고 하는거
-				
-				for(int i = 0; i < mat.size(); i++)
-					model.addElement(mat.get(i)+"    "+matprice.get(i)+"    "+cat.get(i));
-				list_재료바구니.setModel(model);
+				manager.PlusMaterialHaler(model,mat,matprice,cat,tf_재료이름,tf_재료가격,cb_카테고리,list_재료바구니);
 			}	
 		});
 		
 		JButton btn_제거 = new JButton("\uC81C\uAC70");
 		btn_제거.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int index = list_재료바구니.getSelectedIndex();
-				model.remove(index);
-				mat.remove(index);
-				matprice.remove(index);
-				cat.remove(index);
-				
-				list_재료바구니.setModel(model); //Jlist 에 다시 값을 보여주기 위해서
+				manager.RemoveMaterialHandler(model,mat,matprice,cat,list_재료바구니);
 			}
 		});
 		
