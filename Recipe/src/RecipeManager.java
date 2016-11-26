@@ -428,9 +428,7 @@ public class RecipeManager extends JFrame {
 		JButton btn_비밀번호 = new JButton("\uBCC0\uACBD");
 		btn_비밀번호.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ManagerConnection MC = new ManagerConnection();
-				MC.makeSQL("update password set pw = '"+tf_비밀번호.getText()+"';");
-				JOptionPane.showMessageDialog(null,"변경되었습니다.\n 변경된 비밀번호는 = "+tf_비밀번호.getText()+"입니다.");
+				manager.PassWordHandler(tf_비밀번호);
 			}
 		});
 		btn_비밀번호.setBounds(1035, 69, 97, 23);

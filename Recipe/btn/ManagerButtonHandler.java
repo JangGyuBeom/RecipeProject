@@ -43,7 +43,7 @@ public class ManagerButtonHandler {
 		String rmSQL = null; // 레시피-재료 테이블 sql 문
 		String mSQL; // 재료 테이블 sql문
 		String martSQL;
-		ResultSet rset; //아 오류 발생 원인 알았어요
+		ResultSet rset; 
 		int cp; //재료 이름 중복 제어
 		if (str == "등록") {	
 			str = "insert into";
@@ -175,7 +175,9 @@ public class ManagerButtonHandler {
 		});
 	}
 
-	public void PassWordHandler() {
-
+	public void PassWordHandler(JTextField tf_비밀번호) {
+		ManagerConnection MC = new ManagerConnection();
+		MC.makeSQL("update password set pw = '"+tf_비밀번호.getText()+"';");
+		JOptionPane.showMessageDialog(null,"변경되었습니다.\n 변경된 비밀번호는 = "+tf_비밀번호.getText()+"입니다.");
 	}
 }
