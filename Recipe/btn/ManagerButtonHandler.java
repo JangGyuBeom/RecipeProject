@@ -36,13 +36,17 @@ public class ManagerButtonHandler {
 
 	public void recipehandler(String str, String foodname, Integer price, String cooking, String time,
 			ArrayList<String> mat, ArrayList<Integer> matprice, ArrayList<String> cat) {
+		
 		ArrayList<String> matname = new ArrayList <String>();
 		String rmSQL = null; // 레시피-재료 테이블 sql 문
 		String mSQL; // 재료 테이블 sql문
 		String martSQL;
 		ResultSet rset; 
+		if(foodname!=null && price!=null && cooking!=null && time!=null && mat!=null && matprice !=null && cat!=null ){
 		int cp; //재료 이름 중복 제어
-		if (str == "등록") {	
+	
+			if (str == "등록") {	
+		
 			str = "insert into";
 			sql = str + " cook(f_name,f_price,f_recipe,f_time) values('" + foodname + "'," + price + ",'" + cooking
 					+ "','" + time + "');"; //레시피 테이블 등록 sql
@@ -112,9 +116,13 @@ public class ManagerButtonHandler {
 				}
 			}
 			
+			
 			JOptionPane.showMessageDialog(null, "수정 완료");
+		}mc.makeSQL(sql);
 		}
-		mc.makeSQL(sql);
+		else
+			JOptionPane.showMessageDialog(null, "빈공간이 존재합니다.");
+		
 	}
 
 	public void recipehandler(String foodname) {
