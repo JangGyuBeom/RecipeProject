@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -51,7 +52,8 @@ public class Recipeinquires extends JFrame {
 		btn_Send.setContentAreaFilled(false); //투명 버튼
 		btn_Send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			  inq.sendhandler(ta_문의창);
+				inq.sendhandler(ta_문의창);
+				
 			}
 		});
 		btn_Send.setBounds(293, 321, 130, 42);

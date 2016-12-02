@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
@@ -343,23 +344,49 @@ public class RecipeManager extends JFrame {
 		JButton btn_레시피 = new JButton();
 		btn_레시피.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String str = (String)cb_레시피.getSelectedItem();	//콤보박스 내용
-				String foodname = new String(tf_음식이름2.getText()); //레시피 이름
-				Integer price;
-				String cooking = new String(ta_요리순서.getText());	//레시피 순서
-				String time= new String(tf_예상시간.getText());		//시간
-				if(str == "등록"){
-					price = new Integer(tf_가격2.getText());	//레시피 가격
-					manager.recipehandler(str,foodname,price,cooking,time,mat,matprice,cat);
-				}
+				try{
+					String str = (String)cb_레시피.getSelectedItem();	
+					String foodname = new String(tf_음식이름2.getText()); 		
+					String cooking = new String(ta_요리순서.getText());
+					String time= new String(tf_예상시간.getText());
 					
-				else if(str == "수정"){
-					price = new Integer(tf_가격2.getText());	//레시피 가격
-					manager.recipehandler(str, foodname, price, cooking, time,mat,matprice,cat);
+				
+					if(str == "등록"){
+						if(foodname.isEmpty() || time.isEmpty() || cooking.isEmpty()){
+							JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
+						}
+						else{
+							Integer price= new Integer(tf_가격2.getText());
+							manager.recipehandler(str,foodname,price,cooking,time,mat,matprice,cat);
+						}
+						
+					}
+						
+					else if(str == "수정"){
+						if(foodname.isEmpty() || time.isEmpty() || cooking.isEmpty()){
+							JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
+						}
+						else{
+							Integer price= new Integer(tf_가격2.getText());
+							manager.recipehandler(str, foodname, price, cooking, time,mat,matprice,cat);
+						}
+					
+					}
+					else if(str =="삭제"){
+						if(foodname.isEmpty()){
+							JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
+						}
+						else{
+							manager.recipehandler(foodname);
+						}
+						
+					}
+					
 				}
-				else{
-					manager.recipehandler(foodname);
+				catch(Exception e){
+					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
 				}
+				
 			}
 		});
 		btn_레시피.setFocusPainted(false);

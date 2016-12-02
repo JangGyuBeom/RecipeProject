@@ -37,17 +37,17 @@ public class ManagerButtonHandler {
 			ArrayList<String> mat, ArrayList<Integer> matprice, ArrayList<String> cat) {
 
 		ArrayList<String> matname = new ArrayList<String>();
-		String rmSQL = null; // 레시피-재료 테이블 sql 문
-		String mSQL; // 재료 테이블 sql문
+		String rmSQL = null;
+		String mSQL;
 		String martSQL;
 		ResultSet rset;
-		int cp; // 재료 이름 중복 제어
+		int cp; 
 
 		if (str == "등록") {
 
 			str = "insert into";
 			sql = str + " cook(f_name,f_price,f_recipe,f_time) values('" + foodname + "'," + price + ",'" + cooking
-					+ "','" + time + "');"; // 레시피 테이블 등록 sql
+					+ "','" + time + "');"; 
 			for (int i = 0; i < mat.size(); i++) {
 				rmSQL = str + " comat(f_name,mat_name) values('" + foodname + "','" + mat.get(i) + "');";
 				mc.makeSQL(rmSQL);
@@ -59,7 +59,6 @@ public class ManagerButtonHandler {
 					matname.add(rset.getString(1));
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -137,7 +136,7 @@ public class ManagerButtonHandler {
 	public void deliveryhandler(JComboBox 배달음식, JTextField 가게이름, JTextField 음식이름, JTextField 가격, JTextField 전화번호,
 			JTextField 카테고리) {
 		try {
-			String sql;
+			String sql = null;
 			ManagerConnection mc = new ManagerConnection();
 			String str = (String) 배달음식.getSelectedItem();
 			String name = new String(가게이름.getText());
@@ -145,24 +144,46 @@ public class ManagerButtonHandler {
 			Integer price = new Integer(가격.getText());
 			String tel = new String(전화번호.getText());
 			String group = new String(카테고리.getText());
+			
+			
 			if (str == "등록") {
-				str = "insert into";
-				sql = str + " delivery(d_name,d_food,d_price,d_tel,d_group) values('" + name + "','" + food + "',"
-						+ price + ",'" + tel + "','" + group + "');";
-				JOptionPane.showMessageDialog(null, "입력 완료");
-			} else if (str == "수정") {
-				str = "update";
-				sql = str + " delivery set d_price = " + price + " and d_tel = '" + tel + "' and d_group = '" + group
-						+ "' where d_name = '" + name + "' and d_food = '" + food + "';";
-				JOptionPane.showMessageDialog(null, "수정 완료");
-			} else {
-				str = "delete";
-				sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
-				JOptionPane.showMessageDialog(null, "삭제 완료");
+				if(name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()){
+					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
+				}
+				else{
+					str = "insert into";
+					sql = str + " delivery(d_name,d_food,d_price,d_tel,d_group) values('" + name + "','" + food + "',"
+							+ price + ",'" + tel + "','" + group + "');";
+					JOptionPane.showMessageDialog(null, "입력 완료");
+				}
+				
+			} 
+			else if (str == "수정") {
+				if(name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()){
+					
+				}
+				else{
+					str = "update";
+					sql = str + " delivery set d_price = " + price + " and d_tel = '" + tel + "' and d_group = '" + group
+							+ "' where d_name = '" + name + "' and d_food = '" + food + "';";
+					JOptionPane.showMessageDialog(null, "수정 완료");
+				}
+				
+			} 
+			else {
+				if(name.isEmpty() || food.isEmpty()){
+					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
+				}
+				else{
+					str = "delete";
+					sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
+					JOptionPane.showMessageDialog(null, "삭제 완료");
+				}
+				
 			}
 			mc.makeSQL(sql);
 		} catch (Exception k) {
-			JOptionPane.showMessageDialog(null, "빈공간이 있습니다.");
+			JOptionPane.showMessageDialog(null, "잘못된 입력입니다.");
 		}
 	}
 
@@ -187,17 +208,17 @@ public class ManagerButtonHandler {
 
 	public void PlusMaterialHaler(DefaultListModel<String> model, ArrayList<String> mat, ArrayList<Integer> matprice,
 			ArrayList<String> cat, JTextField tf_재료이름, JTextField tf_재료가격, JComboBox cb_카테고리, JList list_재료바구니) {
-		model.clear(); // JList 의 초기화를 위해서 여기서 clear() 를 해야함.
+		model.clear(); 
 		mat.add(tf_재료이름.getText());
 		try {
-			Integer mp = new Integer(tf_재료가격.getText()); // int 형으로 바꿔주기 위해서 쓴다.
+			Integer mp = new Integer(tf_재료가격.getText()); 
 			matprice.add(mp);
 		} catch (Exception k) {
 			JOptionPane.showMessageDialog(null, "가격에 정수를 입력해 주세요.");
 		}
 		cat.add((String) cb_카테고리.getSelectedItem());
 
-		// 위쪽은 sql 문 만들려고 하는거 아래쪽은 JList 창에 표현 할려고 하는거
+	
 
 		for (int i = 0; i < mat.size(); i++)
 			model.addElement(mat.get(i) + "    " + matprice.get(i) + "    " + cat.get(i));
@@ -212,6 +233,6 @@ public class ManagerButtonHandler {
 		matprice.remove(index);
 		cat.remove(index);
 
-		list_재료바구니.setModel(model); // Jlist 에 다시 값을 보여주기 위해서
+		list_재료바구니.setModel(model); 
 	}
 }
