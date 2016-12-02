@@ -26,5 +26,4 @@ public class ManagerConnection {
 		rset = jdbc.readSQL(sql);
 		return rset;
 	}
-
 }

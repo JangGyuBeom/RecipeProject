@@ -7,36 +7,36 @@ import javax.swing.*;
 public class ManagerButtonHandler {
 	String sql;
 	ManagerConnection mc = new ManagerConnection();
-
+	
 	public void noticehandler(JComboBox 공지사항, JTextField 공지번호, JTextArea 공지내용) {
 		try {
 			String str = (String) 공지사항.getSelectedItem();
 			Integer num = new Integer(공지번호.getText());
 			String text = new String(공지내용.getText());
+			
 			if (str == "등록") {
 				str = "insert into";
 				sql = str + " notice(notice_num,notice_text) values(" + num + ",'" + text + "');";
-				JOptionPane.showMessageDialog(null, "입력 완료");
+				mc.makeSQL(sql);
 			} else if (str == "수정") {
 				str = "update";
 				sql = str + " notice set notice_text = '" + text + "' where notice_num = " + num + ";";
-				JOptionPane.showMessageDialog(null, "수정 완료");
+				mc.makeSQL(sql);
 			} else {
 				str = "delete";
 				sql = str + " from notice where notice_num = " + num + ";";
-				JOptionPane.showMessageDialog(null, "삭제 완료");
+				mc.makeSQL(sql);
 			}
-			mc.makeSQL(sql);
+			
 		} catch (Exception k) {
 			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
 		}
-
 	}
 
 	public void recipehandler(String str, String foodname, Integer price, String cooking, String time,
 			ArrayList<String> mat, ArrayList<Integer> matprice, ArrayList<String> cat) {
-
 		ArrayList<String> matname = new ArrayList<String>();
+		ArrayList<String> mName = new ArrayList<String>();
 		String rmSQL = null;
 		String mSQL;
 		String martSQL;
@@ -77,8 +77,12 @@ public class ManagerButtonHandler {
 					mc.makeSQL(mSQL);
 					mc.makeSQL(martSQL);
 				}
+				else{
+					mName.add(mat.get(i));
+				}
 			}
-			JOptionPane.showMessageDialog(null, "입력 완료");
+			if(mName != null)
+				JOptionPane.showMessageDialog(null, mName+"은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
 		} else if (str == "수정") {
 			str = "update";
 			String dSQL = null;
@@ -116,9 +120,12 @@ public class ManagerButtonHandler {
 					mc.makeSQL(mSQL);
 					mc.makeSQL(martSQL);
 				}
+				else{
+					mName.add(mat.get(i));
+				}
 			}
-
-			JOptionPane.showMessageDialog(null, "수정 완료");
+			if(mName != null)
+				JOptionPane.showMessageDialog(null, mName+"은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
 		}
 		mc.makeSQL(sql);
 	}
@@ -130,7 +137,6 @@ public class ManagerButtonHandler {
 		sql = str + " from cook where f_name = '" + foodname + "';";
 		mc.makeSQL(sql);
 		mc.makeSQL(dSQL);
-		JOptionPane.showMessageDialog(null, "삭제 완료");
 	}
 
 	public void deliveryhandler(JComboBox 배달음식, JTextField 가게이름, JTextField 음식이름, JTextField 가격, JTextField 전화번호,
@@ -154,7 +160,6 @@ public class ManagerButtonHandler {
 					str = "insert into";
 					sql = str + " delivery(d_name,d_food,d_price,d_tel,d_group) values('" + name + "','" + food + "',"
 							+ price + ",'" + tel + "','" + group + "');";
-					JOptionPane.showMessageDialog(null, "입력 완료");
 				}
 				
 			} 
@@ -166,7 +171,6 @@ public class ManagerButtonHandler {
 					str = "update";
 					sql = str + " delivery set d_price = " + price + " and d_tel = '" + tel + "' and d_group = '" + group
 							+ "' where d_name = '" + name + "' and d_food = '" + food + "';";
-					JOptionPane.showMessageDialog(null, "수정 완료");
 				}
 				
 			} 
@@ -177,7 +181,6 @@ public class ManagerButtonHandler {
 				else{
 					str = "delete";
 					sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
-					JOptionPane.showMessageDialog(null, "삭제 완료");
 				}
 				
 			}
@@ -203,7 +206,7 @@ public class ManagerButtonHandler {
 	public void PassWordHandler(JTextField tf_비밀번호) {
 		ManagerConnection MC = new ManagerConnection();
 		MC.makeSQL("update password set pw = '" + tf_비밀번호.getText() + "';");
-		JOptionPane.showMessageDialog(null, "변경되었습니다.\n 변경된 비밀번호는 = " + tf_비밀번호.getText() + "입니다.");
+		JOptionPane.showMessageDialog(null, "변경된 비밀번호는 = " + tf_비밀번호.getText() + "입니다.");
 	}
 
 	public void PlusMaterialHaler(DefaultListModel<String> model, ArrayList<String> mat, ArrayList<Integer> matprice,

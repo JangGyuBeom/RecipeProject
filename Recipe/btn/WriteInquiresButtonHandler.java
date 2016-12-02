@@ -10,7 +10,6 @@ public class WriteInquiresButtonHandler {
 		else{
 			String text = new String(문의창.getText());
 			ic.makeSQL(text);
-			JOptionPane.showMessageDialog(null, "전송 완료");
 		}
 		
 		

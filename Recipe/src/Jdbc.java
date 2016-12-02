@@ -1,7 +1,12 @@
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.swing.*;
+import java.awt.EventQueue;
+import java.awt.EventQueue;
 
 public class Jdbc {
 	Connection conn = null;
@@ -32,15 +37,21 @@ public class Jdbc {
 		} catch(SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
 			System.out.println("SQLState: " + sqex.getSQLState());
+			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
 		}	
 		return rset;
 	}
 	public void updateSQL(String sql){
 		try{
+			String e;
+			e = sql.substring(0, 7);
 			st.executeUpdate(sql);
+			JOptionPane.showMessageDialog(null, e+"complete.");
 		} catch(SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
 			System.out.println("SQLState: " + sqex.getSQLState());
+			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
+			return;
 		}
 	}
 	public int returnSQL(String sql) {
@@ -53,6 +64,7 @@ public class Jdbc {
 		} catch (SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
 			System.out.println("SQLState: " + sqex.getSQLState());
+			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
 		}
 		return num;
 	}
