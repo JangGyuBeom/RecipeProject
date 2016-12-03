@@ -146,7 +146,7 @@ public class RecipeResult extends JFrame {
 				String str;
 				if (!e.getValueIsAdjusting()) {
 					str = (String) list_요리.getSelectedValue();
-					rName = str; //선택된 레시피 이름을 복사하기 위해서 만든 변수 - 재료값 비교에 쓰임
+					rName = str; 
 					rRsult.RecipeResultHandler(str,ta_필요재료,ta_레시피,tf_예상시간,tf_추가비용);
 				}
 			}
@@ -159,7 +159,7 @@ public class RecipeResult extends JFrame {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
-								RecipeCompareMaterial frame = new RecipeCompareMaterial(rName); //레시피 이름을 RecipeCompareMaterial 클래스로 넘김
+								RecipeCompareMaterial frame = new RecipeCompareMaterial(rName); 
 								frame.setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();

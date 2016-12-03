@@ -164,6 +164,9 @@ public class ManagerButtonHandler {
 		}
 	}
 
+	
+	
+	
 	public void deliveryhandler(JComboBox 배달음식, JTextField 가게이름, JTextField 음식이름, JTextField 가격, JTextField 전화번호,
 			JTextField 카테고리) {
 		try {

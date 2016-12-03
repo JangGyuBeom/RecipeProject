@@ -601,7 +601,6 @@ public class Material extends Price {
      
     }
     
-   
    // °î¹°_°ß°ú·ù
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 	         JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,

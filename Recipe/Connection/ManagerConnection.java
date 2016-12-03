@@ -4,7 +4,7 @@ import java.sql.SQLException;
 public class ManagerConnection {
 	Jdbc jdbc = new Jdbc();
 
-	public String makePW_SQL(String sql){  //String °ª ¸®ÅÏ 
+	public String makePW_SQL(String sql){ 
 		ResultSet rset;
 		String str = null;
 		rset = jdbc.readSQL(sql);

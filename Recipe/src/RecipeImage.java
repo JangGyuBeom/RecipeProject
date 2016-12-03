@@ -8,9 +8,11 @@ public class RecipeImage {
 	ImageIcon Back = new ImageIcon("Image/back.png");
 	ImageIcon modi = new ImageIcon("Image/modification.png");
 	
-	//swing
-	ImageIcon Del = new ImageIcon("Image/delivery.png");
-	ImageIcon Cook = new ImageIcon("Image/Cook.png");
+	//Main
+	ImageIcon DelLogo = new ImageIcon("Image/DeliveryLogo.png");
+	ImageIcon RecLogo = new ImageIcon("Image/RecipeLogo.png");
+	ImageIcon Delivery = new ImageIcon("Image/Delivery.png");
+	ImageIcon Recipe = new ImageIcon("Image/Recipe.png");
 	ImageIcon exit = new ImageIcon("Image/종료.png");
 	ImageIcon inq = new ImageIcon("Image/문의.png");
 	ImageIcon Not = new ImageIcon("Image/notice.png");

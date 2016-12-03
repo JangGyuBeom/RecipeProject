@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.Icon;
 
 public class RecipeMain extends JFrame {
 
@@ -109,7 +110,7 @@ public class RecipeMain extends JFrame {
 				main.deliveryhandler();
 			}
 		});
-		btn_delivery.setBounds(557, 62, 278, 271);
+		btn_delivery.setBounds(557, 53, 278, 280);
 		contentPane.add(btn_delivery);
 		
 		JButton btn_Inquire = new JButton();
@@ -148,12 +149,12 @@ public class RecipeMain extends JFrame {
 		inquire_image.setBounds(822, 559, 58, 46);
 		contentPane.add(inquire_image);
 		
-		JLabel Recipe_image = new JLabel(image.Cook);
-		Recipe_image.setBounds(152, 62, 259, 271);
+		JLabel Recipe_image = new JLabel(image.Recipe);
+		Recipe_image.setBounds(159, 260, 259, 73);
 		contentPane.add(Recipe_image);
 		
-		JLabel delivery_image = new JLabel(image.Del);
-		delivery_image.setBounds(578, 73, 287, 260);
+		JLabel delivery_image = new JLabel(image.Delivery);
+		delivery_image.setBounds(564, 260, 287, 73);
 		contentPane.add(delivery_image);
 		
 		JLabel notice_image = new JLabel(image.Not);
@@ -161,5 +162,13 @@ public class RecipeMain extends JFrame {
 		notice_image.setFont(new Font("±Ã¼­Ã¼", Font.PLAIN, 18));
 		notice_image.setBounds(35, 402, 131, 120);
 		contentPane.add(notice_image);
+		
+		JLabel RecipeLogo_image = new JLabel(image.RecLogo);
+		RecipeLogo_image.setBounds(137, 53, 265, 219);
+		contentPane.add(RecipeLogo_image);
+		
+		JLabel deliLogo_image = new JLabel(image.DelLogo);
+		deliLogo_image.setBounds(564, 53, 265, 219);
+		contentPane.add(deliLogo_image);
 	}
 }

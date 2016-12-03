@@ -47,9 +47,9 @@ public class Recipeinquires extends JFrame {
 		sp_문의창.setViewportView(ta_문의창);
 		
 		JButton btn_Send = new JButton("");
-		btn_Send.setBorderPainted(false); 	//투명 버튼
-		btn_Send.setFocusPainted(false);		//투명 버튼
-		btn_Send.setContentAreaFilled(false); //투명 버튼
+		btn_Send.setBorderPainted(false); 	
+		btn_Send.setFocusPainted(false);	
+		btn_Send.setContentAreaFilled(false); 
 		btn_Send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				inq.sendhandler(ta_문의창);
@@ -60,9 +60,9 @@ public class Recipeinquires extends JFrame {
 		contentPane.add(btn_Send);
 		
 		JButton btn_back = new JButton();
-		btn_back.setBorderPainted(false); 	//투명 버튼
-		btn_back.setFocusPainted(false);		//투명 버튼
-		btn_back.setContentAreaFilled(false); //투명 버튼
+		btn_back.setBorderPainted(false); 	
+		btn_back.setFocusPainted(false);		
+		btn_back.setContentAreaFilled(false); 
 		btn_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

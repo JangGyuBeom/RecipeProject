@@ -54,9 +54,9 @@ public class RecipeCook extends JFrame {
 		contentPane.add(btn_back);
 
 		JButton btn_search = new JButton();
-		btn_search.setBorderPainted(false); // 투명 버튼
-		btn_search.setFocusPainted(false); // 투명 버튼
-		btn_search.setContentAreaFilled(false); // 투명 버튼
+		btn_search.setBorderPainted(false);
+		btn_search.setFocusPainted(false); 
+		btn_search.setContentAreaFilled(false); 
 		btn_search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
