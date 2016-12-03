@@ -187,23 +187,24 @@ public class ManagerButtonHandler {
 				}
 				
 			} 
-			else {
-				if(name.isEmpty() || food.isEmpty()){
-					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
-				}
-				else {
-					str = "delete";
-					sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
-					JOptionPane.showMessageDialog(null, "삭제 완료.");
-				}
-				
-			}
 			mc.makeSQL(sql);
 		} catch (Exception k) {
 			JOptionPane.showMessageDialog(null, "잘못된 입력입니다.");
 		}
 	}
-
+	public void deliveryhandler(JTextField 가게이름, JTextField 음식이름){
+		String name = new String(가게이름.getText());
+		String food = new String(음식이름.getText());
+		String str = "delete";
+		if(name.isEmpty() || food.isEmpty()){
+			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
+		}
+		else {
+			sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
+			mc.makeSQL(sql);
+			JOptionPane.showMessageDialog(null, "삭제 완료.");
+		}
+	}
 	public void inquireshandler() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

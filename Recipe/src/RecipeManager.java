@@ -287,7 +287,12 @@ public class RecipeManager extends JFrame {
 		JButton btn_배달음식 = new JButton();
 		btn_배달음식.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				manager.deliveryhandler(cb_배달음식,tf_가게이름,tf_음식이름,tf_가격,tf_전화번호,tf_카테고리);
+				String str = (String)cb_배달음식.getSelectedItem();
+				if(str.compareTo("삭제") == 0){
+					manager.deliveryhandler(tf_가게이름,tf_음식이름);
+				}
+				else
+					manager.deliveryhandler(cb_배달음식,tf_가게이름,tf_음식이름,tf_가격,tf_전화번호,tf_카테고리);
 			}
 		});
 		btn_배달음식.setFocusPainted(false);
