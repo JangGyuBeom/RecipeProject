@@ -1,4 +1,5 @@
 import java.awt.EventQueue;
+import java.awt.image.*;
 import java.sql.*;
 import java.util.*;
 
@@ -7,30 +8,26 @@ import javax.swing.*;
 public class ManagerButtonHandler {
 	String sql;
 	ManagerConnection mc = new ManagerConnection();
-	
+
 	public void noticehandler(JComboBox 공지사항, JTextField 공지번호, JTextArea 공지내용) {
 		try {
 			String str = (String) 공지사항.getSelectedItem();
 			Integer num = new Integer(공지번호.getText());
 			String text = new String(공지내용.getText());
-			
+
 			if (str == "등록") {
 				str = "insert into";
-				if(text.isEmpty())
-				{
+				if (text.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "공지 내용이 없습니다.");
-				}
-				else{
-				sql = str + " notice(notice_num,notice_text) values(" + num + ",'" + text + "');";
-				mc.makeSQL(sql);
+				} else {
+					sql = str + " notice(notice_num,notice_text) values(" + num + ",'" + text + "');";
+					mc.makeSQL(sql);
 				}
 			} else if (str == "수정") {
 				str = "update";
-				if(text.isEmpty())
-				{
+				if (text.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "수정 내용이 없습니다.");
-				}
-				else{
+				} else {
 					sql = str + " notice set notice_text = '" + text + "' where notice_num = " + num + ";";
 					mc.makeSQL(sql);
 				}
@@ -39,7 +36,7 @@ public class ManagerButtonHandler {
 				sql = str + " from notice where notice_num = " + num + ";";
 				mc.makeSQL(sql);
 			}
-			
+
 		} catch (Exception k) {
 			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
 		}
@@ -53,13 +50,13 @@ public class ManagerButtonHandler {
 		String mSQL;
 		String martSQL;
 		ResultSet rset;
-		int cp; 
+		int cp;
 
 		if (str == "등록") {
 
 			str = "insert into";
 			sql = str + " cook(f_name,f_price,f_recipe,f_time) values('" + foodname + "'," + price + ",'" + cooking
-					+ "','" + time + "');"; 
+					+ "','" + time + "');";
 			for (int i = 0; i < mat.size(); i++) {
 				rmSQL = str + " comat(f_name,mat_name) values('" + foodname + "','" + mat.get(i) + "');";
 				mc.makeSQL(rmSQL);
@@ -88,13 +85,12 @@ public class ManagerButtonHandler {
 							+ 0 + ");";
 					mc.makeSQL(mSQL);
 					mc.makeSQL(martSQL);
-				}
-				else{
+				} else {
 					mName.add(mat.get(i));
 				}
 			}
-			if(mName != null)
-				JOptionPane.showMessageDialog(null, mName+"은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
+			if (mName != null)
+				JOptionPane.showMessageDialog(null, mName + "은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
 		} else if (str == "수정") {
 			str = "update";
 			String dSQL = null;
@@ -131,25 +127,41 @@ public class ManagerButtonHandler {
 							+ "," + 0 + ");";
 					mc.makeSQL(mSQL);
 					mc.makeSQL(martSQL);
-				}
-				else{
+				} else {
 					mName.add(mat.get(i));
 				}
 			}
-			if(mName != null)
-				JOptionPane.showMessageDialog(null, mName+"은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
+			if (mName != null)
+				JOptionPane.showMessageDialog(null, mName + "은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
 		}
 		mc.makeSQL(sql);
 	}
 
 	public void recipehandler(String foodname) {
+		ResultSet rset;
 		String dSQL = null;
 		String str = "delete";
-		dSQL = str + " from comat where f_name = '" + foodname + "';";
-		sql = str + " from cook where f_name = '" + foodname + "';";
-		mc.makeSQL(sql);
-		mc.makeSQL(dSQL);
-		JOptionPane.showMessageDialog(null, "삭제 완료.");
+		int cp = 0;
+		sql = "select f_name from cook;";
+		rset = mc.mSQL(sql);
+		try {
+			while (rset.next()) {
+				if (foodname.compareTo(rset.getString(1)) == 0)
+					cp++;
+			}
+			if (cp == 0)
+				JOptionPane.showMessageDialog(null, foodname + "이 목록에 없습니다..");
+			else {
+				dSQL = str + " from comat where f_name = '" + foodname + "';";
+				sql = str + " from cook where f_name = '" + foodname + "';";
+				mc.makeSQL(sql);
+				mc.makeSQL(dSQL);
+				JOptionPane.showMessageDialog(null, "삭제 완료.");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void deliveryhandler(JComboBox 배달음식, JTextField 가게이름, JTextField 음식이름, JTextField 가격, JTextField 전화번호,
@@ -163,48 +175,71 @@ public class ManagerButtonHandler {
 			Integer price = new Integer(가격.getText());
 			String tel = new String(전화번호.getText());
 			String group = new String(카테고리.getText());
-			
-			
+
 			if (str == "등록") {
-				if(name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()){
+				if (name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
-				}
-				else{
+				} else {
 					str = "insert into";
 					sql = str + " delivery(d_name,d_food,d_price,d_tel,d_group) values('" + name + "','" + food + "',"
 							+ price + ",'" + tel + "','" + group + "');";
 				}
-				
-			} 
-			else if (str == "수정") {
-				if(name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()){
-					
-				}
-				else{
+
+			} else if (str == "수정") {
+				if (name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()) {
+
+				} else {
 					str = "update";
-					sql = str + " delivery set d_price = " + price + " and d_tel = '" + tel + "' and d_group = '" + group
-							+ "' where d_name = '" + name + "' and d_food = '" + food + "';";
+					sql = str + " delivery set d_price = " + price + " and d_tel = '" + tel + "' and d_group = '"
+							+ group + "' where d_name = '" + name + "' and d_food = '" + food + "';";
 				}
-				
-			} 
+
+			}
 			mc.makeSQL(sql);
 		} catch (Exception k) {
 			JOptionPane.showMessageDialog(null, "잘못된 입력입니다.");
 		}
 	}
+
 	public void deliveryhandler(JTextField 가게이름, JTextField 음식이름){
+		ResultSet rset;
+		int cp = 0;
+		String error;
 		String name = new String(가게이름.getText());
 		String food = new String(음식이름.getText());
 		String str = "delete";
+		sql = "select d_name, d_food from delivery;";
 		if(name.isEmpty() || food.isEmpty()){
 			JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
 		}
 		else {
-			sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
-			mc.makeSQL(sql);
-			JOptionPane.showMessageDialog(null, "삭제 완료.");
+			rset = mc.mSQL(sql);
+			try {
+				while(rset.next()){
+					if(name.compareTo(rset.getString(1)) == 0){
+						cp++;
+						if(food.compareTo(rset.getString(2)) == 0)
+							cp++;
+					}
+				}
+				if(cp == 0){
+					error = name;
+					if(cp == 1)
+						error += "의  "+food;
+					JOptionPane.showMessageDialog(null, error+"가 없습니다.");
+				}
+				else{
+					sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
+					mc.makeSQL(sql);
+					JOptionPane.showMessageDialog(null, "삭제 완료.");
+				}
+			}catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
+
 	public void inquireshandler() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -226,10 +261,10 @@ public class ManagerButtonHandler {
 
 	public void PlusMaterialHaler(DefaultListModel<String> model, ArrayList<String> mat, ArrayList<Integer> matprice,
 			ArrayList<String> cat, JTextField tf_재료이름, JTextField tf_재료가격, JComboBox cb_카테고리, JList list_재료바구니) {
-		model.clear(); 
+		model.clear();
 		mat.add(tf_재료이름.getText());
 		try {
-			Integer mp = new Integer(tf_재료가격.getText()); 
+			Integer mp = new Integer(tf_재료가격.getText());
 			matprice.add(mp);
 		} catch (Exception k) {
 			JOptionPane.showMessageDialog(null, "가격에 정수를 입력해 주세요.");
@@ -249,6 +284,6 @@ public class ManagerButtonHandler {
 		matprice.remove(index);
 		cat.remove(index);
 
-		list_재료바구니.setModel(model); 
+		list_재료바구니.setModel(model);
 	}
 }
