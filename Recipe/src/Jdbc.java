@@ -44,9 +44,15 @@ public class Jdbc {
 	public void updateSQL(String sql){
 		try{
 			String e;
-			e = sql.substring(0, 7);
+			e = sql.substring(0, 6);
 			st.executeUpdate(sql);
-			JOptionPane.showMessageDialog(null, e+"complete.");
+
+			if(e.compareTo("delete") != 0){
+				if(e.compareTo("insert") == 0)
+					JOptionPane.showMessageDialog(null, "등록 완료.");
+				else
+					JOptionPane.showMessageDialog(null, "수정 완료.");
+			}
 		} catch(SQLException sqex) {
 			System.out.println("SQLException: " + sqex.getMessage());
 			System.out.println("SQLState: " + sqex.getSQLState());

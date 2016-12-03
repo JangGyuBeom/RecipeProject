@@ -144,11 +144,7 @@ public class RecipeManager extends JFrame {
 		btn_공지사항.setContentAreaFilled(false); //투명 버튼
 		btn_공지사항.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String ta = ta_공지내용.getText();
-				if(ta.isEmpty())
-					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
-				else
-					manager.noticehandler(cb_공지사항, tf_공지번호, ta_공지내용);
+				manager.noticehandler(cb_공지사항, tf_공지번호, ta_공지내용);
 			}
 		});
 		btn_공지사항.setBounds(978, 145, 64, 57);

@@ -16,12 +16,24 @@ public class ManagerButtonHandler {
 			
 			if (str == "등록") {
 				str = "insert into";
+				if(text.isEmpty())
+				{
+					JOptionPane.showMessageDialog(null, "공지 내용이 없습니다.");
+				}
+				else{
 				sql = str + " notice(notice_num,notice_text) values(" + num + ",'" + text + "');";
 				mc.makeSQL(sql);
+				}
 			} else if (str == "수정") {
 				str = "update";
-				sql = str + " notice set notice_text = '" + text + "' where notice_num = " + num + ";";
-				mc.makeSQL(sql);
+				if(text.isEmpty())
+				{
+					JOptionPane.showMessageDialog(null, "수정 내용이 없습니다.");
+				}
+				else{
+					sql = str + " notice set notice_text = '" + text + "' where notice_num = " + num + ";";
+					mc.makeSQL(sql);
+				}
 			} else {
 				str = "delete";
 				sql = str + " from notice where notice_num = " + num + ";";
@@ -137,6 +149,7 @@ public class ManagerButtonHandler {
 		sql = str + " from cook where f_name = '" + foodname + "';";
 		mc.makeSQL(sql);
 		mc.makeSQL(dSQL);
+		JOptionPane.showMessageDialog(null, "삭제 완료.");
 	}
 
 	public void deliveryhandler(JComboBox 배달음식, JTextField 가게이름, JTextField 음식이름, JTextField 가격, JTextField 전화번호,
@@ -178,9 +191,10 @@ public class ManagerButtonHandler {
 				if(name.isEmpty() || food.isEmpty()){
 					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
 				}
-				else{
+				else {
 					str = "delete";
 					sql = str + " from delivery where d_name = '" + name + "' and d_food = '" + food + "';";
+					JOptionPane.showMessageDialog(null, "삭제 완료.");
 				}
 				
 			}
@@ -220,8 +234,6 @@ public class ManagerButtonHandler {
 			JOptionPane.showMessageDialog(null, "가격에 정수를 입력해 주세요.");
 		}
 		cat.add((String) cb_카테고리.getSelectedItem());
-
-	
 
 		for (int i = 0; i < mat.size(); i++)
 			model.addElement(mat.get(i) + "    " + matprice.get(i) + "    " + cat.get(i));
