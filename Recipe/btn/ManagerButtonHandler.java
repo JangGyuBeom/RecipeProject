@@ -39,15 +39,15 @@ public class ManagerButtonHandler {
 				if (text.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "수정 내용이 없습니다.");
 				} else {
-					if (cp == 0) {
+					if (cp != 0) {
 						sql = str + " notice set notice_text = '" + text + "' where notice_num = " + num + ";";
 						mc.makeSQL(sql);
 					} else
-						JOptionPane.showMessageDialog(null, "공지 번호가 이미 있습니다.");
+						JOptionPane.showMessageDialog(null, "공지 번호가 존재하지 않습니다.");
 				}
 			} else {
 				if (cp == 0)
-					JOptionPane.showMessageDialog(null, "공지 번호가 이미 있습니다.");
+					JOptionPane.showMessageDialog(null, "공지 번호가 존재하지 않습니다.");
 				else {
 					str = "delete";
 					sql = str + " from notice where notice_num = " + num + ";";
