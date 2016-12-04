@@ -22,7 +22,6 @@ public class DeliveryResultButtonHandler{
 				배달가능가격.append(rset.getInt(2)+"\n");
 			}
 		}catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -34,7 +33,6 @@ public class DeliveryResultButtonHandler{
 				전체메뉴가격.append(rset.getInt(2)+"\n");
 			}
 		}catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sql = "select distinct d_tel from delivery where d_name = '"+name+"';";
@@ -44,7 +42,6 @@ public class DeliveryResultButtonHandler{
 				전화번호.setText(rset.getString(1));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

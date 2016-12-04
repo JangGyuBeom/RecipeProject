@@ -110,7 +110,6 @@ public class ManagerButtonHandler {
 					matname.add(rset.getString(1));
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			for (int i = 0; i < mat.size(); i++) {
@@ -237,7 +236,6 @@ public class ManagerButtonHandler {
 					JOptionPane.showMessageDialog(null, "삭제 완료.");
 				}
 			}catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

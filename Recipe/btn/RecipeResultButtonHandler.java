@@ -20,7 +20,6 @@ public class RecipeResultButtonHandler extends Material {
 				필요재료.append(rset.getString(1)+"   ");
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sql = "select f_recipe from cook where f_name = '"+str+"';";
@@ -30,7 +29,6 @@ public class RecipeResultButtonHandler extends Material {
 				레시피.append(rset.getString(1));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sql = "select f_time from cook where f_name = '"+str+"';";
@@ -40,7 +38,6 @@ public class RecipeResultButtonHandler extends Material {
 				예상시간.setText(rset.getString(1));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sql = "select f_price from cook where f_name = '"+str+"';";
@@ -67,7 +64,6 @@ public class RecipeResultButtonHandler extends Material {
 
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		for(int i = 0; i < mn.size(); i++){
@@ -80,7 +76,6 @@ public class RecipeResultButtonHandler extends Material {
 					포스마트.append(rset.getString(3)+"\n");
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

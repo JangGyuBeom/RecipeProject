@@ -470,14 +470,5 @@ public class RecipeManager extends JFrame {
 		테두리3.setBounds(12, 669, 1051, 123);
 		contentPane.add(테두리3);
 		테두리3.setBorder(border);
-		
-		
-		
-		
-		
-
-		
-		
-		
 	}
 }

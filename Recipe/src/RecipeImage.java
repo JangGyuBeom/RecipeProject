@@ -8,7 +8,7 @@ public class RecipeImage {
 	ImageIcon Back = new ImageIcon("Image/back.png");
 	ImageIcon modi = new ImageIcon("Image/modification.png");
 	
-	//Main
+	
 	ImageIcon DelLogo = new ImageIcon("Image/DeliveryLogo.png");
 	ImageIcon RecLogo = new ImageIcon("Image/RecipeLogo.png");
 	ImageIcon Delivery = new ImageIcon("Image/Delivery.png");
@@ -19,7 +19,7 @@ public class RecipeImage {
 	ImageIcon background = new ImageIcon("Image/background.jpg");
 	
 	
-	//cook
+	
 	ImageIcon Search = new ImageIcon("Image/search.png");
 	ImageIcon Add = new ImageIcon("Image/add.png");
 	ImageIcon Money = new ImageIcon("Image/money.png");
@@ -28,16 +28,16 @@ public class RecipeImage {
 	ImageIcon ComMoney = new ImageIcon("Image/$.png");
 	
 	
-	//inquires
+	
 	ImageIcon Send = new ImageIcon("Image/send.png");
 	ImageIcon background_gr = new ImageIcon("Image/background_gr.jpg");
 	
 	
-	//Manager_connect
+	
 	ImageIcon lc = new ImageIcon("Image/lock.png");
 	ImageIcon Back_black = new ImageIcon("Image/back_black.png");
 	
-	//Delivery
+	
 	ImageIcon 족발 = new ImageIcon("Image/족발.jpg");
 	Image 족발2 = 족발.getImage();
 	Image 족발3 = 족발2.getScaledInstance(290, 105,java.awt.Image.SCALE_SMOOTH);

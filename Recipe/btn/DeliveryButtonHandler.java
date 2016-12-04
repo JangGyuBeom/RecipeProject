@@ -9,7 +9,7 @@ public class DeliveryButtonHandler extends Price {
 	Vector<?> vec;
 	int price;
 
-	public void chinahandler() { // 중식
+	public void chinahandler() { 
 
 		price = getPrice();
 
@@ -28,7 +28,7 @@ public class DeliveryButtonHandler extends Price {
 
 	}
 
-	public void chickenhandler() { // 치킨
+	public void chickenhandler() { 
 
 		price = getPrice();
 
@@ -47,7 +47,7 @@ public class DeliveryButtonHandler extends Price {
 
 	}
 
-	public void japanfoodhandler() { // 일식
+	public void japanfoodhandler() { 
 
 		price = getPrice();
 
@@ -66,7 +66,7 @@ public class DeliveryButtonHandler extends Price {
 
 	}
 
-	public void koreanfoodhandler() { // 한식
+	public void koreanfoodhandler() { 
 
 		price = getPrice();
 
@@ -85,7 +85,7 @@ public class DeliveryButtonHandler extends Price {
 
 	}
 
-	public void westernfoodhandler() { // 양식
+	public void westernfoodhandler() { 
 
 		price = getPrice();
 
@@ -104,7 +104,7 @@ public class DeliveryButtonHandler extends Price {
 
 	}
 
-	public void figsfeethandler() { // 족발
+	public void figsfeethandler() { 
 
 		price = getPrice();
 
@@ -123,7 +123,7 @@ public class DeliveryButtonHandler extends Price {
 
 	}
 
-	public void steamhandler() { // 찜
+	public void steamhandler() {
 
 		price = getPrice();
 
@@ -142,7 +142,7 @@ public class DeliveryButtonHandler extends Price {
 
 	}
 
-	public void pizzahandler() { // 피자
+	public void pizzahandler() {
 
 		price = getPrice();
 

@@ -12,7 +12,7 @@ public class Material extends Price {
 
    CookConnection cc = new CookConnection();
 
-   // 채소_과일
+  
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
          JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,
          JCheckBox checkBox_8, JCheckBox checkBox_9, JCheckBox checkBox_10, JCheckBox checkBox_11,
@@ -200,7 +200,7 @@ public class Material extends Price {
       
    }
 
-   // 양념_소스
+   
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 	         JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,
 	         JCheckBox checkBox_8, JCheckBox checkBox_9, JCheckBox checkBox_10, JCheckBox checkBox_11,
@@ -304,7 +304,7 @@ public class Material extends Price {
 	      }
    }
 
-   // 육류
+   
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 	         JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,
 	         JCheckBox checkBox_8, JCheckBox checkBox_9, JCheckBox checkBox_10, JCheckBox checkBox_11,
@@ -424,7 +424,7 @@ public class Material extends Price {
 	      }
    }
 
-   // 수산물
+   
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 	         JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,
 	         JCheckBox checkBox_8, JCheckBox checkBox_9, JCheckBox checkBox_10, JCheckBox checkBox_11,
@@ -499,7 +499,7 @@ public class Material extends Price {
 	       } 
    }
 
-   // 기타
+   
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 	         JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,
 	         JCheckBox checkBox_8, JCheckBox checkBox_9, JCheckBox checkBox_10, JCheckBox checkBox_11,
@@ -601,7 +601,7 @@ public class Material extends Price {
      
     }
     
-   // 곡물_견과류
+   
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 	         JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,
 	         JCheckBox checkBox_8, JCheckBox checkBox_9, JCheckBox checkBox_10, JCheckBox checkBox_11,
@@ -744,7 +744,7 @@ public class Material extends Price {
 	      }
    }
 
-   // 가공_유제품
+ 
    public void SearchM(JCheckBox checkBox, JCheckBox checkBox_1, JCheckBox checkBox_2, JCheckBox checkBox_3,
 	         JCheckBox checkBox_4, JCheckBox checkBox_5, JCheckBox checkBox_6, JCheckBox checkBox_7,
 	         JCheckBox checkBox_8, JCheckBox checkBox_9, JCheckBox checkBox_10, JCheckBox checkBox_11,
@@ -897,7 +897,6 @@ public class Material extends Price {
             }
          }
       } catch (SQLException e) {
-         // TODO Auto-generated catch block
          e.printStackTrace();
       }
       return vec;

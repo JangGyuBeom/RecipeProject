@@ -13,7 +13,6 @@ public class ManagerConnection {
 				str = rset.getString(1);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return str;
