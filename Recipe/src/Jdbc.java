@@ -43,13 +43,17 @@ public class Jdbc {
 	}
 	public void updateSQL(String sql){
 		try{
-			String e;
+			String e,r;
 			e = sql.substring(0, 6);
+			r = sql.substring(12,17);
+			System.out.println(r);
 			st.executeUpdate(sql);
 
 			if(e.compareTo("delete") != 0){
-				if(e.compareTo("insert") == 0)
-					JOptionPane.showMessageDialog(null, "등록 완료.");
+				if(e.compareTo("insert") == 0){
+					if(r.compareTo("comat") != 0)
+						JOptionPane.showMessageDialog(null, "등록 완료.");
+				}
 				else
 					JOptionPane.showMessageDialog(null, "수정 완료.");
 			}
