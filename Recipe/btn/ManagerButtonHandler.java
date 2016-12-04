@@ -35,6 +35,7 @@ public class ManagerButtonHandler {
 				str = "delete";
 				sql = str + " from notice where notice_num = " + num + ";";
 				mc.makeSQL(sql);
+				JOptionPane.showMessageDialog(null, "삭제 완료.");
 			}
 
 		} catch (Exception k) {
