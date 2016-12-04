@@ -113,7 +113,7 @@ public class ManagerButtonHandler {
 								+ matprice.get(i) + ",'" + cat.get(i) + "');";
 						martSQL = str + " mprice(mat_name,big,home,poce) values('" + mat.get(i) + "'," + 0 + "," + 0
 								+ "," + 0 + ");";
-						JOptionPane.showMessageDialog(null, mat.get(i)+"가(이) 재료로 등록 되었습니다.");
+						JOptionPane.showMessageDialog(null, mat.get(i) + "가(이) 재료로 등록 되었습니다.");
 						mc.makeSQL(mSQL);
 						mc.makeSQL(martSQL);
 					} else {
@@ -158,7 +158,7 @@ public class ManagerButtonHandler {
 								+ matprice.get(i) + ",'" + cat.get(i) + "');";
 						martSQL = "insert into mprice(mat_name,big,home,poce) values('" + mat.get(i) + "'," + 0 + ","
 								+ 0 + "," + 0 + ");";
-						JOptionPane.showMessageDialog(null, mat.get(i)+"가(이) 재료로 등록 되었습니다.");
+						JOptionPane.showMessageDialog(null, mat.get(i) + "가(이) 재료로 등록 되었습니다.");
 						mc.makeSQL(mSQL);
 						mc.makeSQL(martSQL);
 					} else {
@@ -303,8 +303,13 @@ public class ManagerButtonHandler {
 		}
 		cat.add((String) cb_카테고리.getSelectedItem());
 
-		for (int i = 0; i < mat.size(); i++)
-			model.addElement(mat.get(i) + "    " + matprice.get(i) + "    " + cat.get(i));
+		if (tf_재료이름.getText().isEmpty())
+			JOptionPane.showMessageDialog(null, "재료 이름을 다시 입력해 주세요.");
+		else {
+			for (int i = 0; i < mat.size(); i++) {
+				model.addElement(mat.get(i) + "    " + matprice.get(i) + "    " + cat.get(i));
+			}
+		}
 		list_재료바구니.setModel(model);
 	}
 

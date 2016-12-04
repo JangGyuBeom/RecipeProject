@@ -46,7 +46,7 @@ public class Jdbc {
 			String e,r;
 			e = sql.substring(0, 6);
 			r = sql.substring(12,17);
-			System.out.println(r);
+
 			st.executeUpdate(sql);
 
 			if(e.compareTo("delete") != 0){
