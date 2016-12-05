@@ -226,7 +226,7 @@ public class ManagerButtonHandler {
 
 				} else {
 					str = "update";
-					sql = str + " delivery set d_price = " + price + " and d_tel = '" + tel + "' and d_group = '"
+					sql = str + " delivery set d_price = " + price + " , d_tel = '" + tel + "' , d_group = '"
 							+ group + "' where d_name = '" + name + "' and d_food = '" + food + "';";
 				}
 
