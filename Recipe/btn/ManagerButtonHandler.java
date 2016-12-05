@@ -204,6 +204,8 @@ public class ManagerButtonHandler {
 			JTextField 카테고리) {
 		try {
 			String sql = null;
+			ResultSet rset;
+			int cp = 0;
 			ManagerConnection mc = new ManagerConnection();
 			String str = (String) 배달음식.getSelectedItem();
 			String name = new String(가게이름.getText());
@@ -211,7 +213,14 @@ public class ManagerButtonHandler {
 			Integer price = new Integer(가격.getText());
 			String tel = new String(전화번호.getText());
 			String group = new String(카테고리.getText());
-
+			sql = "select d_name, d_food from delivery;";
+			rset = mc.mSQL(sql);
+			while(rset.next())
+			{
+				if(name.compareTo(rset.getString(1)) == 0)
+					if(food.compareTo(rset.getString(2)) == 0)
+						cp++;
+			}
 			if (str == "등록") {
 				if (name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "잘못된 입력 입니다.");
@@ -225,9 +234,13 @@ public class ManagerButtonHandler {
 				if (name.isEmpty() || food.isEmpty() || tel.isEmpty() || group.isEmpty()) {
 
 				} else {
+					if(cp == 0)
+						JOptionPane.showMessageDialog(null, "배달 정보가 없습니다.");
+					else{
 					str = "update";
 					sql = str + " delivery set d_price = " + price + " , d_tel = '" + tel + "' , d_group = '"
 							+ group + "' where d_name = '" + name + "' and d_food = '" + food + "';";
+					}
 				}
 
 			}
