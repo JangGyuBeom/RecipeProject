@@ -120,7 +120,8 @@ public class ManagerButtonHandler {
 						mName.add(mat.get(i));
 					}
 				}
-				if (mName != null)
+
+				if (mName.size() > 0)
 					JOptionPane.showMessageDialog(null, mName + "은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
 			} else
 				JOptionPane.showMessageDialog(null, "레시피가 이미 있습니다.");
@@ -165,7 +166,7 @@ public class ManagerButtonHandler {
 						mName.add(mat.get(i));
 					}
 				}
-				if (mName != null)
+				if (mName.size() > 0)
 					JOptionPane.showMessageDialog(null, mName + "은 이미 있는재료 입니다.\n이미 있는 재료는 본래의 가격으로 측정됩니다.");
 			}
 		}

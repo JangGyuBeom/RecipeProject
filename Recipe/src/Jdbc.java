@@ -12,6 +12,7 @@ public class Jdbc {
 	Connection conn = null;
 	java.sql.Statement st = null;
 	ResultSet rset = null;
+
 	{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -41,16 +42,21 @@ public class Jdbc {
 	}
 	public void updateSQL(String sql){
 		try{
-			String e,r;
+			String e,r,m,p;
 			e = sql.substring(0, 6);
 			r = sql.substring(12,17);
-
+			m = sql.substring(12,20);
+			p = sql.substring(12,18);
+			
 			st.executeUpdate(sql);
 
 			if(e.compareTo("delete") != 0){
 				if(e.compareTo("insert") == 0){
-					if(r.compareTo("comat") != 0)
-						JOptionPane.showMessageDialog(null, "등록 완료.");
+					if(r.compareTo("comat") != 0){
+						if(m.compareTo("material") != 0 && p.compareTo("mprice") != 0){
+							JOptionPane.showMessageDialog(null, "등록 완료.");
+						}
+					}
 				}
 				else
 					JOptionPane.showMessageDialog(null, "수정 완료.");
