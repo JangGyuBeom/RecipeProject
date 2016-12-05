@@ -1,6 +1,5 @@
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,6 +17,7 @@ public class Recipe¾ç³ä_¼Ò½º extends JFrame {
 	private JPanel contentPane;
 
 	public Recipe¾ç³ä_¼Ò½º() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		Material M = new Material();
 		

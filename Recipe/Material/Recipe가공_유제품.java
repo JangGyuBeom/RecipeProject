@@ -1,6 +1,5 @@
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,7 +17,7 @@ public class Recipe가공_유제품 extends JFrame {
 	private JPanel contentPane;
 
 	public Recipe가공_유제품() {
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		Material M = new Material();
 		
