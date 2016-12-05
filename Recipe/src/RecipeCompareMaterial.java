@@ -1,5 +1,6 @@
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,7 +19,7 @@ public class RecipeCompareMaterial extends JFrame {
 
 	
 	public RecipeCompareMaterial(String rName) {
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		RecipeResultButtonHandler rb = new RecipeResultButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

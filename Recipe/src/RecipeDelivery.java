@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,6 +19,7 @@ public class RecipeDelivery extends JFrame {
 	private JPanel contentPane;
 
 	public RecipeDelivery() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		Price p = new Price();
 		RecipeImage image = new RecipeImage();
 		DeliveryButtonHandler delivery = new DeliveryButtonHandler();

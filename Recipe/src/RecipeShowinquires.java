@@ -1,5 +1,6 @@
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,6 +20,7 @@ public class RecipeShowinquires extends JFrame {
 
 
 	public RecipeShowinquires() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		ShowInquiresButtonHandler sinq = new ShowInquiresButtonHandler();
 		ShowInquiresConnection sc = new ShowInquiresConnection();

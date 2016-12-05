@@ -1,5 +1,6 @@
 
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,6 +18,7 @@ public class RecipeManager_connect extends JFrame {
 	private final JPasswordField pf_비밀번호 = new JPasswordField();
 
 	public RecipeManager_connect() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		ManagerConnectButtonHandler man_con = new ManagerConnectButtonHandler();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

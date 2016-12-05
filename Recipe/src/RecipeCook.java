@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,7 +24,7 @@ public class RecipeCook extends JFrame {
 	Price p = new Price();
 
 	public RecipeCook() {
-
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		RecipeButtonHandler cook = new RecipeButtonHandler();
 

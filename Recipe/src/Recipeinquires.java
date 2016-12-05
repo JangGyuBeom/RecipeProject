@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,7 +20,7 @@ public class Recipeinquires extends JFrame {
 	private JPanel contentPane;
 	
 	public Recipeinquires() {
-		
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		WriteInquiresButtonHandler inq = new WriteInquiresButtonHandler();
 		

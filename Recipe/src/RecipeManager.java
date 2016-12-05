@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -28,6 +29,7 @@ public class RecipeManager extends JFrame {
 	private JPanel contentPane;
 	
 	public RecipeManager() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		ManagerButtonHandler manager = new ManagerButtonHandler();
 		ArrayList<String> mat = new ArrayList<String>();	

@@ -1,6 +1,7 @@
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
@@ -25,6 +26,7 @@ public class RecipeResult extends JFrame {
 	
 
 	public RecipeResult(Vector<String> vec) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Image/RecipeLogo.png"));
 		RecipeImage image = new RecipeImage();
 		Material M = new Material();
 		RecipeResultButtonHandler rRsult = new RecipeResultButtonHandler();

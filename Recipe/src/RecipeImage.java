@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 
 public class RecipeImage {
 	
+	
 	ImageIcon background_bl = new ImageIcon("Image/background_bl.jpg");
 	ImageIcon Back = new ImageIcon("Image/back.png");
 	ImageIcon modi = new ImageIcon("Image/modification.png");
